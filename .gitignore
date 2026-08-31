@@ -1,12 +1,7 @@
-﻿# Dependencies
-node_modules/
-
-# Build output
+﻿node_modules/
 .next/
 dist/
 build/
-
-# Large files - transfer manually
 *.mp4
 *.zip
 *.avi
@@ -14,16 +9,10 @@ build/
 *.mkv
 *.wav
 *.mp3
-
-# OS files
 .DS_Store
 Thumbs.db
-
-# IDE
 .vscode/
 .idea/
 *.swp
 *.swo
-
-# Logs
 *.log
