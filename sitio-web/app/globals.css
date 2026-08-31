@@ -1,0 +1,59 @@
+@import "tailwindcss";
+
+:root {
+  --color-cream: #fbf0d8;
+  --color-cream-soft: #f4e9ce;
+  --color-bg-alt: #f4f4f2;
+  --color-ink: #2b2420;
+  --color-anchor: #1b2a1f;
+  --color-muted: #6e6255;
+  --color-rose: #d9a3a8;
+  --color-rose-light: #e8b7ba;
+  --color-blue-pastel: #b4d2d8;
+  --color-terracotta: #bd6d5e;
+  --color-coral: #ef8d77;
+  --color-coral-ink: #2b2420;
+  --color-teal: #4ec0b0;
+  --color-teal-dark: #3d7c8c;
+  --color-magenta: #db1f6e;
+  --color-gold: #f1c87a;
+  --color-whatsapp: #25d366;
+}
+
+@theme inline {
+  --color-cream: var(--color-cream);
+  --color-cream-soft: var(--color-cream-soft);
+  --color-bg-alt: var(--color-bg-alt);
+  --color-ink: var(--color-ink);
+  --color-anchor: var(--color-anchor);
+  --color-muted: var(--color-muted);
+  --color-rose: var(--color-rose);
+  --color-rose-light: var(--color-rose-light);
+  --color-blue-pastel: var(--color-blue-pastel);
+  --color-terracotta: var(--color-terracotta);
+  --color-coral: var(--color-coral);
+  --color-teal: var(--color-teal);
+  --color-teal-dark: var(--color-teal-dark);
+  --color-magenta: var(--color-magenta);
+  --color-gold: var(--color-gold);
+  --color-whatsapp: var(--color-whatsapp);
+
+  --font-display: var(--font-playfair);
+  --font-body: var(--font-nunito);
+}
+
+body {
+  background: var(--color-cream);
+  color: var(--color-ink);
+  font-family: var(--font-body);
+}
+
+.font-display {
+  font-family: var(--font-display);
+}
+
+h1,
+h2,
+h3 {
+  text-wrap: balance;
+}
