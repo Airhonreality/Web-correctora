@@ -1,0 +1,37 @@
+﻿Informe de asociación de los recursos
+Todo el período
+Estado del recurso	Recurso	Tipo de recurso	Nivel	Estado	Motivo del estado	Agregado por	Última actualización	Clics	Impr.	CTR	Código de moneda	Prom. CPC	Costo	Interacciones	Porcentaje de interacción	Costo prom.	Conversiones	Costo/conv.	Porcentaje de conv.	Valor de conv.	Todas las conv.	Costo/todas las conv.
+Habilitado	https://tpc.googlesyndication.com/simgad/1925171155079947589	Imagen	Campaña	Apto		Proporcionado por el anunciante	"5 jun 2025, 7:35 a.m."	9	177	5.08%	COP	146.33	1317.00	9	5.08%	146.33	0.00	0	0.00%	0.00	0.00	0
+Habilitado	"Servicio_de_corrección
+Servicio profesional de corrección
+Tu texto en buenas manos
+https://www.correcionestilo.com"	Vínculo a sitio	Cuenta	No apto	Rechazado	Proporcionado por el anunciante	 --	0	0	 --	COP	0	0.00	0	 --	0	0.00	0	 --	0.00	0.00	0
+Habilitado	https://tpc.googlesyndication.com/simgad/6278761715177763574	Imagen	Campaña	Apto		Proporcionado por el anunciante	"5 jun 2025, 7:35 a.m."	365	"11,064"	3.30%	COP	131.12	47858.60	365	3.30%	131.12	7.00	6836.94	1.92%	0.00	7.00	6836.94
+Habilitado	3133631715	Llamada	Campaña	Apto		Proporcionado por el anunciante	"5 jun 2025, 7:35 a.m."	177	"2,489"	7.11%	COP	1385.41	245217.07	177	7.11%	1385.41	36.00	6811.59	20.34%	11.00	36.00	6811.59
+Habilitado	https://tpc.googlesyndication.com/simgad/12312436384651321098	Imagen	Campaña	Apto		Proporcionado por el anunciante	"5 jun 2025, 7:35 a.m."	47	"2,453"	1.92%	COP	85.55	4020.99	47	1.92%	85.55	1.00	4020.99	2.13%	0.00	1.00	4020.99
+Habilitado	https://tpc.googlesyndication.com/simgad/9301192188045240650	Imagen	Campaña	Apto		Proporcionado por el anunciante	"5 jun 2025, 7:35 a.m."	17	374	4.55%	COP	1174.57	19967.67	17	4.55%	1174.57	3.00	6655.89	17.65%	1.00	3.00	6655.89
+Habilitado	https://tpc.googlesyndication.com/simgad/13986435481037259588	Imagen	Campaña	Apto		Proporcionado por el anunciante	"5 jun 2025, 7:35 a.m."	15	269	5.58%	COP	903.58	13553.74	15	5.58%	903.58	1.00	13553.74	6.67%	1.00	1.00	13553.74
+Habilitado	Espera la llamada	Texto destacado	Cuenta	Apto		Proporcionado por el anunciante	 --	177	"2,738"	6.46%	COP	738.43	130702.33	177	6.46%	738.43	16.00	8168.90	9.04%	2.00	16.00	8168.90
+Habilitado	Solicita 3 Cotizaciones	Texto destacado	Cuenta	Apto		Proporcionado por el anunciante	 --	175	"2,615"	6.69%	COP	827.19	144757.50	175	6.69%	827.19	18.00	8042.08	10.29%	2.00	18.00	8042.08
+Habilitado	https://tpc.googlesyndication.com/simgad/11783730812367429002	Imagen	Campaña	Apto		Proporcionado por el anunciante	"5 jun 2025, 7:35 a.m."	16	401	3.99%	COP	1071.05	17136.74	16	3.99%	1071.05	2.00	8568.37	12.50%	1.00	2.00	8568.37
+Habilitado	"Perfil
+Calidad profesional en servicio
+Correctora de estilo profesional
+https://www.correcionestilo.com/perfil"	Vínculo a sitio	Cuenta	No apto	Rechazado	Proporcionado por el anunciante	"21 jun 2023, 8:11 a.m."	0	0	 --	COP	0	0.00	0	 --	0	0.00	0	 --	0.00	0.00	0
+Habilitado	https://tpc.googlesyndication.com/simgad/11481717974275191760	Logotipo de la empresa	Campaña	Apto		Proporcionado por el anunciante	"5 jun 2025, 7:35 a.m."	999	"13,341"	7.49%	COP	755.63	754879.12	999	7.49%	755.63	103.00	7328.92	10.31%	16.00	103.00	7328.92
+Habilitado	Rapido-fácil-seguro	Texto destacado	Cuenta	Apto		Proporcionado por el anunciante	 --	212	"2,996"	7.08%	COP	727.25	154175.95	212	7.08%	727.25	17.00	9069.17	8.02%	2.00	17.00	9069.17
+Habilitado	Corrección Estilo	Nombre de la empresa	Campaña	No apto	Rechazado	Proporcionado por el anunciante	"5 jun 2025, 7:35 a.m."	0	0	 --	COP	0	0.00	0	 --	0	0.00	0	 --	0.00	0.00	0
+Habilitado	https://tpc.googlesyndication.com/simgad/16052210460117961172	Imagen	Campaña	Apto		Proporcionado por el anunciante	"5 jun 2025, 7:35 a.m."	23	571	4.03%	COP	1205.72	27731.51	23	4.03%	1205.72	4.00	6932.88	17.39%	1.00	4.00	6932.88
+Habilitado	"Portafolio de clientes
+Clientes satisfechos
+Servicio de correción
+https://www.correcionestilo.com/#portafolio"	Vínculo a sitio	Cuenta	No apto	Rechazado	Proporcionado por el anunciante	 --	0	0	 --	COP	0	0.00	0	 --	0	0.00	0	 --	0.00	0.00	0
+Habilitado	https://tpc.googlesyndication.com/simgad/8284281968706079068	Imagen	Campaña	Apto		Proporcionado por el anunciante	"5 jun 2025, 7:35 a.m."	46	"1,008"	4.56%	COP	648.38	29825.47	46	4.56%	648.38	4.00	7456.37	8.70%	1.00	4.00	7456.37
+Habilitado	https://tpc.googlesyndication.com/simgad/15678302898524832681	Imagen	Campaña	Apto		Proporcionado por el anunciante	"5 jun 2025, 7:35 a.m."	10	306	3.27%	COP	1036.39	10363.93	10	3.27%	1036.39	2.00	5181.96	20.00%	1.00	2.00	5181.96
+Habilitado	https://tpc.googlesyndication.com/simgad/8344984918426560280	Imagen	Campaña	Apto		Proporcionado por el anunciante	"5 jun 2025, 7:35 a.m."	178	"6,218"	2.86%	COP	198.58	35346.70	178	2.86%	198.58	1.00	35346.70	0.56%	0.00	1.00	35346.70
+Habilitado	"3133631715
+WhatsApp
+Requiero un servicio de corrección"	Mensaje	Cuenta	Apto		Proporcionado por el anunciante	"17 mar 2025, 8:33 a.m."	195	"2,927"	6.66%	COP	1383.57	269795.90	195	6.66%	1383.57	35.00	7708.45	17.95%	18.00	35.00	7708.45
+Habilitado	https://tpc.googlesyndication.com/simgad/2412635529950402921	Imagen	Campaña	Apto		Proporcionado por el anunciante	"5 jun 2025, 7:35 a.m."	16	400	4.00%	COP	1133.61	18137.74	16	4.00%	1133.61	1.00	18137.74	6.25%	0.00	1.00	18137.74
+Habilitado	Corrección Estilo .com	Nombre de la empresa	Cuenta	No apto	Rechazado	Proporcionado por el anunciante	"28 mar 2025, 7:33 p.m."	0	0	 --	COP	0	0.00	0	 --	0	0.00	0	 --	0.00	0.00	0
+Habilitado	https://tpc.googlesyndication.com/simgad/6829962080175366139	Logotipo de la empresa	Cuenta	Apto		Proporcionado por el anunciante	"16 jul 2024, 9:49 a.m."	0	0	 --	COP	0	0.00	0	 --	0	0.00	0	 --	0.00	0.00	0

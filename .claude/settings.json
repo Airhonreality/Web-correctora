@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(grep -o 'application/ld+json.\\\\{0,400\\\\}' .next/server/app/correccion-de-estilo.html)",
+      "Bash(grep -o 'application/ld+json.\\\\{0,400\\\\}' .next/server/app/escritora.html)"
+    ]
+  }
+}

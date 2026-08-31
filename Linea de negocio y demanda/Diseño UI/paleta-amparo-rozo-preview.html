@@ -1,0 +1,469 @@
+<title>Paleta Amparo Rozo</title>
+<style>
+  :root {
+    --bg: #FBF0D8;
+    --surface: #FFFFFF;
+    --surface-2: #F4E9CE;
+    --ink: #2B2420;
+    --muted: #6E6255;
+    --border: rgba(43,36,32,0.14);
+    --coral: #EF8D77;
+    --teal: #4EC0B0;
+    --rose: #D9A3A8;
+    --rose-light: #E8B7BA;
+    --terracotta: #BD6D5E;
+    --gold: #F1C87A;
+    --magenta: #DB1F6E;
+    --petrol: #3D7C8C;
+    --dark-anchor: #1B2A1F;
+    --whatsapp: #25D366;
+
+    --font-display: Georgia, 'Iowan Old Style', 'Palatino Linotype', 'Book Antiqua', serif;
+    --font-body: 'Segoe UI', system-ui, -apple-system, Helvetica, Arial, sans-serif;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #1B2A1F;
+      --surface: #24332A;
+      --surface-2: #2C3D32;
+      --ink: #F5EFE3;
+      --muted: #C4BBAC;
+      --border: rgba(245,239,227,0.16);
+      --coral: #F0967F;
+      --teal: #5BC7B8;
+      --rose: #E3B3B8;
+      --rose-light: #EFC7C9;
+      --terracotta: #D48774;
+      --gold: #F1C87A;
+      --magenta: #E85290;
+      --petrol: #6FA8B6;
+    }
+  }
+
+  :root[data-theme="dark"] {
+    --bg: #1B2A1F;
+    --surface: #24332A;
+    --surface-2: #2C3D32;
+    --ink: #F5EFE3;
+    --muted: #C4BBAC;
+    --border: rgba(245,239,227,0.16);
+    --coral: #F0967F;
+    --teal: #5BC7B8;
+    --rose: #E3B3B8;
+    --rose-light: #EFC7C9;
+    --terracotta: #D48774;
+    --gold: #F1C87A;
+    --magenta: #E85290;
+    --petrol: #6FA8B6;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--font-body);
+    margin: 0;
+    padding: 0;
+  }
+
+  .wrap {
+    max-width: 920px;
+    margin: 0 auto;
+    padding: 3.5rem 1.5rem 5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+  }
+
+  header.page {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+
+  .eyebrow {
+    font-family: var(--font-body);
+    font-size: 0.78rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+
+  h1 {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-weight: 400;
+    font-size: clamp(2rem, 4.5vw, 2.9rem);
+    margin: 0;
+    text-wrap: balance;
+    color: var(--ink);
+  }
+
+  .lede {
+    font-size: 1.02rem;
+    color: var(--muted);
+    max-width: 62ch;
+    line-height: 1.55;
+  }
+
+  section {
+    display: flex;
+    flex-direction: column;
+    gap: 1.1rem;
+  }
+
+  h2 {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-weight: 400;
+    font-size: 1.5rem;
+    margin: 0;
+    color: var(--ink);
+  }
+
+  .group-label {
+    font-family: var(--font-body);
+    font-size: 0.75rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin: 0 0 0.4rem;
+  }
+
+  .swatch-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 1rem;
+  }
+
+  .swatch {
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    overflow: hidden;
+    background: var(--surface);
+  }
+
+  .swatch-color {
+    height: 72px;
+    width: 100%;
+  }
+
+  .swatch-info {
+    padding: 0.65rem 0.8rem 0.8rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+  }
+
+  .swatch-name {
+    font-size: 0.92rem;
+    font-weight: 600;
+  }
+
+  .swatch-hex {
+    font-family: 'Consolas', 'SFMono-Regular', Menlo, monospace;
+    font-size: 0.82rem;
+    color: var(--muted);
+    font-variant-numeric: tabular-nums;
+  }
+
+  .swatch-role {
+    font-size: 0.78rem;
+    color: var(--muted);
+  }
+
+  .type-demo {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.6rem;
+  }
+
+  .type-row {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+    padding-bottom: 1.4rem;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .type-row:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+
+  .type-label {
+    font-size: 0.72rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+
+  .type-sample-display {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: 1.9rem;
+    color: var(--ink);
+    text-wrap: balance;
+  }
+
+  .type-sample-nav {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: 1rem;
+    display: flex;
+    gap: 1.4rem;
+    flex-wrap: wrap;
+  }
+
+  .type-sample-nav span {
+    color: var(--muted);
+  }
+
+  .type-sample-nav span.active {
+    color: var(--ink);
+    border-bottom: 1.5px solid var(--ink);
+    padding-bottom: 2px;
+  }
+
+  .type-sample-body {
+    font-family: var(--font-body);
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--ink);
+    max-width: 60ch;
+  }
+
+  .type-sample-brand {
+    font-family: var(--font-body);
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    font-size: 1.05rem;
+    color: var(--ink);
+  }
+
+  .cta-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.9rem;
+  }
+
+  .cta {
+    font-family: var(--font-body);
+    font-weight: 600;
+    font-size: 0.9rem;
+    padding: 0.65rem 1.2rem;
+    border-radius: 6px;
+    color: white;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .cta.coral { background: var(--coral); color: #2B2420; }
+  .cta.teal { background: var(--teal); color: #10312C; }
+  .cta.magenta { background: var(--magenta); }
+  .cta.gold { background: var(--gold); color: var(--dark-anchor); border: 1.5px solid var(--dark-anchor); font-weight: 700; }
+
+  footer.note {
+    font-size: 0.85rem;
+    color: var(--muted);
+    line-height: 1.6;
+    border-top: 1px solid var(--border);
+    padding-top: 1.5rem;
+  }
+
+  @media (max-width: 480px) {
+    .wrap { padding: 2.4rem 1.1rem 3.5rem; }
+  }
+</style>
+
+<div class="wrap">
+  <header class="page">
+    <div class="eyebrow">Destilado visual — sitio legacy</div>
+    <h1>Paleta y tipografía de Amparo Rozo</h1>
+    <p class="lede">Lectura de las 8 capturas del sitio actual. Confirma si estos tonos y esta pareja tipográfica coinciden con lo que ves en el sitio real antes de fijarlos como tokens definitivos.</p>
+  </header>
+
+  <section>
+    <p class="group-label">Fondos y superficies</p>
+    <div class="swatch-grid">
+      <div class="swatch">
+        <div class="swatch-color" style="background:#FBF0D8"></div>
+        <div class="swatch-info">
+          <span class="swatch-name">Crema</span>
+          <span class="swatch-hex">#FBF0D8</span>
+          <span class="swatch-role">Header y bandas de highlight</span>
+        </div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-color" style="background:#F4F4F2"></div>
+        <div class="swatch-info">
+          <span class="swatch-name">Gris claro</span>
+          <span class="swatch-hex">#F4F4F2</span>
+          <span class="swatch-role">Sección alterna (hero Inicio)</span>
+        </div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-color" style="background:#D9A3A8"></div>
+        <div class="swatch-info">
+          <span class="swatch-name">Rosa polvo</span>
+          <span class="swatch-hex">#D9A3A8</span>
+          <span class="swatch-role">Banda de página interior</span>
+        </div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-color" style="background:#E8B7BA"></div>
+        <div class="swatch-info">
+          <span class="swatch-name">Rosa claro</span>
+          <span class="swatch-hex">#E8B7BA</span>
+          <span class="swatch-role">Aviso de confidencialidad</span>
+        </div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-color" style="background:#B4D2D8"></div>
+        <div class="swatch-info">
+          <span class="swatch-name">Azul pastel</span>
+          <span class="swatch-hex">#B4D2D8</span>
+          <span class="swatch-role">Tarjeta de testimonio</span>
+        </div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-color" style="background:#BD6D5E"></div>
+        <div class="swatch-info">
+          <span class="swatch-name">Terracota</span>
+          <span class="swatch-hex">#BD6D5E</span>
+          <span class="swatch-role">Fondo de footer</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <p class="group-label">Texto y estructura</p>
+    <div class="swatch-grid">
+      <div class="swatch">
+        <div class="swatch-color" style="background:#2B2420"></div>
+        <div class="swatch-info">
+          <span class="swatch-name">Marrón casi negro</span>
+          <span class="swatch-hex">#2B2420</span>
+          <span class="swatch-role">Titulares serif</span>
+        </div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-color" style="background:#1B2A1F"></div>
+        <div class="swatch-info">
+          <span class="swatch-name">Verde muy oscuro</span>
+          <span class="swatch-hex">#1B2A1F</span>
+          <span class="swatch-role">Barra superior, ancla oscura</span>
+        </div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-color" style="background:#4A4A4A"></div>
+        <div class="swatch-info">
+          <span class="swatch-name">Gris texto</span>
+          <span class="swatch-hex">#4A4A4A</span>
+          <span class="swatch-role">Cuerpo de párrafo</span>
+        </div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-color" style="background:#3D7C8C"></div>
+        <div class="swatch-info">
+          <span class="swatch-name">Teal petróleo</span>
+          <span class="swatch-hex">#3D7C8C</span>
+          <span class="swatch-role">Subtítulo itálico</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <p class="group-label">Acentos y CTA</p>
+    <div class="swatch-grid">
+      <div class="swatch">
+        <div class="swatch-color" style="background:#EF8D77"></div>
+        <div class="swatch-info">
+          <span class="swatch-name">Coral</span>
+          <span class="swatch-hex">#EF8D77</span>
+          <span class="swatch-role">CTA flotante "Hablemos"</span>
+        </div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-color" style="background:#4EC0B0"></div>
+        <div class="swatch-info">
+          <span class="swatch-name">Turquesa</span>
+          <span class="swatch-hex">#4EC0B0</span>
+          <span class="swatch-role">CTA "Requiero un servicio"</span>
+        </div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-color" style="background:#DB1F6E"></div>
+        <div class="swatch-info">
+          <span class="swatch-name">Magenta</span>
+          <span class="swatch-hex">#DB1F6E</span>
+          <span class="swatch-role">CTA "Comprar ejemplar"</span>
+        </div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-color" style="background:#F1C87A"></div>
+        <div class="swatch-info">
+          <span class="swatch-name">Dorado</span>
+          <span class="swatch-hex">#F1C87A</span>
+          <span class="swatch-role">Botón del footer</span>
+        </div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-color" style="background:#25D366"></div>
+        <div class="swatch-info">
+          <span class="swatch-name">Verde WhatsApp</span>
+          <span class="swatch-hex">#25D366</span>
+          <span class="swatch-role">Ícono de contacto</span>
+        </div>
+      </div>
+    </div>
+    <div class="cta-row">
+      <span class="cta coral">Hablemos</span>
+      <span class="cta teal">Requiero un servicio de corrección</span>
+      <span class="cta magenta">COMPRAR EJEMPLAR</span>
+      <span class="cta gold">HABLEMOS</span>
+    </div>
+  </section>
+
+  <section>
+    <h2>Pareja tipográfica</h2>
+    <div class="type-demo">
+      <div class="type-row">
+        <span class="type-label">Marca — sans bold, versalitas</span>
+        <span class="type-sample-brand">Corrección, redacción y estilo</span>
+      </div>
+      <div class="type-row">
+        <span class="type-label">Navegación — serif itálica</span>
+        <span class="type-sample-nav">
+          <span class="active">Inicio</span>
+          <span>Perfil</span>
+          <span>Blog personal</span>
+          <span>Escritora</span>
+          <span>Contacto</span>
+        </span>
+      </div>
+      <div class="type-row">
+        <span class="type-label">Titular de sección — serif itálica</span>
+        <span class="type-sample-display">Mi compromiso</span>
+      </div>
+      <div class="type-row">
+        <span class="type-label">Cuerpo de texto — sans regular</span>
+        <p class="type-sample-body">Corregir repeticiones, redundancias, localismos, ambigüedades, erratas y cacofonías. Reescribir oraciones confusas en un lenguaje claro y estructurado.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer class="note">
+    Colores leídos visualmente de las capturas — aproximaciones, no valores de CSS inspeccionados. Tipografía identificada por semejanza de forma (serif itálica elegante + sans-serif humanista redondeada), no por nombre de fuente confirmado. Sirve para validar la lectura antes de fijar los tokens definitivos en <code>Diseño UI/Guia de estilo visual - destilado.md</code>.
+  </footer>
+</div>
