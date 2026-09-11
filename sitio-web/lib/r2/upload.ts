@@ -1,7 +1,7 @@
 import { PutObjectCommand } from "@aws-sdk/client-s3";
 import { getR2Client, getR2BucketName, getR2PublicUrl } from "./client";
 
-export async function uploadImageToR2(file: File, folder: "portafolio" | "blog") {
+export async function uploadImageToR2(file: File, folder: "portafolio" | "blog" | "libros") {
   const arrayBuffer = await file.arrayBuffer();
   const extension = file.name.split(".").pop() ?? "jpg";
   const key = `${folder}/${crypto.randomUUID()}.${extension}`;
