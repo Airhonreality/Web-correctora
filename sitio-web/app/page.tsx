@@ -36,16 +36,16 @@ export default async function Home() {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
             
             {/* Bloque de Texto (7 Columnas) */}
-            <div className="col-span-1 lg:col-span-7 text-left bg-blue-pastel p-8 lg:p-12 rounded-lg">
-              <h1 className="font-display text-5xl font-bold tracking-tight text-ink sm:text-7xl">
+            <div className="col-span-1 lg:col-span-7 flex flex-col justify-center gap-6 text-left bg-blue-pastel px-10 lg:px-12 py-12 lg:py-14 rounded-2xl shadow-[0_10px_30px_rgba(0,0,0,0.04)]">
+              <h1 className="font-display text-5xl font-bold tracking-tight text-ink leading-[1.15] sm:text-7xl">
                 Su texto está en buenas manos.
               </h1>
-              <p className="mt-8 text-xl leading-relaxed text-muted font-normal max-w-xl">
+              <p className="max-w-xl text-xl font-medium leading-relaxed text-ink">
                 Corrección de estilo para novelas, memorias, crónicas y libros de
                 crecimiento personal — hecha a mano, palabra por palabra, por una
                 escritora y periodista. Sin inteligencia artificial.
               </p>
-              <div className="mt-10 flex flex-wrap items-center gap-x-6 gap-y-4">
+              <div className="flex flex-wrap items-center gap-x-6 gap-y-4 pt-1">
                 <WhatsAppButton 
                   message="Hola Amparo, quiero información sobre corrección de estilo."
                   className="shadow-sm uppercase tracking-wider text-xs sm:text-sm h-12 px-8"
@@ -54,9 +54,9 @@ export default async function Home() {
                 </WhatsAppButton>
                 <Link
                   href="/portafolio"
-                  className="inline-flex h-12 items-center justify-center rounded-md border border-ink bg-transparent px-8 text-xs sm:text-sm font-semibold uppercase tracking-wider text-ink transition-colors hover:bg-ink hover:text-cream"
+                  className="inline-flex items-center text-xs font-bold uppercase tracking-widest text-ink border-b-2 border-ink pb-1 transition-colors hover:text-muted hover:border-muted"
                 >
-                  Ver portafolio
+                  Ver portafolio <span className="ml-2">→</span>
                 </Link>
               </div>
             </div>

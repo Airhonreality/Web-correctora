@@ -15,6 +15,13 @@
   --color-coral-ink: #2b2420;
   --color-teal: #4ec0b0;
   --color-teal-dark: #3d7c8c;
+  --color-navy: #152741;
+  --color-nude: #fbf8f1;
+  --color-sand: #f0ebe1;
+  --color-olive: #6f6a3e;
+  --color-olive-soft: #e3e6d5;
+  --color-cobalt: #2e5a8f;
+  --color-teja: #c85a46;
   --color-magenta: #db1f6e;
   --color-gold: #f1c87a;
   --color-whatsapp: #25d366;
@@ -34,6 +41,13 @@
   --color-coral: var(--color-coral);
   --color-teal: var(--color-teal);
   --color-teal-dark: var(--color-teal-dark);
+  --color-navy: var(--color-navy);
+  --color-nude: var(--color-nude);
+  --color-sand: var(--color-sand);
+  --color-olive: var(--color-olive);
+  --color-olive-soft: var(--color-olive-soft);
+  --color-cobalt: var(--color-cobalt);
+  --color-teja: var(--color-teja);
   --color-magenta: var(--color-magenta);
   --color-gold: var(--color-gold);
   --color-whatsapp: var(--color-whatsapp);
@@ -56,4 +70,20 @@ h1,
 h2,
 h3 {
   text-wrap: balance;
+}
+
+/* --- Slider horizontal de portafolio (corrección de estilo) --- */
+.hide-scrollbar {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .scroll-smooth {
+    scroll-behavior: auto;
+  }
 }

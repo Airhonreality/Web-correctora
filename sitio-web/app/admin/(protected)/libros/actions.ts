@@ -15,15 +15,33 @@ async function resolveImageUrl(formData: FormData, fieldName: string, existingUr
   return existingUrl ?? null;
 }
 
+async function resolvePublisherLogos(formData: FormData) {
+  const logos: string[] = [];
+
+  for (const value of formData.getAll("publisherLogoUrl")) {
+    const url = String(value).trim();
+    if (url) logos.push(url);
+  }
+
+  const files = formData
+    .getAll("publisherLogoFile")
+    .filter((entry): entry is File => entry instanceof File && entry.size > 0);
+  for (const file of files) {
+    logos.push(await uploadImageToR2(file, "libros"));
+  }
+
+  return logos.length > 0 ? logos.join(", ") : null;
+}
+
 export async function createBookAction(formData: FormData) {
   const title = String(formData.get("title") ?? "").trim();
   const subtitle = String(formData.get("subtitle") ?? "").trim();
   const editorialNote = String(formData.get("editorialNote") ?? "").trim();
   const description = String(formData.get("description") ?? "").trim();
   const purchaseLink = String(formData.get("purchaseLink") ?? "").trim();
+  const publisherLogos = await resolvePublisherLogos(formData);
   const purchasePlatform = String(formData.get("purchasePlatform") ?? "").trim();
-  const publisherLogos = String(formData.get("publisherLogos") ?? "").trim();
-  
+
   const preferenceOrder = parseInt(String(formData.get("preferenceOrder") ?? "0"), 10) || 0;
   const published = formData.get("published") === "on";
 
@@ -58,7 +76,7 @@ export async function updateBookAction(id: number, formData: FormData) {
   const description = String(formData.get("description") ?? "").trim();
   const purchaseLink = String(formData.get("purchaseLink") ?? "").trim();
   const purchasePlatform = String(formData.get("purchasePlatform") ?? "").trim();
-  const publisherLogos = String(formData.get("publisherLogos") ?? "").trim();
+  const publisherLogos = await resolvePublisherLogos(formData);
   const existingCoverUrl = String(formData.get("existingCoverUrl") ?? "");
 
   const preferenceOrder = parseInt(String(formData.get("preferenceOrder") ?? "0"), 10) || 0;

@@ -11,7 +11,15 @@ type Testimonial = {
   quote: string;
 };
 
-export function TestimonialCarousel({ testimonials }: { testimonials: Testimonial[] }) {
+export function TestimonialCarousel({
+  testimonials,
+  variant = "card",
+  onDark = false,
+}: {
+  testimonials: Testimonial[];
+  variant?: "card" | "editorial";
+  onDark?: boolean;
+}) {
   const scrollRef = useRef<HTMLDivElement>(null);
 
   const scroll = (direction: "left" | "right") => {
@@ -57,34 +65,60 @@ export function TestimonialCarousel({ testimonials }: { testimonials: Testimonia
       `}</style>
       <div 
         ref={scrollRef}
-        className="flex overflow-x-auto snap-x snap-mandatory hide-scrollbar pb-8"
+        className="flex overflow-x-auto snap-x snap-mandatory hide-scrollbar"
         style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
       >
-        {testimonials.map((testimonial) => (
-          <div key={testimonial.id} className="w-full flex-none snap-center px-4 sm:px-6">
-            <blockquote className="relative mx-auto w-full max-w-4xl rounded-2xl bg-blue-pastel px-8 py-12 text-center shadow-sm md:px-16 md:py-16">
-              <div 
-                className="absolute left-1/2 top-4 -translate-x-1/2 font-display text-[120px] leading-none text-teal-dark opacity-15 pointer-events-none" 
-                aria-hidden="true"
-              >
-                &ldquo;
-              </div>
-              <p className="relative z-10 font-display text-lg leading-relaxed italic text-ink md:text-2xl mt-8">
-                &ldquo;{testimonial.quote}&rdquo;
-              </p>
-              <footer className="relative z-10 mt-8 flex flex-col items-center justify-center gap-1 not-italic font-sans text-sm">
-                <span className="font-bold uppercase tracking-wider text-ink/80">
-                  {testimonial.clientName}
-                </span>
-                {testimonial.bookTitle && (
-                  <span className="text-muted">
-                    Autor de <em className="font-semibold text-teal-dark">{testimonial.bookTitle}</em>
+        {testimonials.map((testimonial) =>
+          variant === "editorial" ? (
+            <div key={testimonial.id} className="w-full flex-none snap-center px-4 sm:px-10">
+              <blockquote className="relative mx-auto w-full max-w-2xl px-6 py-5 text-center md:py-6">
+                <div 
+                  className="absolute left-1/2 top-0 -translate-x-1/2 font-display text-[64px] leading-none text-terracotta/15 pointer-events-none select-none md:text-[84px]" 
+                  aria-hidden="true"
+                >
+                  &ldquo;
+                </div>
+                <p className={`relative z-10 font-display text-xl leading-snug italic md:text-2xl ${onDark ? "text-cream" : "text-ink"}`}>
+                  &ldquo;{testimonial.quote}&rdquo;
+                </p>
+                <footer className="relative z-10 mt-5 flex flex-col items-center justify-center gap-1 not-italic font-sans text-sm">
+                  <span className={`font-bold uppercase tracking-wider ${onDark ? "text-cream/90" : "text-ink/80"}`}>
+                    {testimonial.clientName}
                   </span>
-                )}
-              </footer>
-            </blockquote>
-          </div>
-        ))}
+                  {testimonial.bookTitle && (
+                    <span className={onDark ? "text-cream/70" : "text-muted"}>
+                      Autor de <em className={`font-semibold ${onDark ? "text-blue-pastel" : "text-teal-dark"}`}>{testimonial.bookTitle}</em>
+                    </span>
+                  )}
+                </footer>
+              </blockquote>
+            </div>
+          ) : (
+            <div key={testimonial.id} className="w-full flex-none snap-center px-4 sm:px-6">
+              <blockquote className="relative mx-auto w-full max-w-4xl rounded-2xl bg-blue-pastel px-8 py-12 text-center shadow-sm md:px-16 md:py-16">
+                <div 
+                  className="absolute left-1/2 top-4 -translate-x-1/2 font-display text-[120px] leading-none text-teal-dark opacity-15 pointer-events-none" 
+                  aria-hidden="true"
+                >
+                  &ldquo;
+                </div>
+                <p className="relative z-10 font-display text-lg leading-relaxed italic text-ink md:text-2xl mt-8">
+                  &ldquo;{testimonial.quote}&rdquo;
+                </p>
+                <footer className="relative z-10 mt-8 flex flex-col items-center justify-center gap-1 not-italic font-sans text-sm">
+                  <span className="font-bold uppercase tracking-wider text-ink/80">
+                    {testimonial.clientName}
+                  </span>
+                  {testimonial.bookTitle && (
+                    <span className="text-muted">
+                      Autor de <em className="font-semibold text-teal-dark">{testimonial.bookTitle}</em>
+                    </span>
+                  )}
+                </footer>
+              </blockquote>
+            </div>
+          )
+        )}
       </div>
 
       {testimonials.length > 1 && (

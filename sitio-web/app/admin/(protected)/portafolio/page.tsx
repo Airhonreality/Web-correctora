@@ -22,21 +22,43 @@ export default async function AdminPortfolioListPage() {
       ) : (
         <div className="flex flex-col divide-y divide-ink/10 rounded-lg bg-cream">
           {items.map((item) => (
-            <div key={item.id} className="flex items-center justify-between p-4">
-              <div>
-                <p className="font-semibold">
-                  {item.bookTitle}{" "}
-                  {!item.authorized && (
-                    <span className="text-xs font-normal text-magenta">
-                      (sin autorización — no visible)
+            <div key={item.id} className="flex items-center justify-between gap-4 p-4">
+              <div className="flex items-center gap-4">
+                {item.coverImageUrl ? (
+                  <img
+                    src={item.coverImageUrl}
+                    alt={`Portada de ${item.bookTitle}`}
+                    className="h-16 w-12 shrink-0 rounded object-cover"
+                  />
+                ) : (
+                  <div className="h-16 w-12 shrink-0 rounded bg-ink/10 flex items-center justify-center text-xs text-muted">
+                    Sin foto
+                  </div>
+                )}
+                <div>
+                  <p className="font-semibold">{item.bookTitle}</p>
+                  <p className="text-sm text-muted">
+                    {item.authorName} — {item.genre}
+                  </p>
+                  <div className="mt-1 flex flex-wrap gap-2">
+                    <span
+                      className={`rounded-full px-2 py-0.5 text-xs font-semibold ${
+                        item.coverImageUrl ? "bg-teal/10 text-teal" : "bg-ink/5 text-muted"
+                      }`}
+                    >
+                      {item.coverImageUrl ? "Con imagen" : "Sin imagen"}
                     </span>
-                  )}
-                </p>
-                <p className="text-sm text-muted">
-                  {item.authorName} — {item.genre}
-                </p>
+                    <span
+                      className={`rounded-full px-2 py-0.5 text-xs font-semibold ${
+                        item.authorized ? "bg-teal/10 text-teal" : "bg-magenta/10 text-magenta"
+                      }`}
+                    >
+                      {item.authorized ? "Publicado" : "No publicado"}
+                    </span>
+                  </div>
+                </div>
               </div>
-              <div className="flex gap-3">
+              <div className="flex shrink-0 gap-3">
                 <Link
                   href={`/admin/portafolio/${item.id}/edit`}
                   className="text-sm font-semibold text-teal underline"

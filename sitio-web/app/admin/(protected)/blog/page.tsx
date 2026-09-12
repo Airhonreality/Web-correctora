@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { getAllBlogPostsAdmin } from "@/lib/db/queries";
 import { deletePostAction } from "./actions";
+import { categoryPillClass } from "@/lib/blog";
 
 export default async function AdminBlogListPage() {
   const posts = await getAllBlogPostsAdmin();
@@ -25,12 +26,20 @@ export default async function AdminBlogListPage() {
             <div key={post.id} className="flex items-center justify-between p-4">
               <div>
                 <p className="font-semibold">
+                  {post.featured && <span className="mr-1 text-gold" aria-label="Destacado">★</span>}
                   {post.title}{" "}
                   {!post.published && (
                     <span className="text-xs font-normal text-muted">(borrador)</span>
                   )}
                 </p>
                 <p className="text-sm text-muted">/blog/{post.slug}</p>
+                {post.category && (
+                  <span
+                    className={`mt-1 inline-block rounded-full px-2.5 py-0.5 text-[10px] font-bold uppercase tracking-wider ${categoryPillClass(post.category)}`}
+                  >
+                    {post.category}
+                  </span>
+                )}
               </div>
               <div className="flex gap-3">
                 <Link

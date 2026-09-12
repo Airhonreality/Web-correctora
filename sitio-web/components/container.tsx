@@ -14,7 +14,7 @@ export function Band({
   className = "",
 }: {
   children: React.ReactNode;
-  tone?: "cream" | "cream-soft" | "bg-alt" | "rose" | "rose-light";
+  tone?: "cream" | "cream-soft" | "bg-alt" | "rose" | "rose-light" | "navy" | "terracotta" | "nude" | "sand" | "cobalt";
   className?: string;
 }) {
   const tones: Record<string, string> = {
@@ -23,6 +23,11 @@ export function Band({
     "bg-alt": "bg-bg-alt",
     rose: "bg-rose text-ink",
     "rose-light": "bg-rose-light text-ink",
+    navy: "bg-navy text-cream",
+    terracotta: "bg-terracotta text-ink",
+    nude: "bg-nude",
+    sand: "bg-sand",
+    cobalt: "bg-cobalt text-cream",
   };
   return <div className={`${tones[tone]} ${className}`}>{children}</div>;
 }

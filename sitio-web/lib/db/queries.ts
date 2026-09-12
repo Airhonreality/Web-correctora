@@ -1,5 +1,5 @@
 import "server-only";
-import { eq, desc } from "drizzle-orm";
+import { eq, desc, sql } from "drizzle-orm";
 import { blogPosts, portfolioItems, testimonials, authorBooks } from "./schema";
 
 /**
@@ -22,7 +22,12 @@ export async function getPublishedBlogPosts() {
       .select()
       .from(blogPosts)
       .where(eq(blogPosts.published, true))
-      .orderBy(desc(blogPosts.preferenceOrder), desc(blogPosts.createdAt));
+      .orderBy(
+        desc(blogPosts.featured),
+        desc(blogPosts.preferenceOrder),
+        sql`${blogPosts.publishedAt} DESC NULLS LAST`,
+        desc(blogPosts.createdAt)
+      );
   }, []);
 }
 

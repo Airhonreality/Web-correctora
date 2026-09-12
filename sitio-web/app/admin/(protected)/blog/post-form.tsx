@@ -1,14 +1,27 @@
 import { MarkdownEditor } from "./md-editor";
 import { CoverImagePicker } from "@/components/cover-image-picker";
+import { BLOG_CATEGORIES } from "@/lib/blog";
 
 type PostFormValues = {
   title: string;
   excerpt: string;
   body: string;
   coverImageUrl?: string | null;
+  category?: string | null;
+  featured?: boolean;
+  publishedAt?: Date | string | null;
   published: boolean;
   preferenceOrder?: number;
 };
+
+function toDateInputValue(value?: Date | string | null) {
+  if (!value) return "";
+  const date = typeof value === "string" ? new Date(value) : value;
+  if (Number.isNaN(date.getTime())) return "";
+  const day = String(date.getDate()).padStart(2, "0");
+  const month = String(date.getMonth() + 1).padStart(2, "0");
+  return `${date.getFullYear()}-${month}-${day}`;
+}
 
 export function PostForm({
   action,
@@ -40,6 +53,21 @@ export function PostForm({
         />
       </label>
       <label className="flex flex-col gap-1">
+        <span className="text-sm font-semibold">Categoría (para las etiquetas del blog)</span>
+        <select
+          name="category"
+          defaultValue={initialValues?.category ?? ""}
+          className="rounded-md border border-ink/20 px-4 py-2"
+        >
+          <option value="">Sin categoría</option>
+          {BLOG_CATEGORIES.map((category) => (
+            <option key={category.slug} value={category.label}>
+              {category.label}
+            </option>
+          ))}
+        </select>
+      </label>
+      <label className="flex flex-col gap-1">
         <span className="text-sm font-semibold">Orden de Preferencia (número mayor = más importante)</span>
         <input
           type="number"
@@ -63,6 +91,28 @@ export function PostForm({
         <MarkdownEditor initialValue={initialValues?.body} />
         <span className="text-xs text-muted mt-1">
           Usa el editor para dar formato al contenido (Markdown).
+        </span>
+      </label>
+      <label className="flex items-center gap-2">
+        <input
+          type="checkbox"
+          name="featured"
+          defaultChecked={initialValues?.featured ?? false}
+        />
+        <span className="text-sm">
+          Destacado (aparece en las primeras posiciones del blog)
+        </span>
+      </label>
+      <label className="flex flex-col gap-1">
+        <span className="text-sm font-semibold">Fecha de publicación</span>
+        <input
+          type="date"
+          name="publishedAt"
+          defaultValue={toDateInputValue(initialValues?.publishedAt)}
+          className="rounded-md border border-ink/20 px-4 py-2"
+        />
+        <span className="text-xs text-muted">
+          Déjala vacía para usar la fecha de creación del post.
         </span>
       </label>
       <label className="flex items-center gap-2">

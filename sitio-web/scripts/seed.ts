@@ -6,6 +6,7 @@ const posts: Array<{
   title: string;
   excerpt: string;
   body: string;
+  category: string;
   published: boolean;
 }> = [
   {
@@ -42,6 +43,7 @@ El 57% de los autores en español rechaza categóricamente el uso de la intelige
 Conclusión
 
 Aunque las herramientas de IA pueden ser un complemento útil, contratar los servicios de un corrector de estilo humano garantiza un nivel de precisión y personalización que la tecnología aún no puede igualar. Un corrector profesional no solo mejora el texto, sino que también protege la voz del autor, conecta con el lector y asegura que cada palabra cumpla con su propósito. Si buscas llevar tus textos al siguiente nivel, la experiencia humana es insustituible.`,
+    category: "Oficio del Corrector",
     published: true,
   },
   {
@@ -86,6 +88,7 @@ Por qué: es una expresión interrogativa. Ejemplo: ¿Por qué no me has llamado
 Porqué: es sustantivo, sinónimo de causa, razón o motivo: "Desconozco el porqué de su extraño comportamiento".
 
 Por que: el computador la marca como incorrecta. Se trata de una conjunción que significa "para que". Por ejemplo: "Ruegue a Dios por que no llueva".`,
+    category: "Normas RAE",
     published: true,
   },
   {
@@ -105,6 +108,7 @@ Si la conversación se trae a colación entre personajes de la novela, lo recome
 Me dijo por WhatsApp que hiciera lo que quisiera.
 
 Me dijo por WhatsApp, «Haz lo que quieras».`,
+    category: "Consejos de Redacción",
     published: true,
   },
   {
@@ -128,6 +132,7 @@ Eliminación de los dígrafos ch y ll del abecedario. Estos signos dobles se sig
 La norma de escribir sin acento el adjetivo solo y los determinantes demostrativos.
 
 La posibilidad de escribir sin tilde el adverbio solo y los pronombres demostrativos este, ese, aquel, incluso en casos de posible ambigüedad.`,
+    category: "Ortografía",
     published: true,
   },
   {
@@ -144,6 +149,7 @@ He aquí otras damnificadas: Ruíz/Ruiz, fué/fue, dió/dio, vió/vio, fé/fe.
 Tildes de pretéritos monosílabos que perdieron la tilde en 1999. Seguramente habremos tildado alguna de estas palabras después de esta fecha: fió/fio, lió/lio, guió/guio, rió/rio.
 
 Otras palabras que perdieron la tilde en 1999: guión/guion, Sión/Sion.`,
+    category: "Ortografía",
     published: true,
   },
   {
@@ -154,6 +160,7 @@ Otras palabras que perdieron la tilde en 1999: guión/guion, Sión/Sion.`,
     body: `A veces escuchamos, e incluso utilizamos, expresiones latinas que siguen vigentes y que al introducirlas ocasionalmente en un texto le proporcionamos un toque de elegancia y exactitud etimológica.
 
 Ad hoc: expresamente para esto. Alma máter: la universidad, madre del espíritu. Alter ego: otro yo, una segunda personalidad. A posteriori: posteriormente. A priori: previamente. Cogito, ergo sum: pienso, luego existo. Currículum vitae: historial o méritos de uno. De facto: de hecho. Déficit: carencia o falta de. Ex profeso: intencionadamente, únicamente. Facsímile: copia idéntica. In fraganti: en el mismo momento. Lapsus linguae: error involuntario al hablar. Memorándum: informe, recopilación. Motu proprio: por propia voluntad. Non plus ultra: no más allá. Sine die: sin fecha fija. Statu quo: situación determinada. Ultimátum: última posibilidad. Vox populi: opinión popular o generalizada. Ergo: por tanto, luego. Exabrupto: arrebatada, bruscamente. Hábeas corpus: derecho a ser oído; mostrar al reo. Ibidem: allí mismo. Ipso facto: en el acto, por el mismo hecho. Mare magnum: confusión de asuntos. Modus vivendi: modo de vivir. Per se: por sí mismo. Sine qua non: condición sin la cual no. Sui géneris: muy especial. Superávit: residuo. Verbi gratia o verbi gracia: por ejemplo.`,
+    category: "Estilo Narrativo",
     published: true,
   },
   {
@@ -194,6 +201,7 @@ Zaguán: sala o pieza de una casa, inmediata a la puerta principal de entrada.
 Resolana: luz y calor producidos por la reverberación del sol en un lugar que está a la sombra.
 
 Atalaya: torre construida en un lugar alto para vigilar gran extensión de terreno o de mar y poder avisar con tiempo de un peligro o amenaza; punto de vista desde el cual se pueden enjuiciar con objetividad hechos e ideas.`,
+    category: "Estilo Narrativo",
     published: true,
   },
   {
@@ -206,6 +214,7 @@ Atalaya: torre construida en un lugar alto para vigilar gran extensión de terre
 Queda, pues, en manos del lector, decidir libremente cómo escribir y expresarse oralmente.
 
 No obstante, la claridad, precisión y economía del lenguaje contribuyen a que el lector preste más atención al escrito y entienda las intenciones del autor.`,
+    category: "Estilo Narrativo",
     published: true,
   },
   {
@@ -220,6 +229,7 @@ Un corrector de estilo trabaja sobre tres frentes a la vez. Primero, la superfic
 No se trata de imponer un estilo ajeno al tuyo. Un buen corrector preserva tu voz como autor y la hace brillar con más claridad, no la reemplaza.
 
 Si tu manuscrito está listo y quieres saber qué necesita, escríbeme por WhatsApp y lo revisamos juntos.`,
+    category: "Oficio del Corrector",
     published: true,
   },
   {
@@ -236,6 +246,7 @@ La corrección de estilo va más allá: revisa cómo están construidas las fras
 En pocas palabras: la corrección ortotipográfica revisa que el texto esté bien escrito. La corrección de estilo revisa que el texto esté bien contado.
 
 Si tu manuscrito ya pasó por un corrector ortográfico automático (como el de Word) y quieres saber si necesita algo más, escríbeme por WhatsApp.`,
+    category: "Oficio del Corrector",
     published: true,
   },
   {
@@ -256,6 +267,7 @@ Cuida los tiempos verbales. Cambiar de pasado a presente sin intención rompe la
 No le tengas miedo a cortar. Si una escena no mueve la trama ni desarrolla a un personaje, probablemente sobra.
 
 Después de tu propia revisión, un corrector de estilo puede ver lo que a ti, como autor, te resulta invisible por estar demasiado cerca del texto. Escríbeme por WhatsApp cuando tu manuscrito esté listo.`,
+    category: "Guía para autores",
     published: true,
   },
 ];
@@ -321,10 +333,24 @@ const portfolio: Array<{
   },
 ];
 
+const postDates: Record<string, { publishedAt?: Date; featured?: boolean }> = {
+  "ventajas-de-contratar-un-corrector-de-estilo-frente-a-una-ia": { publishedAt: new Date("2025-01-05T12:00:00") },
+  "el-computador-no-se-las-sabe-todas": { publishedAt: new Date("2025-01-05T12:00:00") },
+  "dialogos-de-whatsapp-en-una-novela": { publishedAt: new Date("2025-01-05T12:00:00") },
+  "solo-con-tilde-o-no": { publishedAt: new Date("2025-01-03T12:00:00") },
+  "tildes-obsoletas": { publishedAt: new Date("2016-06-22T12:00:00") },
+  "expresiones-latinas-que-no-pasan-de-moda": { publishedAt: new Date("2020-04-05T12:00:00") },
+  "bellas-palabras-del-espanol-en-via-de-extincion": { publishedAt: new Date("2020-04-05T12:00:00") },
+  "armonia-y-musica-del-lenguaje": { publishedAt: new Date("2020-04-05T12:00:00") },
+  "que-hace-un-corrector-de-estilo": { publishedAt: new Date("2024-09-12T12:00:00") },
+  "diferencia-entre-correccion-de-estilo-y-ortotipografia": { publishedAt: new Date("2024-10-25T12:00:00") },
+  "como-mejorar-el-estilo-de-mi-novela": { publishedAt: new Date("2024-03-18T12:00:00"), featured: true },
+};
+
 async function seed() {
   console.log("Insertando posts del blog...");
   for (const post of posts) {
-    await db.insert(blogPosts).values(post).onConflictDoNothing();
+    await db.insert(blogPosts).values({ ...post, ...(postDates[post.slug] ?? {}) }).onConflictDoNothing();
   }
 
   console.log("Insertando fichas de portafolio (sin autorizar por defecto)...");

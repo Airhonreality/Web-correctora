@@ -6,9 +6,9 @@ export function WhatsAppButton({
   variant = "primary",
   className = "",
 }: {
-  message: string;
+message: string;
   children: React.ReactNode;
-  variant?: "primary" | "outline";
+  variant?: "primary" | "outline" | "light" | "terracotta";
   className?: string;
 }) {
   const base =
@@ -16,7 +16,11 @@ export function WhatsAppButton({
   const styles =
     variant === "primary"
       ? "bg-coral text-[var(--color-coral-ink)] hover:brightness-95"
-      : "border-2 border-anchor text-anchor hover:bg-anchor hover:text-cream";
+      : variant === "light"
+        ? "bg-white text-teja hover:brightness-95"
+        : variant === "terracotta"
+          ? "bg-terracotta text-cream hover:brightness-95"
+          : "border-2 border-anchor text-anchor hover:bg-anchor hover:text-cream";
 
   return (
     <a

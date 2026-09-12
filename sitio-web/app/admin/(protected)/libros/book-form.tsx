@@ -1,4 +1,5 @@
 import { CoverImagePicker } from "@/components/cover-image-picker";
+import { LogosPicker } from "@/components/logos-picker";
 
 type BookFormValues = {
   title: string;
@@ -90,19 +91,9 @@ export function BookForm({
         </label>
       </div>
 
-      <label className="flex flex-col gap-1">
-        <span className="text-sm font-semibold">Logos de Editorial (URLs separados por comas)</span>
-        <input
-          type="text"
-          name="publisherLogos"
-          defaultValue={initialValues?.publisherLogos ?? ""}
-          className="rounded-md border border-ink/20 px-4 py-2"
-          placeholder="https://...logo1.png, https://...logo2.png"
-        />
-        <span className="text-xs text-muted">
-          Pega los enlaces de las imágenes de los sellos editoriales separados por coma.
-        </span>
-      </label>
+      <div className="mt-2">
+        <LogosPicker initialValue={initialValues?.publisherLogos} />
+      </div>
 
       <label className="flex flex-col gap-1">
         <span className="text-sm font-semibold">Orden de Preferencia (número mayor = más arriba)</span>
