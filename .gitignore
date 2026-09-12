@@ -16,4 +16,7 @@ Thumbs.db
 *.swp
 *.swo
 *.log
+.env
+.env.*
+.secrets/
 
