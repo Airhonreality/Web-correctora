@@ -4,6 +4,7 @@ import { WhatsAppButton } from "@/components/whatsapp-button";
 import { JsonLd } from "@/components/json-ld";
 import { getAllTestimonials } from "@/lib/db/queries";
 import { TestimonialCarousel } from "@/components/testimonial-carousel";
+import { EventsCarousel } from "@/components/events-carousel";
 import { pageMetadata, reviewJsonLd } from "@/lib/seo";
 
 export const dynamic = "force-dynamic";
@@ -35,7 +36,7 @@ export default async function Home() {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
             
             {/* Bloque de Texto (7 Columnas) */}
-            <div className="col-span-1 lg:col-span-7 text-left">
+            <div className="col-span-1 lg:col-span-7 text-left bg-blue-pastel p-8 lg:p-12 rounded-lg">
               <h1 className="font-display text-5xl font-bold tracking-tight text-ink sm:text-7xl">
                 Su texto está en buenas manos.
               </h1>
@@ -62,13 +63,9 @@ export default async function Home() {
 
             {/* Composición Visual: Arco + Cameo (5 Columnas) */}
             <div className="col-span-1 lg:col-span-5 relative hidden lg:block">
-               {/* 1. El Arco (Fondo de textura) */}
+               {/* 1. El Arco (Carrusel de eventos) */}
                <div className="aspect-[3/4] w-full max-w-[85%] ml-auto rounded-tr-full rounded-tl-full overflow-hidden shadow-xl border-4 border-white/50 bg-white">
-                  <img 
-                    src="https://pub-31f388eee9ee467086e726e2865e639a.r2.dev/web/maquina-escribir-edicion-textos.png"
-                    alt="Manuscrito (Temporal)" 
-                    className="w-full h-full object-cover opacity-90 sepia-[.2]"
-                  />
+                  <EventsCarousel />
                </div>
 
                {/* 2. El Cameo (Retrato superpuesto) */}
