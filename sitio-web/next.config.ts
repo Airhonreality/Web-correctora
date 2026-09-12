@@ -8,6 +8,11 @@ const nextConfig: NextConfig = {
       ? [{ protocol: "https" as const, hostname: new URL(r2PublicUrl).hostname }]
       : [],
   },
+  experimental: {
+    serverActions: {
+      bodySizeLimit: "10mb",
+    },
+  },
 };
 
 export default nextConfig;
