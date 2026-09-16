@@ -3,8 +3,8 @@ import { absoluteUrl } from "@/lib/site";
 import { getPublishedBlogPosts } from "@/lib/db/queries";
 
 const staticRoutes = [
-  { path: "/", priority: 1, changeFrequency: "weekly" as const },
-  { path: "/correccion-de-estilo", priority: 0.9, changeFrequency: "monthly" as const },
+  { path: "/correccion-de-estilo", priority: 1, changeFrequency: "weekly" as const },
+  { path: "/", priority: 0.5, changeFrequency: "weekly" as const },
   { path: "/cuanto-cuesta-corregir-un-libro", priority: 0.9, changeFrequency: "monthly" as const },
   { path: "/portafolio", priority: 0.7, changeFrequency: "weekly" as const },
   { path: "/perfil", priority: 0.6, changeFrequency: "monthly" as const },

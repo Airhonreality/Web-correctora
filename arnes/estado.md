@@ -6,7 +6,22 @@ Se lee al arrancar cualquier sesión, se actualiza al cerrar cada tarea o al rei
 Fase 1 (investigación, copy, diseño, stack) cerrada. Fase 2 (implementación) en marcha: el sitio vive en `sitio-web/` (Next.js + Tailwind + Neon + R2), con repo propio en GitHub (`Airhonreality/Amparo_Correcciones`) y contenido real ya cargado en producción de datos (Neon).
 
 ## Última sesión cerrada
-**Fecha:** 2026-09-11
+**Fecha:** 2026-09-16
+**Qué se hizo (reestructuración de la arquitectura del sitio, comando "IMPLEMENTAR" del humano + push + deploy):**
+- **El home deja de existir como página.** `/correccion-de-estilo` pasa a ser el nuevo home y `/` es un redirect permanente (308) a esa ruta. La campaña de Google Ads que puja por keywords transaccionales con Final URL en el home ya no aterriza en una página vacía: `/` redirige directo a la landing de conversión.
+- **Secciones del home migradas a `/perfil` (merge):** "Amparo Rozo" (cita + bio), "Como escritora" (intro de la sección "Mis Novelas" + link a `/escritora`) y "¿Tienes un manuscrito listo para publicar?" (CTA final de WhatsApp). El resto del home (hero + carrusel de testimonios) quedó deprecado y fue eliminado (`app/page.tsx` borrado).
+- **Navegación:** se eliminó el ítem "Inicio" (`→/`) de `navLinks` y de `primaryMobileLinks` (móvil) — no había sentido tener un redirect en el menú. Queda: Servicios, Portafolio, Perfil, Escritora, Blog (+ Contactar).
+- **SEO:** `/correccion-de-estilo` subió a priority 1 en `sitemap.ts` (se conserva `/` para no romper enlaces históricos, pero ahora responde 308); canonical default del layout apunta a `/correccion-de-estilo`.
+- Verificado: `tsc --noEmit` limpio, `next build` OK. Desplegado y confirmado con Vercel CLI.
+- **Archivos afectados:** `arnes/estado.md` (este registro), `sitio-web/next.config.ts` (redirect), `sitio-web/app/page.tsx` (borrado), `sitio-web/app/perfil/page.tsx` (merge de secciones), `sitio-web/lib/site.ts` + `sitio-web/components/nav.tsx` (nav sin "Inicio"), `sitio-web/app/sitemap.ts`, `sitio-web/app/layout.tsx`.
+
+**Qué quedó pendiente:**
+- ⚠️ **Cambiar el Final URL de la campaña de Google Ads a `https://www.correcionestilo.com/correccion-de-estilo/`** (sigue siendo la acción pendiente; hoy `/` redirige, pero la landing directa evita el salto).
+- Ver en vivo (preview o producción) el redirect de `/` y el merge en `/perfil` con las 3 secciones integradas (+ los 7 libros del portafolio autorizados y el testimonio destacado en la landing).
+
+## Sesiones cerradas anteriores
+
+### Sesión 2026-09-11
 **Qué se hizo (implementación de conversión pura en `/correccion-de-estilo/`, comando "IMPLEMENTAR" del humano):**
 - **Por qué:** la campaña de Google Ads puja por keywords transaccionales (`corrección de estilo`, `corrector de estilo`, etc.) con Final URL en el **home** (`Copy web add.md:25`). El arnés de negocio mapea esas keywords al **pilar transaccional** `/correccion-de-estilo/` (`Input 1 modelo de negocio amparo rozo.md:178,260`) — para no perder el magnetismo del home apuntó a esa página, se le integró el magnetismo adentro.
 - **Hero con magnetismo del home transplanteado:** título indexado "Corrección de estilo literario" (H1 transaccional, ya no `sr-only`) + promesa emocional "Su texto está en buenas manos." + composición visual de arco (EventsCarousel) y cameo circular de Amparo con su pill — misma composición que el home (`app/page.tsx:65-85`). CTAs arriba: WhatsApp + ancla a Inversión.

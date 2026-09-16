@@ -28,11 +28,11 @@ export const metadata: Metadata = {
     template: "%s — Amparo Rozo",
   },
   description,
-  alternates: { canonical: "/" },
+  alternates: { canonical: "/correccion-de-estilo" },
   openGraph: {
     title: "Amparo Rozo — Corrección de estilo literario",
     description,
-    url: "/",
+    url: "/correccion-de-estilo",
     siteName: siteInfo.name,
     locale: "es_CO",
     type: "website",
