@@ -12,7 +12,7 @@ Fase 1 (investigación, copy, diseño, stack) cerrada. Fase 2 (implementación) 
 - **Secciones del home migradas a `/perfil` (merge):** "Amparo Rozo" (cita + bio), "Como escritora" (intro de la sección "Mis Novelas" + link a `/escritora`) y "¿Tienes un manuscrito listo para publicar?" (CTA final de WhatsApp). El resto del home (hero + carrusel de testimonios) quedó deprecado y fue eliminado (`app/page.tsx` borrado).
 - **Navegación:** se eliminó el ítem "Inicio" (`→/`) de `navLinks` y de `primaryMobileLinks` (móvil) — no había sentido tener un redirect en el menú. Queda: Servicios, Portafolio, Perfil, Escritora, Blog (+ Contactar).
 - **SEO:** `/correccion-de-estilo` subió a priority 1 en `sitemap.ts` (se conserva `/` para no romper enlaces históricos, pero ahora responde 308); canonical default del layout apunta a `/correccion-de-estilo`.
-- Verificado: `tsc --noEmit` limpio, `next build` OK. Desplegado y confirmado con Vercel CLI.
+- Verificado: `tsc --noEmit` limpio, `next build` OK. Desplegado y confirmado con Vercel CLI: `/` responde **308 → /correccion-de-estilo** en producción (`www.correcionestilo.com`), `/perfil` 200, `/correccion-de-estilo` 200.
 - **Archivos afectados:** `arnes/estado.md` (este registro), `sitio-web/next.config.ts` (redirect), `sitio-web/app/page.tsx` (borrado), `sitio-web/app/perfil/page.tsx` (merge de secciones), `sitio-web/lib/site.ts` + `sitio-web/components/nav.tsx` (nav sin "Inicio"), `sitio-web/app/sitemap.ts`, `sitio-web/app/layout.tsx`.
 
 **Qué quedó pendiente:**
