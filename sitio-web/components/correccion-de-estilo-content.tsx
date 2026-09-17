@@ -12,22 +12,34 @@ import {
   getAuthorizedPortfolioItems,
 } from "@/lib/db/queries";
 
-const compromiso = [
-  "Repeticiones, redundancias, localismos, ambigüedades, erratas y cacofonías.",
-  "Oraciones confusas: las reescribo en un lenguaje claro y estructurado (sintaxis).",
-  "Errores de puntuación, ortográficos, léxicos y gramaticales. Uso correcto del vocabulario.",
-  "Ortotipografía: comillas, guiones, rayas, paréntesis, voladitas, siglas, itálicas, versalitas.",
-  "Párrafos, sangrías, fuente.",
-  "Normas APA (para libros especializados).",
+const compromiso: Array<{ lead: string; rest?: string }> = [
+  { lead: "Repeticiones, redundancias, localismos, ambigüedades, erratas y cacofonías." },
+  {
+    lead: "Oraciones confusas,",
+    rest: "las reescribo en un lenguaje claro y estructurado (sintaxis).",
+  },
+  {
+    lead: "Errores de puntuación, ortográficos, léxicos y gramaticales.",
+    rest: "Uso correcto del vocabulario.",
+  },
+  {
+    lead: "Ortotipografía:",
+    rest: "comillas, guiones, rayas, paréntesis, voladitas, siglas, itálicas, versalitas.",
+  },
+  { lead: "Párrafos, sangrías y fuente." },
+  { lead: "Normas APA:", rest: "para libros especializados." },
 ];
 
-const novelas = [
-  "Construcción de personajes tridimensionales: lenguaje acorde, características físicas y personalidad.",
-  "Diálogos: uso correcto de rayas, incisos y comillas.",
-  "Continuidad lógica de la historia.",
-  "Trama: coherencia en los hechos.",
-  "Uso correcto de tiempos verbales.",
-  "Lectura crítica y comentarios.",
+const novelas: Array<{ lead: string; rest?: string }> = [
+  {
+    lead: "Personajes tridimensionales:",
+    rest: "lenguaje acorde, características físicas y personalidad.",
+  },
+  { lead: "Diálogos:", rest: "uso correcto de rayas, incisos y comillas." },
+  { lead: "Continuidad lógica de la historia." },
+  { lead: "Trama:", rest: "coherencia en los hechos." },
+  { lead: "Uso correcto de tiempos verbales." },
+  { lead: "Lectura crítica", rest: "y comentarios." },
 ];
 
 function QuoteStrip({
@@ -237,13 +249,16 @@ export async function CorreccionDeEstiloContent() {
                 Pulido integral del lenguaje: del detalle tipográfico fino
                 hasta la claridad estructural de cada oración.
               </p>
-              <ul className="mt-7 flex flex-col gap-3.5 text-[15px] leading-snug text-ink/90">
+              <ul className="mt-8 flex flex-col gap-4">
                 {compromiso.map((item) => (
-                  <li key={item} className="flex items-start gap-3">
-                    <span className="mt-1 inline-flex h-4 w-4 shrink-0 items-center justify-center rounded-full bg-teal/20">
-                      <Check className="h-2.5 w-2.5 text-teal-dark" aria-hidden="true" />
+                  <li key={item.lead} className="flex items-start gap-4">
+                    <span className="inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-teal text-white shadow-[0_10px_22px_-10px_rgba(78,192,176,0.85)] md:h-10 md:w-10">
+                      <Check className="h-4 w-4" strokeWidth={3} aria-hidden="true" />
                     </span>
-                    <span>{item}</span>
+                    <p className="text-[15px] leading-relaxed text-ink/90 md:text-base">
+                      <span className="font-bold text-ink">{item.lead}</span>
+                      {item.rest ? ` ${item.rest}` : ""}
+                    </p>
                   </li>
                 ))}
               </ul>
@@ -264,13 +279,16 @@ export async function CorreccionDeEstiloContent() {
                 El trabajo fino del narrador: personajes, ritmo y coherencia de
                 la historia, con lectura crítica y comentarios.
               </p>
-              <ul className="mt-7 flex flex-col gap-3.5 text-[15px] leading-snug text-ink/90">
+              <ul className="mt-8 flex flex-col gap-4">
                 {novelas.map((item) => (
-                  <li key={item} className="flex items-start gap-3">
-                    <span className="mt-1 inline-flex h-4 w-4 shrink-0 items-center justify-center rounded-full bg-white/70">
-                      <Check className="h-2.5 w-2.5 text-ink" aria-hidden="true" />
+                  <li key={item.lead} className="flex items-start gap-4">
+                    <span className="inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-terracotta text-cream shadow-[0_10px_22px_-10px_rgba(189,109,94,0.9)] md:h-10 md:w-10">
+                      <Check className="h-4 w-4" strokeWidth={3} aria-hidden="true" />
                     </span>
-                    <span>{item}</span>
+                    <p className="text-[15px] leading-relaxed text-ink/90 md:text-base">
+                      <span className="font-bold text-ink">{item.lead}</span>
+                      {item.rest ? ` ${item.rest}` : ""}
+                    </p>
                   </li>
                 ))}
               </ul>
