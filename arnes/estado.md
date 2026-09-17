@@ -6,6 +6,18 @@ Se lee al arrancar cualquier sesión, se actualiza al cerrar cada tarea o al rei
 Fase 1 (investigación, copy, diseño, stack) cerrada. Fase 2 (implementación) en marcha: el sitio vive en `sitio-web/` (Next.js + Tailwind + Neon + R2), con repo propio en GitHub (`Airhonreality/Amparo_Correcciones`) y contenido real ya cargado en producción de datos (Neon).
 
 ## Última sesión cerrada
+**Fecha:** 2026-09-17 (reorden del home según requerimientos de Amparo)
+**Qué se hizo (implementado, verificado y desplegado):**
+- **Pie de foto:** las credenciales ("Comunicadora social-periodista / Universidad Externado de Colombia / Correctora profesional de estilo y autora de dos novelas publicadas por editoriales.") pasaron de párrafo del hero a captión/\"pie de foto\" del cameo de Amparo (chip `max-w-[240px]` bajo la foto). Se quitó el pill anterior "Amparo Rozo".
+- **Borrado:** la lista de géneros al pie del hero ("Libros especializados · Crecimiento personal / Novelas · Cuentos · Memorias · Crónicas") y el kicker "Servicio integral de corrección de estilo" (solo visible; la frase persiste únicamente en la meta description de SEO). Se quitó también el check "Acuerdo de confidencialidad" del hero.
+- **Reorden de prioridades:** Maquetación y confidencialidad ya NO son bloques destacados → bajaron al **final de la página en letra pequeña** (banda muted debajo del CTA, con link al diseñador gráfico y nota del NDA). El banner navy de maquetación y la card rosa "Confidencialidad garantizada" se retiraron.
+- **Opiniones arriba:** sección **terracota "Lo que dicen los autores" justo después de "Mi compromiso"**, con **carrusel editorial con TODAS las 12 opiniones + mini grilla** (6 compactas). El QuoteStrip estático ("Otros autores corregidos") se eliminó. Debajo va el **artículo de la IA** (columna única).
+- **Textos corregidos:** "Pulido integral del lenguaje: desde la claridad estructural de cada oración hasta el detalle tipográfico." y ítem "Trama: coherencia en los hechos. Situaciones inverosímiles."
+- Verificado: `tsc --noEmit` limpio, `eslint` sin errores nuevos (6 pre-existentes en `opcion-*`), `next build` OK. Deploy en vivo verificado (`www.correcionestilo.com`). Commit código `0ed2a13`.
+- **Nota:** el token de Vercel había caducado; el CLI lo renovó solo al correr `vercel whoami`.
+- **Archivos afectados:** `sitio-web/components/correccion-de-estilo-content.tsx`, `arnes/estado.md`.
+
+## Sesión cerrada antes
 **Fecha:** 2026-09-16 (listas "Mi compromiso" más vistosas)
 **Qué se hizo (pedido directo del humano, implementado, verificado y desplegado):**
 - **"Mi compromiso" con más peso visual:** las dos listas (ortotipografía/gramática y edición de novelas) dejaron de sentirse como texto plano. Los ítems ahora son filas con un **badge circular grande de color** (check sólido teal card 1 / terracota card 2, ~40px, con sombra difuminada del mismo color) y el texto en dos niveles: **lead en Nunito negrita** + detalle en tinta suave (arrays `compromiso`/`novelas` pasaron a `{lead, rest}`). Mayor separación entre ítems (`gap-4`) y tipografía un punto más grande.
