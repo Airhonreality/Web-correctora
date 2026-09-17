@@ -13,8 +13,8 @@ const images: CarouselImage[] = [
     alt: 'Lanzamiento Marcianos - Casa Editorial Ibáñez',
   },
   {
-    src: '/event-2.jpg',
-    alt: 'Amparo Rozo en Filbo Marcianos',
+    src: '/firma-feria-escritora-colombiana.jpg',
+    alt: 'Firma de libros en feria de escritores colombianos',
   },
   {
     src: '/event-3.jpg',

@@ -8,15 +8,6 @@ const nextConfig: NextConfig = {
       ? [{ protocol: "https" as const, hostname: new URL(r2PublicUrl).hostname }]
       : [],
   },
-  async redirects() {
-    return [
-      {
-        source: "/",
-        destination: "/correccion-de-estilo",
-        permanent: true,
-      },
-    ];
-  },
 };
 
 export default nextConfig;

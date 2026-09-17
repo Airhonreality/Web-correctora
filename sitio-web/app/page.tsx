@@ -10,6 +10,6 @@ export const metadata = pageMetadata({
   path: "/correccion-de-estilo",
 });
 
-export default function CorreccionDeEstiloPage() {
+export default function HomePage() {
   return <CorreccionDeEstiloContent />;
 }
