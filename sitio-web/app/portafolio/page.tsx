@@ -2,19 +2,21 @@ import Image from "next/image";
 import Link from "next/link";
 import { Container, Band } from "@/components/container";
 import { WhatsAppButton } from "@/components/whatsapp-button";
+import { JsonLd } from "@/components/json-ld";
 import { whatsappHref } from "@/lib/site";
 import { getAuthorizedPortfolioItems, getAllTestimonials } from "@/lib/db/queries";
 import { FeaturedBookCarousel } from "@/components/featured-book-carousel";
-import { pageMetadata } from "@/lib/seo";
+import { breadcrumbJsonLd, pageMetadata } from "@/lib/seo";
 import { genrePillClass } from "@/lib/portfolio";
 
 export const metadata = pageMetadata({
-  title: "Corrección de estilo literario — manuscritos corregidos",
-  description: "Una muestra de manuscritos corregidos por Amparo Rozo.",
+  title: "Manuscritos corregidos",
+  description:
+    "Una muestra de manuscritos corregidos por Amparo Rozo: novelas, memorias y crónicas, con los testimonios reales de los autores que confiaron en su trabajo.",
   path: "/portafolio",
 });
 
-export const dynamic = "force-dynamic";
+export const revalidate = 60;
 
 type Testimonial = {
   id: number;
@@ -61,6 +63,12 @@ export default async function PortafolioPage() {
 
   return (
     <>
+      <JsonLd
+        data={breadcrumbJsonLd([
+          { name: "Inicio", path: "/correccion-de-estilo" },
+          { name: "Manuscritos corregidos", path: "/portafolio" },
+        ])}
+      />
       {/* Bloque 1 — Encabezado sobre fondo rojizo */}
       <Band tone="rose" className="pt-16 pb-10 md:pt-20 md:pb-12">
         <Container>

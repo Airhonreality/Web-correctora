@@ -1,6 +1,7 @@
 import { Container, Band } from "@/components/container";
 import { WhatsAppButton } from "@/components/whatsapp-button";
-import { pageMetadata } from "@/lib/seo";
+import { JsonLd } from "@/components/json-ld";
+import { faqJsonLd, pageMetadata } from "@/lib/seo";
 
 export const metadata = pageMetadata({
   title: "¿Cuánto cuesta corregir un libro?",
@@ -8,6 +9,24 @@ export const metadata = pageMetadata({
     "Tarifa de corrección de estilo: $23 COP por palabra, sin paquetes cerrados ni cotizadores automáticos.",
   path: "/cuanto-cuesta-corregir-un-libro",
 });
+
+const faq = faqJsonLd([
+  {
+    question: "¿Cuánto cuesta corregir un libro?",
+    answer:
+      "Trabajo con una tarifa fija de $23 COP por palabra. No hay paquetes cerrados ni cotizadores automáticos: te escribo personalmente después de contar las palabras exactas de tu manuscrito.",
+  },
+  {
+    question: "¿No sabes cuántas palabras tiene tu manuscrito?",
+    answer:
+      "En Word: Revisar > Contar palabras. Como referencia, una página estándar (Times New Roman 12, interlineado 1,5) tiene entre 250 y 300 palabras.",
+  },
+  {
+    question: "¿Por qué no hay un cotizador automático?",
+    answer:
+      "Porque cotizar personalmente tu manuscrito es una oportunidad para conocernos. También puedes enviármelo; yo lo reviso y te doy el valor exacto.",
+  },
+]);
 
 const ejemplos = [
   { extension: "Cuento corto (10.000 palabras)", precio: "$230.000 COP" },
@@ -19,6 +38,7 @@ const ejemplos = [
 export default function CuantoCuestaPage() {
   return (
     <>
+      <JsonLd data={faq} />
       <Band tone="cream" className="py-16">
         <Container className="flex flex-col gap-3 text-center">
           <h1 className="text-4xl font-bold tracking-tight">

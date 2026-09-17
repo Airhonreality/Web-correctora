@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { Container, Band } from "@/components/container";
 import { JsonLd } from "@/components/json-ld";
 import { bookJsonLd, pageMetadata } from "@/lib/seo";
@@ -56,10 +57,12 @@ export default async function EscritoraPage() {
                 {/* Left: Full bleed image */}
                 <div className="w-full md:w-1/2 relative min-h-[400px]">
                   {book.coverImageUrl ? (
-                    <img
+                    <Image
                       src={book.coverImageUrl}
                       alt={`Portada de ${book.title}`}
-                      className="absolute inset-0 w-full h-full object-cover"
+                      fill
+                      sizes="(min-width: 768px) 50vw, 100vw"
+                      className="object-cover"
                     />
                   ) : (
                     <div className="absolute inset-0 w-full h-full bg-ink/5 flex items-center justify-center text-muted italic">
@@ -86,6 +89,7 @@ export default async function EscritoraPage() {
                   {book.publisherLogos && (
                     <div className="flex flex-wrap items-center justify-end gap-4 mt-12 pt-6 border-t border-ink/10">
                       {book.publisherLogos.split(",").map((logo, idx) => (
+                        // eslint-disable-next-line @next/next/no-img-element -- URL de sello editorial en dominio arbitrario, fuera de remotePatterns
                         <img
                           key={idx}
                           src={logo.trim()}

@@ -1,10 +1,11 @@
 import Link from "next/link";
+import Image from "next/image";
 import { Container, Band } from "@/components/container";
 import { WhatsAppButton } from "@/components/whatsapp-button";
 import { pageMetadata } from "@/lib/seo";
 import { getPublishedAuthorBooks } from "@/lib/db/queries";
 
-export const dynamic = "force-dynamic";
+export const revalidate = 60;
 
 export const metadata = pageMetadata({
   title: "Mi perfil",
@@ -58,10 +59,13 @@ export default async function PerfilPage() {
             </div>
             <div className="w-full md:w-1/2 flex flex-col items-center">
               <div className="relative aspect-[4/5] w-full max-w-sm bg-ink/5 rounded-xl overflow-hidden shadow-2xl border border-ink/10">
-                <img 
-                  src="https://pub-31f388eee9ee467086e726e2865e639a.r2.dev/web/amparo-rozo-filbo-2022.avif" 
-                  alt="Amparo Rozo firmando libros en la Feria Internacional del Libro (Filbo) 2022" 
-                  className="object-cover w-full h-full hover:scale-105 transition-transform duration-500" 
+                <Image
+                  src="https://pub-31f388eee9ee467086e726e2865e639a.r2.dev/web/amparo-rozo-filbo-2022.avif"
+                  alt="Amparo Rozo firmando libros en la Feria Internacional del Libro (Filbo) 2022"
+                  fill
+                  sizes="(min-width: 768px) 384px, 100vw"
+                  className="object-cover transition-transform duration-500 hover:scale-105"
+                  priority
                 />
               </div>
               <p className="text-center text-sm text-muted mt-3 italic">
@@ -126,19 +130,25 @@ export default async function PerfilPage() {
           {/* Sub-hero 2 — Revista Cultural DC */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-14 items-center bg-white p-8 md:p-12 rounded-3xl shadow-sm border border-ink/5">
             <div className="flex gap-3 overflow-x-auto pb-2 snap-x order-last">
-              <img
+              <Image
                 src="https://pub-31f388eee9ee467086e726e2865e639a.r2.dev/web/revista-dc-portada.jpg"
                 alt="Portada Revista DC"
+                width={288}
+                height={384}
                 className="h-64 md:h-72 w-auto object-contain rounded-md shadow-md snap-center border border-ink/10"
               />
-              <img
+              <Image
                 src="https://pub-31f388eee9ee467086e726e2865e639a.r2.dev/web/revista-dc-articulo-1.jpg"
                 alt="Artículo Revista DC Parte 1"
+                width={288}
+                height={384}
                 className="h-64 md:h-72 w-auto object-contain rounded-md shadow-md snap-center border border-ink/10"
               />
-              <img
+              <Image
                 src="https://pub-31f388eee9ee467086e726e2865e639a.r2.dev/web/revista-dc-articulo-2.jpg"
                 alt="Artículo Revista DC Parte 2"
+                width={288}
+                height={384}
                 className="h-64 md:h-72 w-auto object-contain rounded-md shadow-md snap-center border border-ink/10"
               />
             </div>
@@ -176,10 +186,12 @@ export default async function PerfilPage() {
               {books.map((book) => (
                 <div key={book.id} className="flex flex-col items-center text-center gap-6">
                   {book.coverImageUrl ? (
-                    <img
+                    <Image
                       src={book.coverImageUrl}
                       alt={`Portada de ${book.title}`}
-                      className="w-full max-w-[200px] rounded-md shadow-xl object-cover hover:scale-105 transition-transform"
+                      width={200}
+                      height={300}
+                      className="w-full max-w-[200px] rounded-md shadow-xl object-cover transition-transform hover:scale-105"
                     />
                   ) : (
                     <div className="w-full max-w-[200px] aspect-[2/3] bg-ink/10 rounded-md flex items-center justify-center text-muted italic shadow-inner">

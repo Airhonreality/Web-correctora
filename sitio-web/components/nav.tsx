@@ -56,7 +56,7 @@ export function Nav() {
         } ${isScrolled ? "shadow-sm border-b border-ink/5" : ""}`}
       >
         <div className="mx-auto flex max-w-6xl items-center justify-between px-6 h-20">
-          <Link href="/" className="font-display group flex flex-col justify-center bg-cream px-6 h-full -ml-6 transition-colors hover:bg-cream-soft">
+          <Link href="/correccion-de-estilo" className="font-display group flex flex-col justify-center bg-cream px-6 h-full -ml-6 transition-colors hover:bg-cream-soft">
             <span className="block text-xs font-bold uppercase tracking-widest text-ink transition-colors group-hover:text-terracotta">
               {siteInfo.tagline}
             </span>
@@ -99,7 +99,7 @@ export function Nav() {
         }`}
       >
         <div className="flex items-center justify-center px-4 py-3">
-          <Link href="/" className="font-display text-center">
+          <Link href="/correccion-de-estilo" className="font-display text-center">
             <span className="block text-[10px] font-bold uppercase tracking-widest text-ink">
               {siteInfo.tagline}
             </span>

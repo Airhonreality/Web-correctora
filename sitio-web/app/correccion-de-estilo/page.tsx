@@ -1,7 +1,7 @@
 import { CorreccionDeEstiloContent } from "@/components/correccion-de-estilo-content";
 import { pageMetadata } from "@/lib/seo";
 
-export const dynamic = "force-dynamic";
+export const revalidate = 60;
 
 export const metadata = pageMetadata({
   title: "Corrección de estilo literario",

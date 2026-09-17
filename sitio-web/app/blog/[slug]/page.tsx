@@ -6,10 +6,10 @@ import { Band } from "@/components/container";
 import { WhatsAppButton } from "@/components/whatsapp-button";
 import { JsonLd } from "@/components/json-ld";
 import { getBlogPostBySlug } from "@/lib/db/queries";
-import { blogPostingJsonLd, pageMetadata } from "@/lib/seo";
+import { blogPostingJsonLd, breadcrumbJsonLd, pageMetadata } from "@/lib/seo";
 import { categoryPillClass, formatBlogDate, readingTimeLabel } from "@/lib/blog";
 
-export const dynamic = "force-dynamic";
+export const revalidate = 60;
 
 export async function generateMetadata({
   params,
@@ -48,6 +48,13 @@ export default async function BlogPostPage({
           datePublished: post.publishedAt ?? post.createdAt,
           dateModified: post.updatedAt,
         })}
+      />
+      <JsonLd
+        data={breadcrumbJsonLd([
+          { name: "Inicio", path: "/correccion-de-estilo" },
+          { name: "Blog", path: "/blog" },
+          { name: post.title, path: `/blog/${post.slug}` },
+        ])}
       />
       <Band tone="cream" className="border-b border-[#E5E0D8]">
         <div className="mx-auto max-w-3xl px-6 py-14 sm:py-16">

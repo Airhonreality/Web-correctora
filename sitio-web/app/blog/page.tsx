@@ -214,7 +214,8 @@ export async function generateMetadata({
   const category = categoryBySlug(categoria);
   return pageMetadata({
     title: category ? `${category.label} — Blog` : "Blog",
-    description: "Tips de redacción y corrección de estilo, por Amparo Rozo.",
+    description:
+      "Artículos sobre redacción, ortotipografía y corrección de estilo para autores independientes que están escribiendo, editando o a punto de publicar su libro.",
     path: "/blog",
   });
 }

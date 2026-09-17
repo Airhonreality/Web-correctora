@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import Image from 'next/image';
 
 interface CarouselImage {
   src: string;
@@ -46,10 +47,13 @@ export function EventsCarousel() {
             index === currentIndex ? 'opacity-100' : 'opacity-0'
           }`}
         >
-          <img
+          <Image
             src={image.src}
             alt={image.alt}
-            className="w-full h-full object-cover"
+            fill
+            sizes="(min-width: 1024px) 40vw, 100vw"
+            className="object-cover"
+            priority={index === 0}
           />
         </div>
       ))}
