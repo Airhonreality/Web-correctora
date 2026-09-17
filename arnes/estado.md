@@ -6,6 +6,15 @@ Se lee al arrancar cualquier sesión, se actualiza al cerrar cada tarea o al rei
 Fase 1 (investigación, copy, diseño, stack) cerrada. Fase 2 (implementación) en marcha: el sitio vive en `sitio-web/` (Next.js + Tailwind + Neon + R2), con repo propio en GitHub (`Airhonreality/Amparo_Correcciones`) y contenido real ya cargado en producción de datos (Neon).
 
 ## Última sesión cerrada
+**Fecha:** 2026-09-17 (tuteo + espacios móviles)
+**Qué se hizo (implementado, verificado y desplegado):**
+- **Tuteo:** el hero del home pasa a "**Tu** texto está en buenas manos" (y su imagen OpenGraph `app/opengraph-image.tsx`). Se auditaron las páginas públicas: el resto del copy ya usa "tú" (el "su" restante es tercera persona del libro/trabajo, no de usted).
+- **Espacios en móvil:** se redujo el relleno vertical de las 4 secciones del home en móvil (de ~96px a ~56px por lado; `py-14` base + `sm/lg` iguales) y dos separaciones internas grandes (`mt-14`→`mt-10 sm:mt-14` en Mi compromiso; `mt-12`→`mt-8 sm:mt-12` en el carrusel). Pantallas grandes sin cambios.
+- Verificado: `tsc` limpio, `next build` OK, deploy en vivo. Commits: `816210c` (espacios) y `ae2d850` (tuteo).
+- ⚠️ **Pendiente de revisión del humano:** el working tree tiene **cambios sin commitear que no son de esta sesión** (borran `app/page.tsx` y `app/opcion-*`, y modifican varias páginas, `next.config.ts`, `lib/seo.ts`, etc.). No fueron tocados ni commiteados por mí; producción no los incluye. Hay que decidir si se conservan (commit) o se desechan.
+- **Archivos afectados:** `sitio-web/components/correccion-de-estilo-content.tsx`, `sitio-web/app/opengraph-image.tsx`, `arnes/estado.md`.
+
+## Sesión cerrada antes
 **Fecha:** 2026-09-17 (home: se retira la mini grilla de opiniones)
 **Qué se hizo (implementado, verificado y desplegado):**
 - **Mini grilla de opiniones eliminada** de la sección "Opiniones de mis clientes": el carrusel editorial ya muestra todas las opiniones y la grilla recargaba la página. Se eliminó también el helper `excerpt` (quedó sin uso). La sección queda: título + carrusel sobre fondo `olive-soft`.
