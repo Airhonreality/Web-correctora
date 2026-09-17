@@ -6,6 +6,13 @@ Se lee al arrancar cualquier sesión, se actualiza al cerrar cada tarea o al rei
 Fase 1 (investigación, copy, diseño, stack) cerrada. Fase 2 (implementación) en marcha: el sitio vive en `sitio-web/` (Next.js + Tailwind + Neon + R2), con repo propio en GitHub (`Airhonreality/Amparo_Correcciones`) y contenido real ya cargado en producción de datos (Neon).
 
 ## Última sesión cerrada
+**Fecha:** 2026-09-17 (home: se retira la mini grilla de opiniones)
+**Qué se hizo (implementado, verificado y desplegado):**
+- **Mini grilla de opiniones eliminada** de la sección "Opiniones de mis clientes": el carrusel editorial ya muestra todas las opiniones y la grilla recargaba la página. Se eliminó también el helper `excerpt` (quedó sin uso). La sección queda: título + carrusel sobre fondo `olive-soft`.
+- Verificado: `tsc` limpio, `eslint` sin errores nuevos (6 pre-existentes en `opcion-*`), `next build` OK, deploy en vivo. Commit `9fb7cdc`.
+- **Archivos afectados:** `sitio-web/components/correccion-de-estilo-content.tsx`, `arnes/estado.md`.
+
+## Sesión cerrada antes
 **Fecha:** 2026-09-17 (home simplificado según feedback de Amparo, 8:46-9:03 a.m.)
 **Qué se hizo (implementado, verificado y desplegado):**
 - **Un solo título** en la sección de opiniones: **"Opiniones de mis clientes"** (se eliminó el eyebrow "Opiniones reales de mis autores" y el título "Lo que dicen los autores"; la palabra "autores" confundía).
