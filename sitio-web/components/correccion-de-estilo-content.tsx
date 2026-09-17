@@ -94,9 +94,6 @@ export async function CorreccionDeEstiloContent() {
   const testimonials = await getAllTestimonials();
   const portfolioItems = await getAuthorizedPortfolioItems();
 
-  const secondaryTestimonial =
-    testimonials.find((t) => t.quote.length >= 70) ?? testimonials[0] ?? null;
-
   const testimonialByTitle = new Map<
     string,
     { clientName: string; quote: string }
@@ -127,13 +124,22 @@ export async function CorreccionDeEstiloContent() {
               <h1 className="mt-6 font-display text-4xl font-bold leading-[1.05] tracking-tight text-ink sm:text-6xl lg:text-[4.25rem]">
                 Corrección de estilo literario
               </h1>
-              <p className="mt-6 font-display text-2xl italic leading-snug text-ink sm:text-3xl">
-                Su texto está en buenas manos.
+              <p className="mt-6 font-display text-2xl leading-snug text-ink sm:text-3xl">
+                Su texto está en buenas manos
+              </p>
+              <p className="mt-5 max-w-xl text-base font-medium leading-relaxed text-teal-dark">
+                Comunicadora social-periodista / Universidad Externado de
+                Colombia / Correctora profesional de estilo y autora de dos
+                novelas publicadas por editoriales.
               </p>
               <p className="mt-5 max-w-xl text-lg leading-relaxed text-ink/80">
-                Para novelas, memorias, crónicas, libros especializados y de
-                crecimiento personal — hecha a mano, palabra por palabra, por
-                una escritora y periodista. Sin inteligencia artificial.
+                Corrección de estilo —sin inteligencia artificial— de novelas,
+                memorias, crónicas, libros de crecimiento personal, etc.
+              </p>
+              <p className="mt-4 max-w-xl font-display text-lg leading-relaxed text-ink/75">
+                La corrección de estilo dota a tu manuscrito de claridad,
+                precisión, expresividad y tono adecuado, para que la lectura sea
+                fluida, armónica y entretenida.
               </p>
               <div className="mt-9 flex flex-wrap items-center gap-x-6 gap-y-4">
                 <WhatsAppButton
@@ -353,14 +359,12 @@ export async function CorreccionDeEstiloContent() {
       </section>
 
       {/* E. Pausa de lectura: quote banner full width ("Otros autores corregidos") */}
-      {secondaryTestimonial && (
-        <QuoteStrip
-          quote={secondaryTestimonial.quote}
-          clientName={secondaryTestimonial.clientName}
-          bookTitle={secondaryTestimonial.bookTitle}
-          label="Otros autores corregidos"
-        />
-      )}
+      <QuoteStrip
+        quote="Sorprendida con el trabajo de corrección. No me esperaba encontrarme con tantos problemas de incoherencias, situaciones inverosímiles y personajes mal perfilados. Gracias. Un gran abrazo."
+        clientName="Patricia Sánchez"
+        bookTitle="De regreso a la vida"
+        label="Otros autores corregidos"
+      />
 
       {/* F. Portafolio: módulo slide/hero de /portafolio sobre fondo lino/arena */}
       {portfolioItems.length > 0 && (
@@ -406,7 +410,7 @@ export async function CorreccionDeEstiloContent() {
               </div>
               <div className="rounded-3xl bg-navy p-8 text-cream">
                 <dt className="text-sm font-bold uppercase tracking-widest text-cream/70">
-                  Ejemplo · novela de 70.000 palabras
+                  Ejemplo: novela de 70.000 palabras
                 </dt>
                 <dd className="mt-3 font-display text-4xl font-bold text-gold">
                   $1.610.000
@@ -422,6 +426,16 @@ export async function CorreccionDeEstiloContent() {
             >
               Ver el detalle completo de precios →
             </Link>
+            <div className="mx-auto mt-14 max-w-2xl">
+              <h3 className="font-display text-2xl italic text-ink">
+                ¿Por qué no hay un cotizador automático?
+              </h3>
+              <p className="mt-3 text-base leading-relaxed text-muted">
+                Porque cotizar personalmente tu manuscrito es una oportunidad
+                para conocernos. También puedes enviármelo; yo lo reviso y te
+                doy el valor exacto.
+              </p>
+            </div>
             <div className="mt-8 flex justify-center">
               <WhatsAppButton
                 message="Hola Amparo, quiero enviarte mi manuscrito para que lo corrijas."
@@ -434,7 +448,7 @@ export async function CorreccionDeEstiloContent() {
           </div>
 
           <div className="mx-auto mt-20 max-w-xl border-t border-ink/10 pt-16">
-            <h3 className="font-display text-3xl italic text-ink sm:text-4xl">
+            <h3 className="font-display text-3xl text-ink sm:text-4xl">
               ¿Tienes un manuscrito listo para publicar?
             </h3>
             <p className="mt-3 text-base text-muted">

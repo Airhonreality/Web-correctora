@@ -4,13 +4,12 @@ import { Container, Band } from "@/components/container";
 import { WhatsAppButton } from "@/components/whatsapp-button";
 import { whatsappHref } from "@/lib/site";
 import { getAuthorizedPortfolioItems, getAllTestimonials } from "@/lib/db/queries";
-import { TestimonialCarousel } from "@/components/testimonial-carousel";
 import { FeaturedBookCarousel } from "@/components/featured-book-carousel";
 import { pageMetadata } from "@/lib/seo";
 import { genrePillClass } from "@/lib/portfolio";
 
 export const metadata = pageMetadata({
-  title: "Libros corregidos",
+  title: "Corrección de estilo literario — manuscritos corregidos",
   description: "Una muestra de manuscritos corregidos por Amparo Rozo.",
   path: "/portafolio",
 });
@@ -67,8 +66,7 @@ export default async function PortafolioPage() {
         <Container>
           <div className="grid grid-cols-1 gap-8 md:grid-cols-5 md:items-end">
             <div className="md:col-span-3">
-              <h1 className="font-display text-4xl italic md:text-5xl">Libros corregidos</h1>
-              <span className="mt-6 block h-px w-16 bg-ink/25" aria-hidden="true" />
+              <span className="block h-px w-16 bg-ink/25" aria-hidden="true" />
               <p className="mt-5 max-w-xl text-lg leading-relaxed text-ink/75">
                 Una muestra de manuscritos que he corregido — de distintos
                 géneros, todos con el mismo cuidado palabra por palabra.
@@ -183,22 +181,30 @@ export default async function PortafolioPage() {
       )}
 
       {/* Bloque 3 — Voces de autores sobre fondo cobalt */}
-      {testimonials.length > 0 && (
-        <Band tone="cobalt" className="py-12 md:py-16">
-          <Container>
-            <div className="mb-8 flex flex-col items-center text-center">
-              <h2 className="font-display text-2xl italic text-cream md:text-3xl">
-                Lo que dicen los autores
-              </h2>
-              <span
-                aria-hidden="true"
-                className="mt-3 block h-px w-[30px] bg-cream/40"
-              />
-            </div>
-            <TestimonialCarousel testimonials={testimonials} variant="editorial" onDark />
-          </Container>
-        </Band>
-      )}
+      <Band tone="cobalt" className="py-12 md:py-16">
+        <Container>
+          <div className="mb-8 flex flex-col items-center text-center">
+            <h2 className="font-display text-2xl italic text-cream md:text-3xl">
+              Lo que dicen los autores
+            </h2>
+            <span
+              aria-hidden="true"
+              className="mt-3 block h-px w-[30px] bg-cream/40"
+            />
+          </div>
+          <figure className="mx-auto max-w-2xl text-center">
+            <blockquote className="font-display text-xl leading-relaxed text-cream md:text-2xl">
+              «Sorprendida con el trabajo de corrección. No me esperaba
+              encontrarme con tantos problemas de incoherencias, situaciones
+              inverosímiles y personajes mal perfilados. Gracias. Un gran
+              abrazo.»
+            </blockquote>
+            <figcaption className="mt-6 text-sm italic text-cream/70">
+              — Patricia Sánchez
+            </figcaption>
+          </figure>
+        </Container>
+      </Band>
 
       {/* Bloque 4 — Cierre cálido terracota */}
       <Band tone="terracotta" className="py-12 md:py-16">

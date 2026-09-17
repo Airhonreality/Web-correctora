@@ -260,13 +260,13 @@ Lee en voz alta. Las frases que suenan torpes al oído casi siempre lo son tambi
 
 Elimina las muletillas. Palabras y expresiones que se repiten sin darte cuenta ("de repente", "entonces", "en ese momento") le restan fuerza al texto cuando aparecen demasiado seguido.
 
-Revisa la continuidad. ¿El personaje tenía los ojos verdes en el capítulo 3 y cafés en el capítulo 20? ¿La escena ocurre de día y dos párrafos después ya es de noche sin explicación? Estas inconsistencias son de las más difíciles de detectar por el propio autor, precisamente porque conoces la historia de memoria.
+Revisa la coherencia. ¿El personaje tenía los ojos verdes en el capítulo 3 y cafés en el capítulo 20? ¿La escena ocurre de día y dos párrafos después ya es de noche sin ninguna explicación? Estas inconsistencias son de las más difíciles de detectar por el propio autor, precisamente porque conoces la historia de memoria.
 
 Cuida los tiempos verbales. Cambiar de pasado a presente sin intención rompe la inmersión del lector.
 
 No le tengas miedo a cortar. Si una escena no mueve la trama ni desarrolla a un personaje, probablemente sobra.
 
-Después de tu propia revisión, un corrector de estilo puede ver lo que a ti, como autor, te resulta invisible por estar demasiado cerca del texto. Escríbeme por WhatsApp cuando tu manuscrito esté listo.`,
+Después de tu propia revisión, un corrector de estilo puede ver lo que a ti, como autor, te resulta invisible por estar demasiado cerca del texto. Envía dos páginas de tu manuscrito y te respondo con una primera lectura personalizada.`,
     category: "Guía para autores",
     published: true,
   },

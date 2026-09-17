@@ -24,7 +24,7 @@ export function Footer() {
       </div>
       <div className="flex flex-col items-center gap-3 pb-10">
         <WhatsAppButton
-          message="Hola Amparo, quiero información sobre corrección de estilo."
+          message="Hola, Amparo, me gustaría conocer tus servicios de corrección de estilo."
           variant="outline"
           className="!border-gold !text-gold hover:!bg-gold hover:!text-anchor"
         >

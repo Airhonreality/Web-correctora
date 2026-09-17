@@ -73,9 +73,9 @@ export default function CuantoCuestaPage() {
           ¿Por qué no hay un cotizador automático?
         </h2>
         <p>
-          Porque el momento de cotizar tu manuscrito es, en sí mismo, parte de
-          conocernos. Envíame tu texto y te respondo personalmente con el
-          valor exacto.
+          Porque cotizar personalmente tu manuscrito es una oportunidad para
+          conocernos. También puedes enviármelo; yo lo reviso y te doy el valor
+          exacto.
         </p>
       </Container>
 

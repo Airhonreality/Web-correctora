@@ -42,8 +42,9 @@ export default async function PerfilPage() {
                 armónica y entretenida.&rdquo;
               </p>
               <p className="text-lg text-ink/80 leading-relaxed">
-                Amplia experiencia en corrección de estilo de textos literarios,
-                memorias, libros de crecimiento personal y especializados.
+                En mi recorrido profesional he trabajado como editora y
+                correctora de textos literarios, Memorias, libros
+                especializados y de crecimiento personal, entre otros.
               </p>
               <p className="text-lg text-ink/80 leading-relaxed">
                 Reviso tu manuscrito palabra por palabra: sintaxis, ortotipografía,
@@ -73,58 +74,87 @@ export default async function PerfilPage() {
 
       <Container className="py-20 flex flex-col gap-24">
         
-        {/* Validación en Medios / Social Proof */}
+        {/* Trayectoria Editorial */}
         <section>
-          <h2 className="font-display text-3xl italic mb-10 text-center text-ink">En los medios</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
-            
-            {/* Canal UNO */}
-            <div className="flex flex-col gap-6 bg-white p-8 rounded-2xl shadow-sm border border-ink/5 hover:shadow-md transition-shadow">
-              <div className="aspect-video w-full rounded-md overflow-hidden bg-ink/5 shadow-inner">
-                <video 
-                  controls 
-                  preload="metadata"
-                  className="w-full h-full object-cover"
-                >
-                  <source src="https://pub-31f388eee9ee467086e726e2865e639a.r2.dev/web/amparo-rozo-canal-uno-gps.mp4" type="video/mp4" />
-                  Tu navegador no soporta el formato de video.
-                </video>
-              </div>
-              <div>
-                <h3 className="font-bold text-xl text-ink">Canal UNO - Espacio GPS</h3>
-                <p className="mt-4 text-ink/80 leading-relaxed">
-                  El escritor y columnista colombiano Juan Esteban Constaín reseñó mi novela <em>Juro por mis orejas</em>. Resaltó su carácter histórico y fantástico. Un género al que pocos escritores le apuestan.
+          <div className="text-center mb-12">
+            <h2 className="font-display text-3xl italic text-ink">Trayectoria editorial</h2>
+            <p className="text-muted mt-2">Instituciones y proyectos con los que he colaborado</p>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {trayectoria.map((item, index) => (
+              <div key={index} className="bg-cream-soft p-6 rounded-xl border border-ink/5 hover:border-ink/10 transition-colors flex items-center">
+                <p className="text-sm text-ink/80 leading-relaxed font-medium">
+                  {item}
                 </p>
               </div>
-            </div>
+            ))}
+          </div>
+        </section>
 
-            {/* Revista DC */}
-            <div className="flex flex-col gap-6 bg-white p-8 rounded-2xl shadow-sm border border-ink/5 hover:shadow-md transition-shadow">
-              <div className="flex gap-3 overflow-x-auto pb-4 snap-x smooth-scroll">
-                <img 
-                  src="https://pub-31f388eee9ee467086e726e2865e639a.r2.dev/web/revista-dc-portada.jpg" 
-                  alt="Portada Revista DC"
-                  className="h-56 w-auto object-contain rounded-md shadow-sm snap-center border border-ink/10"
-                />
-                <img 
-                  src="https://pub-31f388eee9ee467086e726e2865e639a.r2.dev/web/revista-dc-articulo-1.jpg" 
-                  alt="Artículo Revista DC Parte 1"
-                  className="h-56 w-auto object-contain rounded-md shadow-sm snap-center border border-ink/10"
-                />
-                <img 
-                  src="https://pub-31f388eee9ee467086e726e2865e639a.r2.dev/web/revista-dc-articulo-2.jpg" 
-                  alt="Artículo Revista DC Parte 2"
-                  className="h-56 w-auto object-contain rounded-md shadow-sm snap-center border border-ink/10"
-                />
-              </div>
-              <div>
-                <h3 className="font-bold text-xl text-ink">Revista Cultural DC</h3>
-                <p className="mt-4 text-ink/80 leading-relaxed">
-                  La revista cultural DC, en la sección de Libros Recomendados, destacó el carácter histórico y mágico de mi novela. Un género al que pocos escritores colombianos le apuestan en la actualidad.
-                </p>
-              </div>
-            </div>
+        {/* Validación en Medios / Social Proof */}
+        <section className="flex flex-col gap-8 md:gap-14">
+          <h2 className="font-display text-3xl italic text-center text-ink">En los medios</h2>
 
+          {/* Sub-hero 1 — Cablenoticias (Canal UNO · Espacio GPS) */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-14 items-center bg-white p-8 md:p-12 rounded-3xl shadow-sm border border-ink/5">
+            <div className="aspect-video w-full rounded-xl overflow-hidden bg-ink/5 shadow-lg ring-1 ring-ink/10">
+              <video
+                controls
+                preload="metadata"
+                className="w-full h-full object-cover"
+              >
+                <source src="https://pub-31f388eee9ee467086e726e2865e639a.r2.dev/web/amparo-rozo-canal-uno-gps.mp4" type="video/mp4" />
+                Tu navegador no soporta el formato de video.
+              </video>
+            </div>
+            <div className="flex flex-col gap-4">
+              <p className="text-xs font-bold uppercase tracking-[0.3em] text-terracotta">
+                Canal UNO · Espacio GPS
+              </p>
+              <h3 className="font-display text-3xl lg:text-4xl text-ink leading-tight">
+                Entrevista en Cablenoticias
+              </h3>
+              <p className="text-lg text-ink/80 leading-relaxed">
+                En la entrevista concedida en el perfil de Canal UNO, el escritor
+                y columnista colombiano Juan Esteban Constaín reseñó mi novela{" "}
+                <em>Juro por mis orejas</em>. Resaltó su carácter histórico y
+                fantástico, un género al que pocos escritores le apuestan.
+              </p>
+            </div>
+          </div>
+
+          {/* Sub-hero 2 — Revista Cultural DC */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-14 items-center bg-white p-8 md:p-12 rounded-3xl shadow-sm border border-ink/5">
+            <div className="flex gap-3 overflow-x-auto pb-2 snap-x order-last">
+              <img
+                src="https://pub-31f388eee9ee467086e726e2865e639a.r2.dev/web/revista-dc-portada.jpg"
+                alt="Portada Revista DC"
+                className="h-64 md:h-72 w-auto object-contain rounded-md shadow-md snap-center border border-ink/10"
+              />
+              <img
+                src="https://pub-31f388eee9ee467086e726e2865e639a.r2.dev/web/revista-dc-articulo-1.jpg"
+                alt="Artículo Revista DC Parte 1"
+                className="h-64 md:h-72 w-auto object-contain rounded-md shadow-md snap-center border border-ink/10"
+              />
+              <img
+                src="https://pub-31f388eee9ee467086e726e2865e639a.r2.dev/web/revista-dc-articulo-2.jpg"
+                alt="Artículo Revista DC Parte 2"
+                className="h-64 md:h-72 w-auto object-contain rounded-md shadow-md snap-center border border-ink/10"
+              />
+            </div>
+            <div className="flex flex-col gap-4">
+              <p className="text-xs font-bold uppercase tracking-[0.3em] text-terracotta">
+                Prensa escrita
+              </p>
+              <h3 className="font-display text-3xl lg:text-4xl text-ink leading-tight">
+                Revista Cultural DC
+              </h3>
+              <p className="text-lg text-ink/80 leading-relaxed">
+                La revista cultural DC, en la sección de Libros Recomendados,
+                destacó el carácter histórico y mágico de mi novela. Un género al
+                que pocos escritores colombianos le apuestan en la actualidad.
+              </p>
+            </div>
           </div>
         </section>
 
@@ -176,23 +206,6 @@ export default async function PerfilPage() {
             </div>
           </section>
         )}
-
-        {/* Trayectoria Editorial */}
-        <section>
-          <div className="text-center mb-12">
-            <h2 className="font-display text-3xl italic text-ink">Trayectoria editorial</h2>
-            <p className="text-muted mt-2">Instituciones y proyectos con los que he colaborado</p>
-          </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {trayectoria.map((item, index) => (
-              <div key={index} className="bg-cream-soft p-6 rounded-xl border border-ink/5 hover:border-ink/10 transition-colors flex items-center">
-                <p className="text-sm text-ink/80 leading-relaxed font-medium">
-                  {item}
-                </p>
-              </div>
-            ))}
-          </div>
-        </section>
 
       </Container>
 
