@@ -1,10 +1,11 @@
 import Link from "next/link";
-import { Check, LayoutTemplate, ShieldCheck } from "lucide-react";
+import { Check } from "lucide-react";
 import { Container } from "@/components/container";
 import { WhatsAppButton } from "@/components/whatsapp-button";
 import { whatsappHref } from "@/lib/site";
 import { JsonLd } from "@/components/json-ld";
 import { EventsCarousel } from "@/components/events-carousel";
+import { TestimonialCarousel } from "@/components/testimonial-carousel";
 import { FeaturedBookCarousel } from "@/components/featured-book-carousel";
 import { serviceJsonLd } from "@/lib/seo";
 import {
@@ -37,53 +38,10 @@ const novelas: Array<{ lead: string; rest?: string }> = [
   },
   { lead: "Diálogos:", rest: "uso correcto de rayas, incisos y comillas." },
   { lead: "Continuidad lógica de la historia." },
-  { lead: "Trama:", rest: "coherencia en los hechos." },
+  { lead: "Trama:", rest: "coherencia en los hechos. Situaciones inverosímiles." },
   { lead: "Uso correcto de tiempos verbales." },
   { lead: "Lectura crítica", rest: "y comentarios." },
 ];
-
-function QuoteStrip({
-  quote,
-  clientName,
-  bookTitle,
-  label,
-}: {
-  quote: string;
-  clientName: string;
-  bookTitle?: string | null;
-  label?: string;
-}) {
-  return (
-    <section className="bg-terracotta">
-      <Container className="max-w-4xl py-16 sm:py-20">
-        <figure className="text-center">
-          {label && (
-            <p className="text-xs font-bold uppercase tracking-[0.24em] text-cream/70">
-              {label}
-            </p>
-          )}
-          <div
-            className="pointer-events-none font-display text-7xl leading-none text-cream/25"
-            aria-hidden="true"
-          >
-            &ldquo;
-          </div>
-          <blockquote className="mt-2 font-display text-2xl italic leading-relaxed text-cream sm:text-3xl">
-            &ldquo;{quote}&rdquo;
-          </blockquote>
-          <figcaption className="mt-7 text-sm font-bold uppercase tracking-widest text-cream/90">
-            — {clientName}
-          </figcaption>
-          {bookTitle && (
-            <p className="mt-1 text-xs uppercase tracking-wider text-cream/70">
-              Autor de {bookTitle}
-            </p>
-          )}
-        </figure>
-      </Container>
-    </section>
-  );
-}
 
 function normalizeTitle(text: string) {
   return text
@@ -129,20 +87,11 @@ export async function CorreccionDeEstiloContent() {
         <Container className="relative z-10 max-w-6xl py-20 sm:py-28 lg:py-32">
           <div className="grid grid-cols-1 items-center gap-14 lg:grid-cols-12 lg:gap-10">
             <div className="lg:col-span-7">
-              <p className="flex items-center gap-3 text-sm font-bold uppercase tracking-[0.22em] text-teal-dark">
-                <span className="h-0.5 w-9 bg-teal-dark" aria-hidden="true" />
-                Servicio integral de corrección de estilo
-              </p>
-              <h1 className="mt-6 font-display text-4xl font-bold leading-[1.05] tracking-tight text-ink sm:text-6xl lg:text-[4.25rem]">
+              <h1 className="font-display text-4xl font-bold leading-[1.05] tracking-tight text-ink sm:text-6xl lg:text-[4.25rem]">
                 Corrección de estilo literario
               </h1>
               <p className="mt-6 font-display text-2xl leading-snug text-ink sm:text-3xl">
                 Su texto está en buenas manos
-              </p>
-              <p className="mt-5 max-w-xl text-base font-medium leading-relaxed text-teal-dark">
-                Comunicadora social-periodista / Universidad Externado de
-                Colombia / Correctora profesional de estilo y autora de dos
-                novelas publicadas por editoriales.
               </p>
               <p className="mt-5 max-w-xl text-lg leading-relaxed text-ink/80">
                 Corrección de estilo —sin inteligencia artificial— de novelas,
@@ -173,10 +122,7 @@ export async function CorreccionDeEstiloContent() {
                   <Check className="h-4 w-4 text-teal-dark" aria-hidden="true" />
                   Corrección palabra por palabra
                 </li>
-                <li className="flex items-center gap-2">
-                  <Check className="h-4 w-4 text-teal-dark" aria-hidden="true" />
-                  Acuerdo de confidencialidad
-                </li>
+                
                 <li className="flex items-center gap-2">
                   <Check className="h-4 w-4 text-teal-dark" aria-hidden="true" />
                   Sin inteligencia artificial
@@ -197,30 +143,21 @@ export async function CorreccionDeEstiloContent() {
                     className="h-full w-full object-cover"
                   />
                 </div>
-                <div className="rounded-full border border-ink/5 bg-white/95 px-4 py-1.5 shadow-md backdrop-blur-md">
-                  <p className="whitespace-nowrap text-[10px] font-bold uppercase tracking-widest text-ink">
-                    Amparo Rozo
+                <div className="max-w-[240px] rounded-2xl border border-ink/5 bg-white/95 px-4 py-3 text-center shadow-md backdrop-blur-md">
+                  <p className="text-[11px] font-semibold leading-snug text-ink">
+                    Comunicadora social-periodista / Universidad Externado de
+                    Colombia / Correctora profesional de estilo y autora de dos
+                    novelas publicadas por editoriales.
                   </p>
                 </div>
               </div>
             </div>
           </div>
 
-          {/* Lista de géneros al pie del hero */}
-          <ul className="mt-16 flex flex-wrap items-center justify-center gap-x-10 gap-y-4 text-lg font-bold text-teja sm:text-xl">
-            <li className="flex items-center gap-2.5">
-              <span className="h-1.5 w-1.5 rounded-full bg-gold" aria-hidden="true" />
-              Libros especializados · Crecimiento personal
-            </li>
-            <li className="flex items-center gap-2.5">
-              <span className="h-1.5 w-1.5 rounded-full bg-gold" aria-hidden="true" />
-              Novelas · Cuentos · Memorias · Crónicas
-            </li>
-          </ul>
-        </Container>
+          </Container>
       </section>
 
-      {/* C. Mi compromiso: grilla 2x2 de cards + banner navy */}
+      {/* C. Mi compromiso: grilla 2x2 de cards */}
       <section className="bg-cream">
         <Container className="max-w-6xl py-24 sm:py-28">
           <div className="flex flex-col items-center text-center">
@@ -246,8 +183,8 @@ export async function CorreccionDeEstiloContent() {
                 Corrección ortotipográfica y gramatical
               </h3>
               <p className="mt-3 text-sm text-muted">
-                Pulido integral del lenguaje: del detalle tipográfico fino
-                hasta la claridad estructural de cada oración.
+                Pulido integral del lenguaje: desde la claridad estructural de
+                cada oración hasta el detalle tipográfico.
               </p>
               <ul className="mt-8 flex flex-col gap-4">
                 {compromiso.map((item) => (
@@ -295,38 +232,66 @@ export async function CorreccionDeEstiloContent() {
             </article>
           </div>
 
-          {/* Banner inferior: azul marino profundo */}
-          <div className="mt-6 flex flex-col items-start justify-between gap-6 overflow-hidden rounded-3xl bg-navy p-8 text-cream sm:p-10 lg:flex-row lg:items-center">
-            <div className="flex max-w-xl flex-col gap-2">
-              <h3 className="text-2xl font-bold tracking-tight sm:text-3xl">
-                ¿Tu libro necesita también maquetación?
-              </h3>
-              <p className="text-cream/80">
-                Diagramación y diseño de portada disponibles con un diseñador
-                gráfico aliado. Tu libro completo, listo para imprimir.
-              </p>
-            </div>
-            <a
-              href={whatsappHref(
-                "Hola Amparo, quiero información sobre maquetación y diagramación de mi libro.",
-              )}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex shrink-0 items-center gap-2.5 rounded-full border border-cream/35 px-6 py-3 text-sm font-bold uppercase tracking-wider text-cream transition-colors hover:bg-cream hover:text-navy"
-            >
-              <LayoutTemplate className="h-4 w-4" aria-hidden="true" />
-              Pregunta por diagramación
-            </a>
-          </div>
-        </Container>
+          </Container>
       </section>
 
-      {/* D. Grilla asimétrica: humano vs IA (60%) + confidencialidad (40%) */}
+      {/* D. Opiniones de los autores: carrusel editorial + mini grilla */}
+      {testimonials.length > 0 && (
+        <section className="bg-terracotta py-20 sm:py-24">
+          <Container className="max-w-6xl">
+            <div className="flex flex-col items-center text-center">
+              <p className="text-xs font-bold uppercase tracking-[0.24em] text-cream/75">
+                Opiniones reales de mis autores
+              </p>
+              <h2 className="mt-4 text-4xl font-bold tracking-tight text-cream sm:text-5xl">
+                Lo que dicen los autores
+              </h2>
+              <div className="mt-8 h-px w-24 bg-cream/30"></div>
+            </div>
+            <div className="mt-12">
+              <TestimonialCarousel testimonials={testimonials} variant="editorial" onDark />
+            </div>
+            <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+              {testimonials.slice(0, 6).map((t) => (
+                <figure
+                  key={t.id}
+                  className="flex flex-col justify-between rounded-2xl bg-cream/10 p-6 backdrop-blur-sm"
+                >
+                  <blockquote className="font-display text-xl leading-snug italic sm:text-2xl">
+                    <span aria-hidden="true">&ldquo;</span>
+                    {excerpt(t.quote, 1)}
+                    <span aria-hidden="true">&rdquo;</span>
+                  </blockquote>
+                  <figcaption className="mt-5 flex items-center gap-3">
+                    <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-cream/25 text-xs font-bold uppercase tracking-wider text-cream">
+                      {t.clientName
+                        .split(" ")
+                        .map((n) => n[0])
+                        .slice(0, 2)
+                        .join("")}
+                    </span>
+                    <div className="min-w-0">
+                      <p className="truncate text-xs font-bold uppercase tracking-wider text-cream">
+                        {t.clientName}
+                      </p>
+                      {t.bookTitle && (
+                        <p className="truncate text-[11px] text-cream/70">
+                          {t.bookTitle}
+                        </p>
+                      )}
+                    </div>
+                  </figcaption>
+                </figure>
+              ))}
+            </div>
+          </Container>
+        </section>
+      )}
+
+      {/* E. Sección IA: humano vs IA (confidencialidad y maquetación bajan al pie) */}
       <section className="bg-cream pb-24 sm:pb-28">
         <Container className="max-w-6xl">
-          <div className="grid gap-6 lg:grid-cols-5">
-            {/* Columna izquierda (60%): rigor */}
-            <article className="flex flex-col rounded-3xl border-2 border-teal bg-white p-8 shadow-sm sm:p-10 lg:col-span-3">
+          <div className="mx-auto max-w-3xl rounded-3xl border-2 border-teal bg-white p-8 shadow-sm sm:p-10">
               <p className="text-xs font-bold uppercase tracking-[0.24em] text-teal-dark">
                 Humano vs. Inteligencia artificial
               </p>
@@ -350,39 +315,9 @@ export async function CorreccionDeEstiloContent() {
                   artificial para escribir o corregir su obra.
                 </p>
               </div>
-            </article>
-
-            {/* Columna derecha (40%): calidez y seguridad */}
-            <article className="flex flex-col justify-between gap-8 rounded-3xl bg-rose p-8 sm:p-10 lg:col-span-2">
-              <div>
-                <p className="inline-flex items-center gap-2 rounded-full bg-white/60 px-3 py-1 text-[11px] font-bold uppercase tracking-widest text-ink/75">
-                  <ShieldCheck className="h-3.5 w-3.5" aria-hidden="true" />
-                  Tranquilidad total
-                </p>
-                <h2 className="mt-6 text-3xl font-bold leading-tight tracking-tight text-ink sm:text-4xl">
-                  Confidencialidad garantizada
-                </h2>
-                <p className="mt-4 text-base leading-relaxed text-ink/85">
-                  Si lo deseas, firmamos un acuerdo de confidencialidad del
-                  material a corregir, con la certeza de que no pasará a
-                  terceros ni será divulgado sin tu autorización.
-                </p>
-              </div>
-              <p className="border-t border-ink/15 pt-6 text-sm font-bold uppercase tracking-wider text-ink/80">
-                Acuerdo firmado antes de leer una sola palabra de tu manuscrito.
-              </p>
-            </article>
-          </div>
+            </div>
         </Container>
       </section>
-
-      {/* E. Pausa de lectura: quote banner full width ("Otros autores corregidos") */}
-      <QuoteStrip
-        quote="Sorprendida con el trabajo de corrección. No me esperaba encontrarme con tantos problemas de incoherencias, situaciones inverosímiles y personajes mal perfilados. Gracias. Un gran abrazo."
-        clientName="Patricia Sánchez"
-        bookTitle="De regreso a la vida"
-        label="Otros autores corregidos"
-      />
 
       {/* F. Portafolio: módulo slide/hero de /portafolio sobre fondo lino/arena */}
       {portfolioItems.length > 0 && (
@@ -481,6 +416,29 @@ export async function CorreccionDeEstiloContent() {
                 Escríbeme por WhatsApp
               </WhatsAppButton>
             </div>
+          </div>
+
+          <div className="mx-auto mt-20 max-w-3xl border-t border-ink/10 pt-8 text-center">
+            <p className="text-sm leading-relaxed text-muted">
+              ¿Tu libro necesita también maquetación? Diagramación y diseño de
+              portada disponibles con un{" "}
+              <a
+                href={whatsappHref(
+                  "Hola Amparo, quiero información sobre maquetación y diagramación de mi libro.",
+                )}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-semibold text-teal underline decoration-teal/40 underline-offset-4"
+              >
+                diseñador gráfico aliado
+              </a>
+              . Tu libro completo, listo para imprimir.
+            </p>
+            <p className="mt-3 text-sm leading-relaxed text-muted">
+              Si lo deseas, firmamos un acuerdo de confidencialidad del
+              material a corregir: tu manuscrito no pasa a terceros ni se
+              divulga sin tu autorización.
+            </p>
           </div>
         </Container>
       </section>
