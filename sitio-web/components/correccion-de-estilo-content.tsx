@@ -51,7 +51,7 @@ export async function CorreccionDeEstiloContent() {
           className="pointer-events-none absolute -right-32 -top-32 h-96 w-96 rounded-full bg-white/40 blur-3xl"
           aria-hidden="true"
         />
-        <Container className="relative z-10 max-w-6xl py-20 sm:py-28 lg:py-32">
+        <Container className="relative z-10 max-w-6xl py-14 sm:py-28 lg:py-32">
           <div className="grid grid-cols-1 items-center gap-14 lg:grid-cols-12 lg:gap-10">
             <div className="lg:col-span-7">
               <h1 className="font-display text-4xl font-bold leading-[1.05] tracking-tight text-ink sm:text-6xl lg:text-[4.25rem]">
@@ -126,7 +126,7 @@ export async function CorreccionDeEstiloContent() {
 
       {/* C. Mi compromiso: grilla 2x2 de cards */}
       <section className="bg-cream">
-        <Container className="max-w-6xl py-24 sm:py-28">
+        <Container className="max-w-6xl py-14 sm:py-28">
           <div className="flex flex-col items-center text-center">
             <p className="text-xs font-bold uppercase tracking-[0.24em] text-teal-dark">
               Alcance del servicio
@@ -137,7 +137,7 @@ export async function CorreccionDeEstiloContent() {
             <div className="mt-8 h-px w-24 bg-teal"></div>
           </div>
 
-          <div className="mt-14 grid gap-6 lg:grid-cols-2">
+          <div className="mt-10 grid gap-6 lg:grid-cols-2 sm:mt-14">
             {/* Card 1: blanco puro */}
             <article className="relative overflow-hidden rounded-3xl border border-ink/10 bg-white p-8 shadow-sm sm:p-10">
               <div
@@ -204,7 +204,7 @@ export async function CorreccionDeEstiloContent() {
 
       {/* D. Opiniones de mis clientes: carrusel editorial + mini grilla */}
       {testimonials.length > 0 && (
-        <section className="bg-olive-soft py-20 sm:py-24">
+        <section className="bg-olive-soft py-14 sm:py-24">
           <Container className="max-w-6xl">
             <div className="flex flex-col items-center text-center">
               <h2 className="text-4xl font-bold tracking-tight text-ink sm:text-5xl">
@@ -212,7 +212,7 @@ export async function CorreccionDeEstiloContent() {
               </h2>
               <div className="mt-8 h-px w-24 bg-teal"></div>
             </div>
-            <div className="mt-12">
+            <div className="mt-8 sm:mt-12">
               <TestimonialCarousel testimonials={testimonials} variant="editorial" />
             </div>
           </Container>
@@ -220,7 +220,7 @@ export async function CorreccionDeEstiloContent() {
       )}
 
       {/* E. Sección IA: humano vs IA */}
-      <section className="bg-cream py-24 sm:py-28">
+      <section className="bg-cream py-14 sm:py-28">
         <Container className="max-w-6xl">
           <div className="mx-auto max-w-3xl rounded-3xl border-2 border-teal bg-white p-8 shadow-sm sm:p-10">
             <p className="text-xs font-bold uppercase tracking-[0.24em] text-teal-dark">
