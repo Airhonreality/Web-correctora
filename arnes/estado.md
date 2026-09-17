@@ -6,6 +6,18 @@ Se lee al arrancar cualquier sesión, se actualiza al cerrar cada tarea o al rei
 Fase 1 (investigación, copy, diseño, stack) cerrada. Fase 2 (implementación) en marcha: el sitio vive en `sitio-web/` (Next.js + Tailwind + Neon + R2), con repo propio en GitHub (`Airhonreality/Amparo_Correcciones`) y contenido real ya cargado en producción de datos (Neon).
 
 ## Última sesión cerrada
+**Fecha:** 2026-09-17 (home simplificado según feedback de Amparo, 8:46-9:03 a.m.)
+**Qué se hizo (implementado, verificado y desplegado):**
+- **Un solo título** en la sección de opiniones: **"Opiniones de mis clientes"** (se eliminó el eyebrow "Opiniones reales de mis autores" y el título "Lo que dicen los autores"; la palabra "autores" confundía).
+- **Fondo verde clarito** (`bg-olive-soft`, token ya existente #e3e6d5) en lugar del terracota ("ese café es tétrico"). Se recoloreó toda la sección (carrusel editorial sin `onDark`, mini grilla en tarjetas blancas, iniciales teal, textos en tinta). Un día a día: mismo componente `TestimonialCarousel`.
+- **Home recortado:** "De ahí para abajo ... irían en otras pestañas". Se retiraron del home la sección de **carátulas de libros** (portafolio → vive en `/portafolio`) y el bloque de **inversión/FAQ/CTA y letra pequeña** (maquetación y confidencialidad quedaron fuera del home). El botón "Ver inversión" del hero ahora enlaza a `/cuanto-cuesta-corregir-un-libro` (antes anclaba a `#inversion`, que ya no existe).
+- **Dato 57% eliminado** del artículo IA (innecesario e inconveniente, según Amparo); el artículo "¿Por qué un corrector humano y no una IA?" se mantiene tal cual, justo después de las opiniones.
+- Orden final del home: **Hero → Mi compromiso → Opiniones de mis clientes → Artículo IA**.
+- Verificado: `tsc --noEmit` limpio, `eslint` sin errores nuevos (6 pre-existentes en `opcion-*`), `next build` OK. Deploy en vivo verificado (`www.correcionestilo.com`). Commit código `dc220c7`.
+- Limpieza: se eliminaron imports/helpers sin uso (`FeaturedBookCarousel`, `getAuthorizedPortfolioItems`, `normalizeTitle`, `whatsappHref`).
+- **Archivos afectados:** `sitio-web/components/correccion-de-estilo-content.tsx`, `arnes/estado.md`.
+
+## Sesión cerrada antes
 **Fecha:** 2026-09-17 (reorden del home según requerimientos de Amparo)
 **Qué se hizo (implementado, verificado y desplegado):**
 - **Pie de foto:** las credenciales ("Comunicadora social-periodista / Universidad Externado de Colombia / Correctora profesional de estilo y autora de dos novelas publicadas por editoriales.") pasaron de párrafo del hero a captión/\"pie de foto\" del cameo de Amparo (chip `max-w-[240px]` bajo la foto). Se quitó el pill anterior "Amparo Rozo".
