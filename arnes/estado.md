@@ -7,8 +7,23 @@ Fase 1 (investigación, copy, diseño, stack) cerrada. Fase 2 (implementación) 
 
 ## Última sesión cerrada
 **Fecha:** 2026-09-16
-**Qué se hizo (reestructuración de la arquitectura del sitio, comando "IMPLEMENTAR" del humano + push + deploy):**
-- **El home deja de existir como página.** `/correccion-de-estilo` pasa a ser el nuevo home y `/` es un redirect permanente (308) a esa ruta. La campaña de Google Ads que puja por keywords transaccionales con Final URL en el home ya no aterriza en una página vacía: `/` redirige directo a la landing de conversión.
+**Qué se hizo (eliminar el "puente" del redirect + 4 ajustes al home, comando "IMPLEMENTAR" del humano + push + deploy):**
+- **Dos rutas apuntando a la misma página, sin redirect:** se eliminó el `redirects()` de `next.config.ts` y se recreó `app/page.tsx`. Ahora `/` y `/correccion-de-estilo` renderizan el mismo componente compartido (`components/correccion-de-estilo-content.tsx`) — adiós al puente visual de "home caída + 2s de redirect". Verificado en producción: `/` responde **200** (antes 308). El contenido vivió como componente único para que ambas rutas nunca se desincronicen.
+- **Se eliminó la sección 1 de opinión** (la franja de testimonio destacado justo bajo el hero, la de Fernando Gómez Casas): redundaba con la franja "Otros autores corregidos" que ya estaba más abajo. Queda una sola pausa de lectura de testimonios.
+- **Foto 2 del slide del hero cambiada:** nueva foto de `Assets/frima de libros en feria escritora colombiana.jpeg` (copiada a `sitio-web/public/firma-feria-escritora-colombiana.jpg`) reemplaza a `event-2.jpg` en `components/events-carousel.tsx`.
+- **Color del texto final del hero** (lista de géneros "Libros especializados · Crecimiento personal / Novelas · Cuentos · Memorias · Crónicas") pasó de `text-cream` al token rojo `text-teja`.
+- **Sección "Libros que he corregido" reemplazada:** se eliminó `components/portfolio-slider.tsx` (componente huérfano) y su sección en el home. En su lugar se importó el módulo slide/hero de `/portafolio` (`FeaturedBookCarousel`) con el mismo mapeo de datos (testimonio por título normalizado, excerpt de 2 oraciones).
+- Verificado: `tsc --noEmit` limpio, `eslint` 0 errores nuevos (6 pre-existentes en `opcion-*`), `next build` OK con `/` como ruta dinámica real (ƒ). Desplegado con Vercel CLI (`web-correctora`): `/` 200, `/correccion-de-estilo` 200, foto nueva servida.
+- **Archivos afectados:** `arnes/estado.md` (este registro), `sitio-web/next.config.ts` (redirect eliminado), `sitio-web/app/page.tsx` (recreado), `sitio-web/app/correccion-de-estilo/page.tsx` (ahora usan el componente compartido), `sitio-web/components/correccion-de-estilo-content.tsx` (nuevo), `sitio-web/components/events-carousel.tsx` (foto 2), `sitio-web/components/portfolio-slider.tsx` (eliminado), `Assets/frima de libros en feria escritora colombiana.jpeg` + `sitio-web/public/firma-feria-escritora-colombiana.jpg` (nuevos).
+
+**Qué quedó pendiente:**
+- ⚠️ **Cambiar el Final URL de la campaña de Google Ads.** Hoy `/` y `/correccion-de-estilo` sirven exactamente el mismo contenido (canonical de `/` apunta a `/correccion-de-estilo`): el final URL puede ser cualquiera de las dos sin salto. Pendiente de decisión del humano cuál usar en la campaña.
+- Ver en vivo la foto 2 del slide, el color teja del género del hero y el nuevo módulo del portafolio en la landing.
+
+## Sesiones cerradas anteriores
+
+### Sesión 2026-09-16 (reestructuración de la arquitectura del sitio)
+**Qué se hizo (el home deja de existir como página — luego revertido en la sesión siguiente, ver arriba):**
 - **Secciones del home migradas a `/perfil` (merge):** "Amparo Rozo" (cita + bio), "Como escritora" (intro de la sección "Mis Novelas" + link a `/escritora`) y "¿Tienes un manuscrito listo para publicar?" (CTA final de WhatsApp). El resto del home (hero + carrusel de testimonios) quedó deprecado y fue eliminado (`app/page.tsx` borrado).
 - **Navegación:** se eliminó el ítem "Inicio" (`→/`) de `navLinks` y de `primaryMobileLinks` (móvil) — no había sentido tener un redirect en el menú. Queda: Servicios, Portafolio, Perfil, Escritora, Blog (+ Contactar).
 - **SEO:** `/correccion-de-estilo` subió a priority 1 en `sitemap.ts` (se conserva `/` para no romper enlaces históricos, pero ahora responde 308); canonical default del layout apunta a `/correccion-de-estilo`.
