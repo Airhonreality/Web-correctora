@@ -38,15 +38,6 @@ const novelas: Array<{ lead: string; rest?: string }> = [
   { lead: "Lectura crítica", rest: "y comentarios." },
 ];
 
-function excerpt(text: string, sentences: number) {
-  const parts = text
-    .split(/(?<=[.!?])\s+/)
-    .map((s) => s.trim())
-    .filter(Boolean);
-  if (parts.length <= sentences) return text;
-  return `${parts.slice(0, sentences).join(" ")} …`;
-}
-
 export async function CorreccionDeEstiloContent() {
   const testimonials = await getAllTestimonials();
 
@@ -223,39 +214,6 @@ export async function CorreccionDeEstiloContent() {
             </div>
             <div className="mt-12">
               <TestimonialCarousel testimonials={testimonials} variant="editorial" />
-            </div>
-            <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-              {testimonials.slice(0, 6).map((t) => (
-                <figure
-                  key={t.id}
-                  className="flex flex-col justify-between rounded-2xl border border-teal/15 bg-white p-6 shadow-sm"
-                >
-                  <blockquote className="font-display text-xl leading-snug italic sm:text-2xl">
-                    <span aria-hidden="true">&ldquo;</span>
-                    {excerpt(t.quote, 1)}
-                    <span aria-hidden="true">&rdquo;</span>
-                  </blockquote>
-                  <figcaption className="mt-5 flex items-center gap-3">
-                    <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-teal/15 text-xs font-bold uppercase tracking-wider text-teal-dark">
-                      {t.clientName
-                        .split(" ")
-                        .map((n) => n[0])
-                        .slice(0, 2)
-                        .join("")}
-                    </span>
-                    <div className="min-w-0">
-                      <p className="truncate text-xs font-bold uppercase tracking-wider text-ink">
-                        {t.clientName}
-                      </p>
-                      {t.bookTitle && (
-                        <p className="truncate text-[11px] text-muted">
-                          {t.bookTitle}
-                        </p>
-                      )}
-                    </div>
-                  </figcaption>
-                </figure>
-              ))}
             </div>
           </Container>
         </section>
