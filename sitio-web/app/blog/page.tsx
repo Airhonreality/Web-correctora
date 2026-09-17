@@ -70,7 +70,7 @@ function FeaturedPost({ post }: { post: Post }) {
         >
           {post.category ?? "Letras y corrección"}
         </span>
-        <h2 className="font-display text-3xl italic leading-tight sm:text-4xl">
+        <h2 className="text-3xl font-bold leading-tight tracking-tight sm:text-4xl">
           <Link href={href} className="transition-colors group-hover:text-terracotta">
             {post.title}
           </Link>
@@ -118,7 +118,7 @@ function PostCard({ post }: { post: Post }) {
             {post.category}
           </span>
         ) : null}
-        <h3 className="font-display text-xl italic leading-snug transition-colors group-hover:text-terracotta">
+        <h3 className="text-xl font-bold leading-snug tracking-tight transition-colors group-hover:text-terracotta">
           {post.title}
         </h3>
         <p className="text-sm leading-relaxed text-muted line-clamp-3">{post.excerpt}</p>
@@ -247,7 +247,7 @@ export default async function BlogPage({
     <>
       <Band tone="cream" className="border-b border-[#E5E0D8]">
         <Wide className="py-14">
-          <h1 className="font-display text-4xl italic sm:text-5xl">Blog</h1>
+          <h1 className="text-4xl font-bold tracking-tight sm:text-5xl">Blog</h1>
           <p className="mt-2 text-muted">Tips de redacción</p>
         </Wide>
       </Band>

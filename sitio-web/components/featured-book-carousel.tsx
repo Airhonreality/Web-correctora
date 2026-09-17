@@ -78,7 +78,7 @@ export function FeaturedBookCarousel({ books }: { books: FeaturedBookData[] }) {
           >
             {book.genre}
           </span>
-          <h2 className="mt-3 font-display text-3xl italic leading-tight">
+          <h2 className="mt-3 text-3xl font-bold leading-tight tracking-tight">
             {book.bookTitle}
           </h2>
           <p className="mt-2 text-sm font-semibold text-muted">{book.authorName}</p>

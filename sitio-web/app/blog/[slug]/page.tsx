@@ -58,7 +58,7 @@ export default async function BlogPostPage({
               {post.category}
             </span>
           ) : null}
-          <h1 className="mt-4 font-display text-3xl italic leading-tight sm:text-4xl">
+          <h1 className="mt-4 text-3xl font-bold leading-tight tracking-tight sm:text-4xl">
             {post.title}
           </h1>
           <div className="mt-4 flex flex-wrap items-center gap-x-5 gap-y-2 text-xs text-muted">

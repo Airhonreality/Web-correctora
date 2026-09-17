@@ -21,7 +21,7 @@ export default function CuantoCuestaPage() {
     <>
       <Band tone="cream" className="py-16">
         <Container className="flex flex-col gap-3 text-center">
-          <h1 className="font-display text-4xl italic">
+          <h1 className="text-4xl font-bold tracking-tight">
             ¿Cuánto cuesta corregir un libro?
           </h1>
           <p className="text-lg text-muted">
@@ -34,7 +34,7 @@ export default function CuantoCuestaPage() {
       </Band>
 
       <Container className="py-16">
-        <h2 className="font-display text-2xl italic">Ejemplos de inversión</h2>
+        <h2 className="text-2xl font-bold tracking-tight">Ejemplos de inversión</h2>
         <div className="mt-6 overflow-x-auto">
           <table className="w-full border-collapse text-left">
             <thead>
@@ -57,7 +57,7 @@ export default function CuantoCuestaPage() {
 
       <Band tone="bg-alt" className="py-16">
         <Container className="flex flex-col gap-4">
-          <h2 className="font-display text-xl italic">
+          <h2 className="text-xl font-bold tracking-tight">
             ¿No sabes cuántas palabras tiene tu manuscrito?
           </h2>
           <p>
@@ -69,7 +69,7 @@ export default function CuantoCuestaPage() {
       </Band>
 
       <Container className="flex flex-col gap-4 py-16">
-        <h2 className="font-display text-xl italic">
+        <h2 className="text-xl font-bold tracking-tight">
           ¿Por qué no hay un cotizador automático?
         </h2>
         <p>

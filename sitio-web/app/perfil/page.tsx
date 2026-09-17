@@ -32,7 +32,7 @@ export default async function PerfilPage() {
         <Container>
           <div className="flex flex-col md:flex-row gap-12 items-center">
             <div className="w-full md:w-1/2 flex flex-col gap-6">
-              <h1 className="font-display text-4xl sm:text-5xl italic text-ink">Mi perfil</h1>
+              <h1 className="text-4xl sm:text-5xl font-bold tracking-tight text-ink">Mi perfil</h1>
               <p className="text-xl text-teal-dark font-medium leading-relaxed">
                 Profesional en Comunicación Social y Periodismo de la Universidad Externado de Colombia (1998).
               </p>
@@ -77,7 +77,7 @@ export default async function PerfilPage() {
         {/* Trayectoria Editorial */}
         <section>
           <div className="text-center mb-12">
-            <h2 className="font-display text-3xl italic text-ink">Trayectoria editorial</h2>
+            <h2 className="text-3xl font-bold tracking-tight text-ink">Trayectoria editorial</h2>
             <p className="text-muted mt-2">Instituciones y proyectos con los que he colaborado</p>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -93,11 +93,11 @@ export default async function PerfilPage() {
 
         {/* Validación en Medios / Social Proof */}
         <section className="flex flex-col gap-8 md:gap-14">
-          <h2 className="font-display text-3xl italic text-center text-ink">En los medios</h2>
+          <h2 className="text-3xl font-bold tracking-tight text-center text-ink">En los medios</h2>
 
           {/* Sub-hero 1 — Cablenoticias (Canal UNO · Espacio GPS) */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-14 items-center bg-white p-8 md:p-12 rounded-3xl shadow-sm border border-ink/5">
-            <div className="aspect-video w-full rounded-xl overflow-hidden bg-ink/5 shadow-lg ring-1 ring-ink/10">
+          <div className="overflow-hidden rounded-3xl bg-white shadow-sm border border-ink/5">
+            <div className="aspect-video w-full bg-ink/5">
               <video
                 controls
                 preload="metadata"
@@ -107,11 +107,11 @@ export default async function PerfilPage() {
                 Tu navegador no soporta el formato de video.
               </video>
             </div>
-            <div className="flex flex-col gap-4">
+            <div className="flex flex-col gap-4 p-8 md:p-12">
               <p className="text-xs font-bold uppercase tracking-[0.3em] text-terracotta">
                 Canal UNO · Espacio GPS
               </p>
-              <h3 className="font-display text-3xl lg:text-4xl text-ink leading-tight">
+              <h3 className="text-3xl font-bold tracking-tight lg:text-4xl text-ink leading-tight">
                 Entrevista en Cablenoticias
               </h3>
               <p className="text-lg text-ink/80 leading-relaxed">
@@ -146,7 +146,7 @@ export default async function PerfilPage() {
               <p className="text-xs font-bold uppercase tracking-[0.3em] text-terracotta">
                 Prensa escrita
               </p>
-              <h3 className="font-display text-3xl lg:text-4xl text-ink leading-tight">
+              <h3 className="text-3xl font-bold tracking-tight lg:text-4xl text-ink leading-tight">
                 Revista Cultural DC
               </h3>
               <p className="text-lg text-ink/80 leading-relaxed">
@@ -162,7 +162,7 @@ export default async function PerfilPage() {
         {books && books.length > 0 && (
           <section className="bg-bg-alt -mx-6 px-6 md:-mx-12 md:px-12 py-16 rounded-3xl border border-ink/5">
             <div className="max-w-4xl mx-auto mb-12 text-center">
-              <h2 className="font-display text-3xl italic mb-6 text-ink">Mis Novelas</h2>
+              <h2 className="text-3xl font-bold tracking-tight mb-6 text-ink">Mis Novelas</h2>
               <p className="text-lg text-ink/80 leading-relaxed max-w-2xl mx-auto">
                 Además de corregir, escribo. Soy autora de{" "}
                 <em>Marcianos hijos de p...</em> (Grupo Editorial Ibáñez, 2025) y{" "}
@@ -212,7 +212,7 @@ export default async function PerfilPage() {
       {/* CTA: ¿Tienes un manuscrito listo para publicar? */}
       <Band tone="cream" className="py-16">
         <Container className="flex flex-col items-center gap-4 text-center">
-          <h2 className="font-display text-2xl italic">
+          <h2 className="text-2xl font-bold tracking-tight">
             ¿Tienes un manuscrito listo para publicar?
           </h2>
           <WhatsAppButton message="Hola Amparo, quiero información sobre corrección de estilo.">

@@ -215,7 +215,7 @@ export async function CorreccionDeEstiloContent() {
             <p className="text-xs font-bold uppercase tracking-[0.24em] text-teal-dark">
               Alcance del servicio
             </p>
-            <h2 className="mt-4 font-display text-4xl italic text-ink sm:text-5xl">
+            <h2 className="mt-4 text-4xl font-bold tracking-tight text-ink sm:text-5xl">
               Mi compromiso
             </h2>
             <div className="mt-8 h-px w-24 bg-teal"></div>
@@ -280,7 +280,7 @@ export async function CorreccionDeEstiloContent() {
           {/* Banner inferior: azul marino profundo */}
           <div className="mt-6 flex flex-col items-start justify-between gap-6 overflow-hidden rounded-3xl bg-navy p-8 text-cream sm:p-10 lg:flex-row lg:items-center">
             <div className="flex max-w-xl flex-col gap-2">
-              <h3 className="font-display text-2xl italic sm:text-3xl">
+              <h3 className="text-2xl font-bold tracking-tight sm:text-3xl">
                 ¿Tu libro necesita también maquetación?
               </h3>
               <p className="text-cream/80">
@@ -312,7 +312,7 @@ export async function CorreccionDeEstiloContent() {
               <p className="text-xs font-bold uppercase tracking-[0.24em] text-teal-dark">
                 Humano vs. Inteligencia artificial
               </p>
-              <h2 className="mt-4 font-display text-3xl italic leading-snug text-ink sm:text-4xl">
+              <h2 className="mt-4 text-3xl font-bold leading-tight tracking-tight text-ink sm:text-4xl">
                 ¿Por qué un corrector humano y no una IA?
               </h2>
               <p className="mt-6 text-base leading-relaxed text-ink/85">
@@ -341,7 +341,7 @@ export async function CorreccionDeEstiloContent() {
                   <ShieldCheck className="h-3.5 w-3.5" aria-hidden="true" />
                   Tranquilidad total
                 </p>
-                <h2 className="mt-6 font-display text-3xl italic leading-snug text-ink sm:text-4xl">
+                <h2 className="mt-6 text-3xl font-bold leading-tight tracking-tight text-ink sm:text-4xl">
                   Confidencialidad garantizada
                 </h2>
                 <p className="mt-4 text-base leading-relaxed text-ink/85">
@@ -395,7 +395,7 @@ export async function CorreccionDeEstiloContent() {
             <p className="text-xs font-bold uppercase tracking-[0.24em] text-teal-dark">
               Inversión clara, sin sorpresas
             </p>
-            <h2 className="mt-4 font-display text-4xl italic text-ink sm:text-5xl">
+            <h2 className="mt-4 text-4xl font-bold tracking-tight text-ink sm:text-5xl">
               Inversión
             </h2>
             <dl className="mx-auto mt-12 grid max-w-3xl gap-6 sm:grid-cols-2">
@@ -427,7 +427,7 @@ export async function CorreccionDeEstiloContent() {
               Ver el detalle completo de precios →
             </Link>
             <div className="mx-auto mt-14 max-w-2xl">
-              <h3 className="font-display text-2xl italic text-ink">
+              <h3 className="text-2xl font-bold tracking-tight text-ink">
                 ¿Por qué no hay un cotizador automático?
               </h3>
               <p className="mt-3 text-base leading-relaxed text-muted">

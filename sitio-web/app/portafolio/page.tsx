@@ -151,7 +151,7 @@ export default async function PortafolioPage() {
                       >
                         {item.genre}
                       </span>
-                      <h3 className="mt-2 font-display text-lg italic leading-snug">
+                      <h3 className="mt-2 text-lg font-bold leading-snug tracking-tight">
                         {item.bookTitle}
                       </h3>
                       <p className="mt-1 text-sm text-muted">{item.authorName}</p>
@@ -184,9 +184,9 @@ export default async function PortafolioPage() {
       <Band tone="cobalt" className="py-12 md:py-16">
         <Container>
           <div className="mb-8 flex flex-col items-center text-center">
-            <h2 className="font-display text-2xl italic text-cream md:text-3xl">
-              Lo que dicen los autores
-            </h2>
+<h2 className="text-2xl font-bold tracking-tight text-cream md:text-3xl">
+                Lo que dicen los autores
+              </h2>
             <span
               aria-hidden="true"
               className="mt-3 block h-px w-[30px] bg-cream/40"
@@ -210,7 +210,7 @@ export default async function PortafolioPage() {
       <Band tone="terracotta" className="py-12 md:py-16">
         <Container className="grid items-center gap-8 md:grid-cols-2">
           <div>
-            <h2 className="font-display text-3xl italic md:text-4xl">
+            <h2 className="text-3xl font-bold tracking-tight md:text-4xl">
               ¿Quieres que tu libro sea el próximo?
             </h2>
             <p className="mt-4 max-w-md text-lg text-ink/75">

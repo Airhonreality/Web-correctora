@@ -38,7 +38,7 @@ export default async function EscritoraPage() {
       <JsonLd data={juroPorMisOrejas} />
       <Band tone="rose" className="py-16">
         <Container>
-          <h1 className="font-display text-4xl italic">Como escritora</h1>
+          <h1 className="text-4xl font-bold tracking-tight">Como escritora</h1>
         </Container>
       </Band>
 
@@ -119,7 +119,7 @@ export default async function EscritoraPage() {
 
               {/* Full-width Synopsis below */}
               <div className="max-w-3xl mx-auto mt-8">
-                <h3 className="font-display italic text-3xl text-magenta mb-6">Sinopsis</h3>
+                <h3 className="font-bold text-3xl text-magenta mb-6 tracking-tight">Sinopsis</h3>
                 <div className="space-y-4 text-ink/80 leading-relaxed text-lg">
                   {paragraphs.map((paragraph, idx) => (
                     <p key={idx}>{paragraph}</p>
