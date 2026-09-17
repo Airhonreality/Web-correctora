@@ -6,6 +6,14 @@ Se lee al arrancar cualquier sesión, se actualiza al cerrar cada tarea o al rei
 Fase 1 (investigación, copy, diseño, stack) cerrada. Fase 2 (implementación) en marcha: el sitio vive en `sitio-web/` (Next.js + Tailwind + Neon + R2), con repo propio en GitHub (`Airhonreality/Amparo_Correcciones`) y contenido real ya cargado en producción de datos (Neon).
 
 ## Última sesión cerrada
+**Fecha:** 2026-09-16 (listas "Mi compromiso" más vistosas)
+**Qué se hizo (pedido directo del humano, implementado, verificado y desplegado):**
+- **"Mi compromiso" con más peso visual:** las dos listas (ortotipografía/gramática y edición de novelas) dejaron de sentirse como texto plano. Los ítems ahora son filas con un **badge circular grande de color** (check sólido teal card 1 / terracota card 2, ~40px, con sombra difuminada del mismo color) y el texto en dos niveles: **lead en Nunito negrita** + detalle en tinta suave (arrays `compromiso`/`novelas` pasaron a `{lead, rest}`). Mayor separación entre ítems (`gap-4`) y tipografía un punto más grande.
+- Verificado: `tsc --noEmit` limpio, `eslint` sin errores nuevos (6 pre-existentes en `opcion-*`), `next build` OK, deploy en vivo (`www.correcionestilo.com`). Commit `21b4318`.
+- **Archivos afectados:** `sitio-web/components/correccion-de-estilo-content.tsx`, `arnes/estado.md` (este registro).
+
+## Sesión cerrada antes
+
 **Fecha:** 2026-09-16 (ajuste de tipografía y tamaño del video)
 **Qué se hizo (pedido directo del humano, implementado, verificado y desplegado):**
 - **Títulos en cursiva → Nunito negrita:** todos los títulos (h1/h2/h3) que usaban `font-display italic` (Playfair itálica) pasaron a Nunito (la fuente del cuerpo) en `font-bold tracking-tight`, sin itálica. Aplicado en home (`Mi compromiso`, `¿Por qué un corrector humano y no una IA?`, `Confidencialidad garantizada`, `¿Tu libro necesita también maquetación?`, `Inversión`, `¿Por qué no hay un cotizador automático?`), portafolio (título de libro, `Lo que dicen los autores`, `¿Quieres que tu libro sea el próximo?`), perfil (`Mi perfil`, `Trayectoria editorial`, `En los medios`, `Mis Novelas`, CTA final), `/cuanto-cuesta` (H1 + 3 h2), `/escritora` (`Como escritora`, `Sinopsis`), blog (H1, post destacado, títulos de cards) y `featured-book-carousel` (título de libro del slider). Se conservaron las cursivas que NO son títulos: citas/testimonios (blockquote Playfair italic), numerales decorativos ("01"/"02", comillas gigantes) y el contador de portafolio.
