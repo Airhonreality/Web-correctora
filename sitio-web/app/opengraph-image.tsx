@@ -40,7 +40,7 @@ export default function OpengraphImage() {
             lineHeight: 1.2,
           }}
         >
-          Su texto está en buenas manos.
+          Tu texto está en buenas manos.
         </div>
         <div style={{ fontSize: 28, color: "#6e6255", marginTop: 32 }}>
           Corrección de estilo literario — hecha a mano, palabra por palabra.

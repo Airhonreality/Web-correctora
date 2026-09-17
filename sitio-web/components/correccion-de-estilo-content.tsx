@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { Check } from "lucide-react";
 import { Container } from "@/components/container";
 import { WhatsAppButton } from "@/components/whatsapp-button";
@@ -58,7 +59,7 @@ export async function CorreccionDeEstiloContent() {
                 Corrección de estilo literario
               </h1>
               <p className="mt-6 font-display text-2xl leading-snug text-ink sm:text-3xl">
-                Su texto está en buenas manos
+                Tu texto está en buenas manos
               </p>
               <p className="mt-5 max-w-xl text-lg leading-relaxed text-ink/80">
                 Corrección de estilo —sin inteligencia artificial— de novelas,
@@ -104,10 +105,13 @@ export async function CorreccionDeEstiloContent() {
               </div>
               <div className="absolute -left-6 bottom-14 flex flex-col items-center gap-3">
                 <div className="relative z-10 h-36 w-36 overflow-hidden rounded-full border-[6px] border-cream shadow-2xl">
-                  <img
+                  <Image
                     src="https://pub-31f388eee9ee467086e726e2865e639a.r2.dev/web/amparo-rozo-correctora-estilo.jpg"
                     alt="Amparo Rozo"
-                    className="h-full w-full object-cover"
+                    fill
+                    sizes="144px"
+                    className="object-cover"
+                    priority
                   />
                 </div>
                 <div className="max-w-[240px] rounded-2xl border border-ink/5 bg-white/95 px-4 py-3 text-center shadow-md backdrop-blur-md">
