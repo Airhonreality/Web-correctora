@@ -262,7 +262,7 @@ Elimina las muletillas. Palabras y expresiones que se repiten sin darte cuenta (
 
 Revisa la coherencia. ¿El personaje tenía los ojos verdes en el capítulo 3 y cafés en el capítulo 20? ¿La escena ocurre de día y dos párrafos después ya es de noche sin ninguna explicación? Estas inconsistencias son de las más difíciles de detectar por el propio autor, precisamente porque conoces la historia de memoria.
 
-Cuida los tiempos verbales. Cambiar de pasado a presente sin intención rompe la inmersión del lector.
+Cuida los tiempos verbales. Cambiar de pasado a presente sin un propósito claro altera la fluidez de la lectura.
 
 No le tengas miedo a cortar. Si una escena no mueve la trama ni desarrolla a un personaje, probablemente sobra.
 

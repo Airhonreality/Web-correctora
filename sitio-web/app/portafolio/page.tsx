@@ -72,24 +72,15 @@ export default async function PortafolioPage() {
       {/* Bloque 1 — Encabezado sobre fondo rojizo */}
       <Band tone="rose" className="pt-16 pb-10 md:pt-20 md:pb-12">
         <Container>
-          <div className="grid grid-cols-1 gap-8 md:grid-cols-5 md:items-end">
-            <div className="md:col-span-3">
-              <span className="block h-px w-16 bg-ink/25" aria-hidden="true" />
-              <p className="mt-5 max-w-xl text-lg leading-relaxed text-ink/75">
-                Una muestra de manuscritos que he corregido — de distintos
-                géneros, todos con el mismo cuidado palabra por palabra.
-              </p>
-            </div>
-            {testimonials.length > 0 && (
-              <div className="md:col-span-2 md:text-right">
-                <p className="font-display text-5xl italic leading-none text-ink">
-                  {testimonials.length}
-                </p>
-                <p className="mt-2 text-sm italic text-ink/70">
-                  Autores respaldan este trabajo
-                </p>
-              </div>
-            )}
+          <div className="max-w-3xl">
+            <span className="block h-px w-16 bg-ink/25" aria-hidden="true" />
+            <h1 className="mt-5 text-3xl font-bold leading-tight tracking-tight text-ink md:text-4xl">
+              Estos son algunos ejemplos de los manuscritos corregidos
+            </h1>
+            <p className="mt-5 max-w-xl text-lg leading-relaxed text-ink/75">
+              Una muestra de manuscritos que he corregido — de distintos
+              géneros, todos con el mismo cuidado palabra por palabra.
+            </p>
           </div>
         </Container>
       </Band>
@@ -222,8 +213,9 @@ export default async function PortafolioPage() {
               ¿Quieres que tu libro sea el próximo?
             </h2>
             <p className="mt-4 max-w-md text-lg text-ink/75">
-              Solicita una cotización sin compromiso, o envía una muestra gratis
-              de tu manuscrito y reviso las primeras páginas.
+              Solicita una cotización sin compromiso. Si gustas, puedes enviarme
+              dos páginas del manuscrito para revisión, con el fin de que
+              conozcas el método y la calidad de mi trabajo de corrección.
             </p>
           </div>
           <div className="flex flex-col items-start gap-5 md:items-end">
@@ -236,13 +228,13 @@ export default async function PortafolioPage() {
             </WhatsAppButton>
             <a
               href={whatsappHref(
-                "Hola Amparo, quiero enviar una muestra gratis de mi manuscrito."
+                "Hola Amparo, quiero enviar dos páginas de mi manuscrito para revisión."
               )}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 border-b border-cream/40 pb-0.5 font-semibold text-cream/90 transition-colors hover:border-cream hover:text-cream"
             >
-              Enviar una muestra gratis <span>→</span>
+              Envía dos páginas sin ningún costo <span>→</span>
             </a>
           </div>
         </Container>

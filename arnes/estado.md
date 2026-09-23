@@ -6,6 +6,16 @@ Se lee al arrancar cualquier sesión, se actualiza al cerrar cada tarea o al rei
 Fase 1 (investigación, copy, diseño, stack) cerrada. Fase 2 (implementación) en marcha: el sitio vive en `sitio-web/` (Next.js + Tailwind + Neon + R2), con repo propio en GitHub (`Airhonreality/Amparo_Correcciones`) y contenido real ya cargado en producción de datos (Neon).
 
 ## Última sesión cerrada
+**Fecha:** 2026-09-22 (portafolio y blog: cierre de correcciones pendientes; commit + push)
+**Qué se hizo (pedido directo del humano: "implementa y push"):**
+- **Portafolio, bloque CTA final** (`sitio-web/app/portafolio/page.tsx`): texto reemplazado → *"Solicita una cotización sin compromiso. Si gustas, puedes enviarme dos páginas del manuscrito para revisión, con el fin de que conozcas el método y la calidad de mi trabajo de corrección."* y el link secundario pasa a **"Enviar dos páginas sin ningún costo"** (mensaje WhatsApp → "quiero enviar dos páginas de mi manuscrito para revisión").
+- **Blog "Cómo mejorar el estilo de mi novela"** (`sitio-web/scripts/seed.ts`): frase de tiempos verbales → *"Cuida los tiempos verbales. Cambiar de pasado a presente sin un propósito claro altera la fluidez de la lectura."* Se creó `sitio-web/scripts/update-blog-tiempos-verbales.ts` para aplicar el mismo cambio en Neon (producción).
+- **⚠️ PENDIENTE de aplicar en Neon:** la actualización del post del blog NO se ejecutó todavía. La `DATABASE_URL` de `.env.local` está redactada (`"[SENSITIVE]"`, sin valor real); el humano pidió pushear solo el código. Falta correr `scripts/update-blog-tiempos-verbales.ts` contra Neon con una `DATABASE_URL` real (usada solo en el comando, no guardada).
+- En esta sesión también quedaron antes: el título del portafolio ("Estos son algunos ejemplos de los manuscritos corregidos" como H1, se retiró el contador "11 autores respaldan este trabajo") y la corrección de la coma del copy del home ("…y el tono adecuado para que la lectura sea fluida…") en `correccion-de-estilo-content.tsx` y `/perfil`.
+- Commits: `cace341`→ previo; este trabajo va en commit nuevo (código). Verificado: `tsc --noEmit` limpio.
+- **Archivos afectados:** `sitio-web/app/portafolio/page.tsx`, `sitio-web/components/correccion-de-estilo-content.tsx`, `sitio-web/app/perfil/page.tsx`, `sitio-web/scripts/seed.ts`, `sitio-web/scripts/update-blog-tiempos-verbales.ts` (nuevo), `arnes/estado.md` (este registro).
+
+## Sesión cerrada antes
 **Fecha:** 2026-09-17 (tuteo + espacios móviles)
 **Qué se hizo (implementado, verificado y desplegado):**
 - **Tuteo:** el hero del home pasa a "**Tu** texto está en buenas manos" (y su imagen OpenGraph `app/opengraph-image.tsx`). Se auditaron las páginas públicas: el resto del copy ya usa "tú" (el "su" restante es tercera persona del libro/trabajo, no de usted).

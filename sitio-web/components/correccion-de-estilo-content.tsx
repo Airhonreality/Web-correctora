@@ -67,8 +67,8 @@ export async function CorreccionDeEstiloContent() {
               </p>
               <p className="mt-4 max-w-xl font-display text-lg leading-relaxed text-ink/75">
                 La corrección de estilo dota a tu manuscrito de claridad,
-                precisión, expresividad y tono adecuado, para que la lectura sea
-                fluida, armónica y entretenida.
+                precisión, expresividad y el tono adecuado para que la lectura
+                sea fluida, armónica y entretenida.
               </p>
               <div className="mt-9 flex flex-wrap items-center gap-x-6 gap-y-4">
                 <WhatsAppButton

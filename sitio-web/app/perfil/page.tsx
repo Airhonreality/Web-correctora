@@ -39,7 +39,7 @@ export default async function PerfilPage() {
               </p>
               <p className="font-display text-2xl lg:text-3xl leading-snug text-ink italic border-l-4 border-ink/20 pl-6">
                 &ldquo;La corrección de estilo dota a tu manuscrito de claridad, precisión,
-                expresividad y el tono adecuado, para que la lectura sea fluida,
+                expresividad y el tono adecuado para que la lectura sea fluida,
                 armónica y entretenida.&rdquo;
               </p>
               <p className="text-lg text-ink/80 leading-relaxed">
