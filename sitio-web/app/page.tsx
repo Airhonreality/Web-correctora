@@ -51,15 +51,15 @@ export default async function Home() {
               </div>
             </div>
 
-            {/* Composición Visual: Arco + Cameo (5 Columnas) */}
-            <div className="col-span-1 lg:col-span-5 relative hidden lg:block flex flex-col items-end">
+            {/* Composición Visual: Arco + Cameo */}
+            <div className="lg:col-span-5 relative flex flex-col items-center lg:items-end">
                {/* 1. El Arco (Carrusel de eventos) */}
-               <div className="aspect-[3/4] w-full max-w-[85%] rounded-tr-full rounded-tl-full overflow-hidden shadow-xl border-4 border-white/50 bg-white">
+               <div className="aspect-[3/4] w-full max-w-[85%] mx-auto rounded-tr-full rounded-tl-full overflow-hidden shadow-xl border-4 border-white/50 bg-white">
                   <EventsCarousel />
                </div>
 
                {/* 2. El Cameo (Retrato superpuesto) */}
-               <div className="absolute -left-6 top-1/2 -translate-y-1/2 flex flex-col items-center gap-3">
+               <div className="mx-auto mt-8 flex flex-col items-center gap-3">
                   <div className="w-32 h-32 shrink-0 rounded-full overflow-hidden shadow-2xl border-[6px] border-cream relative z-10">
                     <img 
                       src="https://pub-31f388eee9ee467086e726e2865e639a.r2.dev/web/amparo-rozo-correctora-estilo.jpg" 
@@ -128,18 +128,8 @@ export default async function Home() {
             </p>
           </div>
 
-          {/* Compromiso artesanal: ancho completo */}
-          <div className="mt-6 mb-10 text-center">
-            <p className="font-display text-lg italic text-ink leading-relaxed max-w-3xl mx-auto">
-              Mi corrección es 100% humana y artesanal: leo tu manuscrito
-              palabra por palabra, aplicando mi criterio como escritora y
-              periodista, sin recurrir a inteligencia artificial ni a herramientas
-              automáticas que decidan por ti.
-            </p>
-          </div>
-
-          {/* Dos columnas de compromisos */}
-          <div className="mt-8 grid gap-6 lg:grid-cols-2">
+{/* Dos columnas de compromisos */}
+           <div className="mt-8 grid gap-6 lg:grid-cols-2">
             {/* Columna 1 */}
             <div className="flex flex-col gap-3 text-lg leading-relaxed text-ink/90">
               <div className="flex items-start gap-3">
@@ -314,22 +304,23 @@ export default async function Home() {
       </section>
 
       {/* Banner compacto de confidencialidad */}
-      <section className="bg-cream py-8 sm:py-12 border-t border-ink/10">
+      <section className="bg-cream py-6 sm:py-10 border-t border-ink/10">
         <Container className="max-w-6xl">
-          <div className="bg-banner-confidencialidad rounded-3xl p-6 sm:p-8 flex flex-col sm:flex-row items-center gap-4 sm:gap-6">
+          <div className="bg-banner-confidencialidad rounded-3xl p-4 sm:p-6 flex flex-col sm:flex-row items-center gap-3 sm:gap-4">
             <div className="flex-shrink-0">
-              <div className="relative inline-flex items-center justify-center w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-ink/20 border border-ink/30">
-                <FileText className="h-5 w-5 sm:h-6 sm:w-6 text-ink" aria-hidden="true" />
-                <Heart className="absolute -right-0.5 -bottom-0.5 h-3.5 w-3.5 sm:h-4 sm:w-4 text-gold" aria-hidden="true" />
+              <div className="relative inline-flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-ink/20 border border-ink/30">
+                <FileText className="h-4 w-4 sm:h-5 sm:w-5 text-ink" aria-hidden="true" />
+                <Heart className="absolute -right-0.5 -bottom-0.5 h-3 w-3 sm:h-3.5 sm:w-3.5 text-gold" aria-hidden="true" />
               </div>
             </div>
-            <ul className="flex flex-col sm:flex-row gap-3 sm:gap-6 text-base sm:text-lg leading-relaxed text-ink/90">
+            <ul className="flex flex-col sm:flex-row gap-2 sm:gap-4 text-sm sm:text-base leading-relaxed text-ink/90">
               <li className="flex items-center gap-2">
-                <strong className="font-bold italic">Contrato de prestación de servicios de corrección de estilo</strong>
-                <span className="text-ink/40 hidden sm:inline">|</span>
+                <span className="text-ink/40">•</span>
+                <span className="font-medium">Contrato de prestación de servicios de corrección de estilo</span>
               </li>
               <li className="flex items-center gap-2">
-                <strong className="font-bold italic">Acuerdo de confidencialidad</strong> del material a corregir, con la certeza de que este no pasará a terceros ni será divulgado sin tu autorización.
+                <span className="text-ink/40">•</span>
+                <span className="font-medium">Acuerdo de confidencialidad del material a corregir</span>
               </li>
             </ul>
           </div>
