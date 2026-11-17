@@ -26,7 +26,7 @@ export function TestimonialSlider({
     if (reduceMotion) return;
     const timer = setInterval(
       () => setIndex((current) => (current + 1) % testimonials.length),
-      9000,
+          10000,
     );
     return () => clearInterval(timer);
   }, [index, paused, testimonials.length]);
@@ -49,19 +49,19 @@ export function TestimonialSlider({
       <div className="max-w-4xl mx-auto py-12 sm:py-16 lg:py-20 px-6 sm:px-10 relative z-10">
         <figure className="text-center transition-opacity duration-500">
           <div
-            className="pointer-events-none font-display text-[90px] leading-none text-cream/20 aria-hidden"
+            className="pointer-events-none font-display text-[90px] leading-none text-ink/10 aria-hidden"
             aria-hidden="true"
           >
             &ldquo;
           </div>
-          <blockquote className="mt-4 font-display text-2xl italic leading-relaxed text-cream sm:text-3xl">
+          <blockquote className="mt-4 font-display text-2xl italic leading-relaxed text-ink sm:text-3xl">
             &ldquo;{t.quote}&rdquo;
           </blockquote>
-          <figcaption className="mt-8 text-sm font-bold uppercase tracking-widest text-cream/90">
+          <figcaption className="mt-8 text-sm font-bold uppercase tracking-widest text-ink/80">
             — {t.clientName}
           </figcaption>
           {t.bookTitle && (
-            <p className="mt-2 text-xs uppercase tracking-wider text-cream/70">
+            <p className="mt-2 text-xs uppercase tracking-wider text-ink/60">
               Autor de {t.bookTitle}
             </p>
           )}
@@ -73,7 +73,7 @@ export function TestimonialSlider({
               type="button"
               onClick={prev}
               aria-label="Testimonio anterior"
-              className="rounded-full p-2 text-cream/80 hover:text-cream transition-colors hover:bg-cream/10"
+              className="rounded-full p-2 text-ink/70 hover:text-ink transition-colors hover:bg-ink/10"
             >
               <ChevronLeft size={20} strokeWidth={2} />
             </button>
@@ -86,8 +86,8 @@ export function TestimonialSlider({
                   aria-current={i === index}
                   className={`h-1.5 w-1.5 rounded-full transition-all ${
                     i === index
-                      ? "w-5 bg-cream"
-                      : "w-1.5 bg-cream/30 hover:bg-cream/50"
+                      ? "w-5 bg-ink"
+                      : "w-1.5 bg-ink/20 hover:bg-ink/40"
                   }`}
                 />
               ))}
@@ -96,7 +96,7 @@ export function TestimonialSlider({
               type="button"
               onClick={next}
               aria-label="Siguiente testimonio"
-              className="rounded-full p-2 text-cream/80 hover:text-cream transition-colors hover:bg-cream/10"
+              className="rounded-full p-2 text-ink/70 hover:text-ink transition-colors hover:bg-ink/10"
             >
               <ChevronRight size={20} strokeWidth={2} />
             </button>
