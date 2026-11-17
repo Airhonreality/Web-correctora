@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { Container, Band } from "@/components/container";
 import { WhatsAppButton } from "@/components/whatsapp-button";
 import { pageMetadata } from "@/lib/seo";
@@ -21,16 +20,17 @@ const trayectoria = [
   "Novelas y textos de autores independientes.",
 ];
 
+const R2 = "https://pub-31f388eee9ee467086e726e2865e639a.r2.dev";
+
 export default function PerfilPage() {
   return (
     <>
       {/* Hero / Bio de Autoridad */}
       <Band tone="cream-soft" className="py-24 border-b border-ink/5">
         <Container>
-          <div className="flex flex-col md:flex-row gap-12 items-center">
+          <div className="flex flex-col md:flex-row gap-12 items-start">
             <div className="w-full md:w-1/2 flex flex-col gap-6">
-              <h1 className="font-display text-4xl sm:text-5xl italic text-ink">Mi perfil</h1>
-              <h2 className="font-display text-3xl italic text-ink mt-2">Amparo Rozo</h2>
+              <h1 className="font-display text-4xl sm:text-5xl italic text-ink">Amparo Rozo</h1>
               <p className="text-xl text-teal-dark font-medium leading-relaxed">
                 Profesional en Comunicación Social y Periodismo de la Universidad Externado de Colombia (1998). Amplia experiencia en corrección de estilo de textos literarios, memorias, libros de crecimiento personal, especializados, etc.
               </p>
@@ -41,7 +41,7 @@ export default function PerfilPage() {
             <div className="w-full md:w-1/2 flex flex-col items-center">
               <div className="relative aspect-[4/5] w-full max-w-sm bg-ink/5 rounded-xl overflow-hidden shadow-2xl border border-ink/10">
                 <img
-                  src="https://pub-31f388eee9ee467086e726e2865e639a.r2.dev/web/amparo-rozo-filbo-2022.avif"
+                  src={`${R2}/web/amparo-rozo-filbo-2022.avif`}
                   alt="Amparo Rozo firmando libros en la Feria Internacional del Libro (Filbo) 2022"
                   className="object-cover w-full h-full hover:scale-105 transition-transform duration-500"
                 />
@@ -54,52 +54,60 @@ export default function PerfilPage() {
         </Container>
       </Band>
 
-      {/* Vitrina de Publicaciones */}
+      {/* Portada y Contraportada - Marcianos hijos de p... */}
       <Container className="py-20">
-        <h2 className="font-display text-3xl italic mb-12 text-center text-ink">Mis Novelas</h2>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-          {/* Marcianos hijos de p... */}
-          <div className="flex flex-col items-center text-center gap-4">
+        <div className="flex flex-col md:flex-row gap-8 items-center max-w-5xl mx-auto">
+          <div className="w-full md:w-1/2 flex flex-col items-center text-center gap-4">
             <img
-              src="https://pub-31f388eee9ee467086e726e2865e639a.r2.dev/libros/34db07cd-39fc-494e-9597-8d0a175d5974.jpg"
+              src={`${R2}/libros/34db07cd-39fc-494e-9597-8d0a175d5974.jpg`}
               alt="Portada de Marcianos hijos de p..."
-              className="w-full max-w-[240px] rounded-md shadow-xl object-cover hover:scale-105 transition-transform"
+              className="w-full max-w-[240px] rounded-md shadow-xl object-cover"
             />
-            <h3 className="font-display text-2xl font-bold text-ink">Marcianos hijos de p...</h3>
-            <p className="text-sm text-ink/70 leading-relaxed max-w-xs">
-              Novela de ficción publicada por el Grupo Editorial Ibáñez, sello Sképsi (2025). Inspirada en hechos reales.
-            </p>
           </div>
-
-          {/* Leonidas / Juro por mis orejas */}
-          <div className="flex flex-col items-center text-center gap-4">
+          <div className="w-full md:w-1/2 flex flex-col items-center text-center gap-4">
             <img
-              src="https://pub-31f388eee9ee467086e726e2865e639a.r2.dev/libros/7e90895d-6d66-4a23-bc5f-7046beb51bcf.jpg"
-              alt="Portada de Leonidas / Juro por mis orejas"
-              className="w-full max-w-[240px] rounded-md shadow-xl object-cover hover:scale-105 transition-transform"
+              src={`${R2}/libros/34db07cd-39fc-494e-9597-8d0a175d5974.jpg`}
+              alt="Contraportada de Marcianos hijos de p..."
+              className="w-full max-w-[240px] rounded-md shadow-xl object-cover"
             />
-            <h3 className="font-display text-2xl font-bold text-ink">Leonidas</h3>
-            <p className="text-sm text-ink/70 leading-relaxed max-w-xs">
-              Segunda edición de Juro por mis orejas, bajo nuevo título (en proceso de publicación).
-            </p>
           </div>
         </div>
+      </Container>
 
-        <div className="mt-14 text-center">
-          <Link
-            href="/escritora"
-            className="inline-flex h-12 items-center justify-center rounded-md border-2 border-anchor px-8 font-semibold text-anchor transition-colors hover:bg-anchor hover:text-cream"
-          >
-            Conocer más o adquirir mis libros
-          </Link>
+      {/* Leonidas / Juro por mis orejas - portada en 3D */}
+      <Container className="py-20">
+        <div className="flex justify-center">
+          <img
+            src={`${R2}/libros/7e90895d-6d66-4a23-bc5f-7046beb51bcf.jpg`}
+            alt="Portada de Leonidas / Juro por mis orejas"
+            className="w-full max-w-[300px] rounded-md shadow-2xl object-cover"
+          />
+        </div>
+      </Container>
+
+      {/* Segunda edición - portada y página interior */}
+      <Container className="py-20">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+          <div className="flex flex-col items-center text-center gap-4">
+            <img
+              src={`${R2}/libros/7e90895d-6d66-4a23-bc5f-7046beb51bcf.jpg`}
+              alt="Leonidas - portada"
+              className="w-full max-w-[240px] rounded-md shadow-xl object-cover"
+            />
+          </div>
+          <div className="flex flex-col items-center text-center gap-4">
+            <img
+              src={`${R2}/libros/7e90895d-6d66-4a23-bc5f-7046beb51bcf.jpg`}
+              alt="Página interior - Leonidas"
+              className="w-full max-w-[240px] rounded-md shadow-xl object-cover"
+            />
+          </div>
         </div>
       </Container>
 
       {/* Validación en Medios / Social Proof */}
       <Band tone="cream-soft" className="py-20 border-t border-ink/5">
         <Container>
-          {/* Entrevista Cablenoticias: título izquierda, video derecha */}
           <section className="flex flex-col md:flex-row gap-12 items-start mb-16">
             <div className="w-full md:w-1/2 flex flex-col justify-center gap-4">
               <h2 className="font-display text-3xl sm:text-4xl italic text-burgundy">
@@ -112,10 +120,10 @@ export default function PerfilPage() {
                   controls
                   preload="metadata"
                   className="w-full h-full object-cover"
-                  poster="https://pub-31f388eee9ee467086e726e2865e639a.r2.dev/web/amparo-rozo-correctora-estilo.jpg"
+                  poster={`${R2}/web/amparo-rozo-correctora-estilo.jpg`}
                 >
                   <source
-                    src="https://pub-31f388eee9ee467086e726e2865e639a.r2.dev/web/amparo-rozo-canal-uno-gps.mp4"
+                    src={`${R2}/web/amparo-rozo-canal-uno-gps.mp4`}
                     type="video/mp4"
                   />
                   Tu navegador no soporta el formato de video.
