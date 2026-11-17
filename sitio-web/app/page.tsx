@@ -116,15 +116,20 @@ export default async function Home() {
             </h2>
           </div>
 
+          {/* Encabezado principal: ancho completo */}
+          <div className="mt-14 mb-10 text-center">
+            <p className="font-semibold text-ink leading-relaxed max-w-2xl mx-auto">
+              Corregir tu manuscrito sin recurrir a herramientas de IA ni a
+              correctores automáticos que sustituyan el análisis lingüístico;
+              de este modo, preservar los matices, el lenguaje y las
+              expresiones propias del castellano.
+            </p>
+          </div>
+
+          {/* Dos columnas de compromisos */}
           <div className="mt-12 grid gap-8 lg:grid-cols-2">
             {/* Columna 1 */}
             <div className="flex flex-col gap-5 text-lg leading-relaxed text-ink/90">
-              <p className="font-semibold text-ink leading-relaxed">
-                Corregir tu manuscrito sin recurrir a herramientas de IA ni a
-                correctores automáticos que sustituyan el análisis lingüístico;
-                de este modo, preservar los matices, el lenguaje y las
-                expresiones propias del castellano.
-              </p>
               <div className="flex items-start gap-3">
                 <Check className="mt-1 h-5 w-5 shrink-0 text-teal-dark" aria-hidden="true" />
                 <span>
