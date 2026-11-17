@@ -272,42 +272,45 @@ export default async function Home() {
       </section>
 
       {/* D. Banner de confidencialidad + sección IA */}
-      <section className="bg-cream py-24 sm:py-32">
+      {/* Banner confidencialidad (izquierda, horizontal) + IA (derecha, vertical) */}
+      <section className="bg-cream py-16 sm:py-24 border-t border-ink/10">
         <Container className="max-w-6xl">
-
-          {/* Banner confidencialidad */}
-          <section className="bg-banner-confidencialidad rounded-3xl p-6 sm:p-10 text-ink mb-10 sm:mb-16 flex flex-col sm:flex-row items-center gap-6 sm:gap-10">
-            <div className="flex-shrink-0 sm:flex-shrink-0">
-              <div className="relative inline-flex items-center justify-center w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-terracotta/20 border border-cream/30">
-                <Mail className="h-6 w-6 sm:h-8 sm:w-8 text-cream" aria-hidden="true" />
-                <Heart className="absolute -right-1 -bottom-1 h-4 w-4 sm:h-5 sm:w-5 text-gold" aria-hidden="true" />
+          <div className="grid gap-8 lg:grid-cols-4 items-start">
+            {/* Columna izquierda: confidencialidad (horizontal) */}
+            <section
+              className="lg:col-span-3 bg-banner-confidencialidad rounded-3xl p-6 sm:p-10 text-ink flex flex-col sm:flex-row items-center gap-6 sm:gap-8"
+            >
+              <div className="flex-shrink-0 sm:flex-shrink-0">
+                <div className="relative inline-flex items-center justify-center w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-ink/20 border border-ink/30">
+                  <Mail className="h-5 w-5 sm:h-6 sm:w-6 text-ink" aria-hidden="true" />
+                  <Heart className="absolute -right-1 -bottom-1 h-4 w-4 sm:h-5 sm:w-5 text-gold" aria-hidden="true" />
+                </div>
               </div>
-            </div>
-            <div className="flex-1">
-              <p className="font-display text-base sm:text-lg leading-relaxed">
-                Firmamos un <strong className="text-cream font-bold italic">acuerdo de confidencialidad</strong> del material a corregir, con la certeza de que este no pasará a terceros ni será divulgado sin tu autorización.
+              <div className="flex-1">
+                <p className="font-display text-sm sm:text-base leading-relaxed">
+                  Firmamos un <strong className="text-ink font-bold italic">acuerdo de confidencialidad</strong> del material a corregir, con la certeza de que este no pasará a terceros ni será divulgado sin tu autorización.
+                </p>
+              </div>
+            </section>
+
+            {/* Columna derecha: IA (rectángulo vertical) */}
+            <article className="lg:col-span-1 flex flex-col rounded-3xl border-2 border-teal bg-white p-6 sm:p-8 shadow-sm">
+              <p className="text-xs font-bold uppercase tracking-[0.24em] text-teal-dark mb-2 sm:mb-4">
+                Humano vs. Inteligencia artificial
               </p>
-            </div>
-          </section>
-
-          {/* Sección IA compacta */}
-          <article className="flex flex-col rounded-3xl border-2 border-teal bg-white p-8 shadow-sm sm:p-10">
-            <p className="text-xs font-bold uppercase tracking-[0.24em] text-teal-dark">
-              Humano vs. Inteligencia artificial
-            </p>
-            <h2 className="mt-4 font-display text-3xl italic leading-snug text-ink sm:text-4xl">
-              ¿Por qué un corrector humano y no una IA?
-            </h2>
-            <p className="mt-6 text-base leading-relaxed text-ink/85">
-              El software no diferencia el uso de la tilde diacrítica en
-              palabras como <em>cuánto/cuanto</em>, <em>qué/que</em> o{" "}
-              <em>dónde/donde</em>, cuya aplicación cambia el significado de
-              la frase. Tampoco reconoce expresiones coloquiales, ni detecta
-              incoherencias de la trama, situaciones inverosímiles o errores
-              de contenido como fechas y lugares que no cuadran.
-            </p>
-          </article>
-
+              <h2 className="mt-0 mb-3 font-display text-2xl sm:text-3xl italic leading-snug text-ink">
+                ¿Por qué un corrector humano y no una IA?
+              </h2>
+              <p className="mt-2 text-sm sm:text-base leading-relaxed text-ink/85">
+                El software no diferencia el uso de la tilde diacrítica en
+                palabras como <em>cuánto/cuanto</em>, <em>qué/que</em> o{" "}
+                <em>dónde/donde</em>, cuya aplicación cambia el significado de
+                la frase. Tampoco reconoce expresiones coloquiales, ni detecta
+                incoherencias de la trama, situaciones inverosímiles o errores
+                de contenido como fechas y lugares que no cuadran.
+              </p>
+            </article>
+          </div>
         </Container>
       </section>
 
