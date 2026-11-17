@@ -316,50 +316,25 @@ export default async function Home() {
         </div>
       </section>
 
-      {/* D. Banner de confidencialidad + sección IA */}
-      {/* Banner confidencialidad (izquierda, horizontal) + IA (derecha, vertical) */}
-      <section className="bg-cream py-16 sm:py-24 border-t border-ink/10">
+      {/* Banner compacto de confidencialidad */}
+      <section className="bg-cream py-8 sm:py-12 border-t border-ink/10">
         <Container className="max-w-6xl">
-          <div className="grid gap-10 lg:grid-cols-2 items-start">
-            {/* Columna izquierda: confidencialidad (horizontal) */}
-            <section
-              className="bg-banner-confidencialidad rounded-3xl p-8 sm:p-12 flex flex-col sm:flex-row items-center gap-8 sm:gap-10"
-            >
-              <div className="flex-shrink-0 sm:flex-shrink-0">
-                <div className="relative inline-flex items-center justify-center w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-ink/20 border border-ink/30">
-                  <FileText className="h-6 w-6 sm:h-8 sm:w-8 text-ink" aria-hidden="true" />
-                  <Heart className="absolute -right-1 -bottom-1 h-4 w-4 sm:h-5 sm:w-5 text-gold" aria-hidden="true" />
-                </div>
+          <div className="bg-banner-confidencialidad rounded-3xl p-6 sm:p-8 flex flex-col sm:flex-row items-center gap-4 sm:gap-6">
+            <div className="flex-shrink-0">
+              <div className="relative inline-flex items-center justify-center w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-ink/20 border border-ink/30">
+                <FileText className="h-5 w-5 sm:h-6 sm:w-6 text-ink" aria-hidden="true" />
+                <Heart className="absolute -right-0.5 -bottom-0.5 h-3.5 w-3.5 sm:h-4 sm:w-4 text-gold" aria-hidden="true" />
               </div>
-              <div className="flex-1">
-                <ul className="flex flex-col gap-3 text-lg leading-relaxed text-ink/90 space-y-3 list-disc list-outside pl-6">
-                  <li>
-                    <strong className="font-bold italic">Contrato de prestación de servicios de corrección de estilo</strong>, estableciendo los alcances, tiempos y condiciones del trabajo sobre tu manuscrito.
-                  </li>
-                  <li>
-                    <strong className="font-bold italic">Acuerdo de confidencialidad</strong> del material a corregir, con la certeza de que este no pasará a terceros ni será divulgado sin tu autorización.
-                  </li>
-                </ul>
-              </div>
-            </section>
-
-            {/* Columna derecha: IA (rectángulo vertical) */}
-            <article className="flex flex-col rounded-3xl border-2 border-teal bg-white p-8 sm:p-12 shadow-sm">
-              <p className="text-xs font-bold uppercase tracking-[0.24em] text-teal-dark mb-3 sm:mb-6">
-                Humano vs. Inteligencia artificial
-              </p>
-              <h2 className="mt-0 mb-4 font-display text-2xl sm:text-3xl italic leading-snug text-ink">
-                ¿Por qué un corrector humano y no una IA?
-              </h2>
-              <p className="mt-3 text-base leading-relaxed text-ink/85">
-                El software no diferencia el uso de la tilde diacrítica en
-                palabras como <em>cuánto/cuanto</em>, <em>qué/que</em> o{" "}
-                <em>dónde/donde</em>, cuya aplicación cambia el significado de
-                la frase. Tampoco reconoce expresiones coloquiales, ni detecta
-                incoherencias de la trama, situaciones inverosímiles o errores
-                de contenido como fechas y lugares que no cuadran.
-              </p>
-            </article>
+            </div>
+            <ul className="flex flex-col sm:flex-row gap-3 sm:gap-6 text-base sm:text-lg leading-relaxed text-ink/90">
+              <li className="flex items-center gap-2">
+                <strong className="font-bold italic">Contrato de prestación de servicios de corrección de estilo</strong>
+                <span className="text-ink/40 hidden sm:inline">|</span>
+              </li>
+              <li className="flex items-center gap-2">
+                <strong className="font-bold italic">Acuerdo de confidencialidad</strong> del material a corregir, con la certeza de que este no pasará a terceros ni será divulgado sin tu autorización.
+              </li>
+            </ul>
           </div>
         </Container>
       </section>

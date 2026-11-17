@@ -1,11 +1,10 @@
 "use client";
 
-import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { ChevronLeft, ChevronRight, X } from "lucide-react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 import { Container } from "@/components/container";
-import { WhatsAppButton } from "@/components/whatsapp-button";
 
 export type PortfolioSliderItem = {
   id: number;
@@ -41,11 +40,9 @@ function summaryLines(summary: string) {
 
 function Card({
   item,
-  onOpen,
   colorVar,
 }: {
   item: PortfolioSliderItem;
-  onOpen: (item: PortfolioSliderItem) => void;
   colorVar: string;
 }) {
   const genre = item.genre.replace(/[.,;:]+$/, "");
@@ -53,11 +50,8 @@ function Card({
   const imgStyle = { backgroundColor: `var(${colorVar})` };
 
   return (
-    <button
-      type="button"
-      onClick={() => onOpen(item)}
-      aria-label={`Ver detalle de ${item.bookTitle}`}
-      className="group flex h-full w-full cursor-pointer flex-col overflow-hidden rounded-lg border border-ink/5 text-left shadow-sm transition-shadow hover:shadow-md focus:outline-none focus-visible:ring-2 focus-visible:ring-teal"
+    <div
+      className="flex h-full w-full cursor-default flex-col overflow-hidden rounded-lg border border-ink/5 text-left shadow-sm"
       style={bgStyle}
     >
       <div className="relative aspect-[2/3] w-full overflow-hidden" style={imgStyle}>
@@ -87,110 +81,6 @@ function Card({
           {summaryLines(item.correctionSummary).slice(0, 2).join(" · ")}
         </p>
       </div>
-    </button>
-  );
-}
-
-function PortfolioModal({
-  item,
-  testimonial,
-  onClose,
-}: {
-  item: PortfolioSliderItem;
-  testimonial?: SliderTestimonial;
-  onClose: () => void;
-}) {
-  const genre = item.genre.replace(/[.,;:]+$/, "");
-  const details = summaryLines(item.correctionSummary);
-  const message = `Hola Amparo, vi tu trabajo en "${item.bookTitle}" (${genre}). Quiero una corrección así para mi manuscrito.`;
-
-  return (
-    <div
-      className="fixed inset-0 z-50 flex items-center justify-center overflow-y-auto p-4 sm:p-8"
-      role="dialog"
-      aria-modal="true"
-      aria-label={`Detalle de ${item.bookTitle}`}
-    >
-      <div
-        className="absolute inset-0 bg-ink/60 backdrop-blur-sm"
-        aria-hidden="true"
-        onClick={onClose}
-      />
-
-      <div className="relative grid w-full max-w-3xl gap-0 overflow-hidden rounded-lg bg-cream shadow-2xl md:grid-cols-[minmax(0,14rem)_1fr]">
-        <button
-          type="button"
-          onClick={onClose}
-          aria-label="Cerrar detalle"
-          className="absolute right-3 top-3 z-10 inline-flex h-9 w-9 items-center justify-center rounded-full bg-white/90 text-ink shadow-sm transition-colors hover:bg-bg-alt"
-          autoFocus
-        >
-          <X className="h-5 w-5" aria-hidden="true" />
-        </button>
-
-        <div className="bg-cream-soft p-6 md:p-8">
-          <div className="relative mx-auto aspect-[2/3] w-full max-w-[13rem] overflow-hidden rounded bg-cream-soft shadow-lg">
-            {item.coverImageUrl ? (
-              <Image
-                src={item.coverImageUrl}
-                alt={`Portada de ${item.bookTitle}`}
-                fill
-                sizes="13rem"
-                className="object-cover"
-              />
-            ) : (
-              <div className="flex h-full w-full items-center justify-center p-4 text-center text-xs text-muted">
-                Portada próximamente
-              </div>
-            )}
-          </div>
-        </div>
-
-        <div className="flex flex-col gap-4 p-6 md:p-8">
-          <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-teal-dark">
-            {genre}
-          </p>
-          <div>
-            <h3 className="font-display text-2xl italic leading-snug text-ink">
-              {item.bookTitle}
-            </h3>
-            <p className="mt-1 text-sm font-semibold text-muted">
-              {item.authorName}
-            </p>
-          </div>
-
-          {details.length > 0 && (
-            <ul className="flex flex-col gap-1.5 text-sm text-ink/80">
-              {details.map((detail) => (
-                <li key={detail} className="flex items-start gap-2">
-                  <span
-                    className="mt-[7px] h-1 w-1 shrink-0 rounded-full bg-teal-dark"
-                    aria-hidden="true"
-                  />
-                  <span>{detail}</span>
-                </li>
-              ))}
-            </ul>
-          )}
-
-          {testimonial && (
-            <blockquote className="rounded-lg border-l-4 border-teal bg-bg-alt p-4">
-              <p className="text-sm italic leading-relaxed text-ink/85">
-                {`"${testimonial.quote}"`}
-              </p>
-              <footer className="mt-2 text-xs font-bold uppercase tracking-wider text-teal-dark">
-                — {testimonial.clientName}
-              </footer>
-            </blockquote>
-          )}
-
-          <div className="mt-auto pt-2">
-            <WhatsAppButton message={message}>
-              Quiero una corrección así
-            </WhatsAppButton>
-          </div>
-        </div>
-      </div>
     </div>
   );
 }
@@ -205,7 +95,6 @@ export function PortfolioSlider({
   showHeader?: boolean;
 }) {
   const trackRef = useRef<HTMLDivElement>(null);
-  const [activeItem, setActiveItem] = useState<PortfolioSliderItem | null>(null);
 
   const testimonialByTitle = useMemo(() => {
     const map = new Map<string, SliderTestimonial>();
@@ -265,9 +154,6 @@ export function PortfolioSlider({
 
   const arrowClass =
     "inline-flex h-10 w-10 items-center justify-center rounded-full border border-ink/15 bg-transparent text-ink transition-colors hover:border-ink hover:bg-ink hover:text-cream";
-  const activeTestimonial = activeItem
-    ? (testimonialByTitle.get(normalizeTitle(activeItem.bookTitle)) ?? undefined)
-    : undefined;
 
   return (
     <div>
@@ -334,21 +220,13 @@ export function PortfolioSlider({
                   data-card
                   className="w-[min(78vw,19rem)] flex-none snap-start sm:w-72 lg:w-80"
                 >
-                  <Card item={item} onOpen={setActiveItem} colorVar={colorVar} />
+                  <Card item={item} colorVar={colorVar} />
                 </div>
               );
             })}
           </div>
         </div>
       </div>
-
-      {activeItem && (
-        <PortfolioModal
-          item={activeItem}
-          testimonial={activeTestimonial}
-          onClose={() => setActiveItem(null)}
-        />
-      )}
     </div>
   );
 }
