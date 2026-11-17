@@ -107,7 +107,7 @@ export default async function Opcion1() {
               </p>
             </div>
             <div className="pt-4">
-              <Link href="/correccion-de-estilo" className="inline-flex items-center font-semibold text-teal hover:text-teal-dark transition-colors">
+              <Link href="/" className="inline-flex items-center font-semibold text-teal hover:text-teal-dark transition-colors">
                 Ver todo lo que incluye <span className="ml-2">→</span>
               </Link>
             </div>

@@ -4,7 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { navLinks, siteInfo, whatsappHref } from "@/lib/site";
 import { useState, useEffect } from "react";
-import { Home, Sparkles, Menu, X, BookOpen } from "lucide-react";
+import { Home, Menu, X, BookOpen } from "lucide-react";
 
 export function Nav() {
   const pathname = usePathname();
@@ -44,7 +44,6 @@ export function Nav() {
 
   const primaryMobileLinks = [
     { href: "/", label: "Inicio", icon: Home },
-    { href: "/correccion-de-estilo", label: "Servicios", icon: Sparkles },
     { href: "/portafolio", label: "Portafolio", icon: BookOpen },
   ];
 

@@ -63,7 +63,7 @@ export function serviceJsonLd() {
     },
     availableChannel: {
       "@type": "ServiceChannel",
-      serviceUrl: absoluteUrl("/correccion-de-estilo"),
+      serviceUrl: absoluteUrl("/"),
     },
     offers: {
       "@type": "Offer",
@@ -79,7 +79,7 @@ export function serviceJsonLd() {
 
 export function rootJsonLdGraph() {
   // Solo la identidad de la persona va en todas las páginas. El Service vive
-  // en /correccion-de-estilo, su página canónica, para no repetir el bloque
+  // en la página principal (/), su página canónica, para no repetir el bloque
   // completo (con Offer) en cada página del sitio.
   return {
     "@context": "https://schema.org",

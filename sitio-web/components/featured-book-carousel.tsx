@@ -106,7 +106,7 @@ export function FeaturedBookCarousel({ books }: { books: FeaturedBookData[] }) {
           </div>
           <div className="mt-auto pt-10">
             <Link
-              href="/correccion-de-estilo"
+              href="/"
               className="group inline-flex items-center gap-2 border-b border-ink/25 pb-0.5 font-display text-lg italic transition-colors hover:border-ink"
             >
               Solicitar revisión de un manuscrito similar

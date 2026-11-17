@@ -193,14 +193,14 @@ function PortfolioModal({
 export function PortfolioSlider({
   items,
   testimonials = [],
+  showHeader = false,
 }: {
   items: PortfolioSliderItem[];
   testimonials?: SliderTestimonial[];
+  showHeader?: boolean;
 }) {
   const trackRef = useRef<HTMLDivElement>(null);
   const [activeItem, setActiveItem] = useState<PortfolioSliderItem | null>(null);
-  const [canPrev, setCanPrev] = useState(false);
-  const [canNext, setCanNext] = useState(false);
 
   const testimonialByTitle = useMemo(() => {
     const map = new Map<string, SliderTestimonial>();
@@ -208,37 +208,45 @@ export function PortfolioSlider({
     return map;
   }, [testimonials]);
 
-  const update = useCallback(() => {
-    const el = trackRef.current;
-    if (!el) return;
-    setCanPrev(el.scrollLeft > 4);
-    setCanNext(el.scrollLeft < el.scrollWidth - el.clientWidth - 4);
-  }, []);
+  // Duplicar ítems para crear el efecto de scroll infinito (loop)
+  const displayItems = useMemo(() => {
+    if (items.length <= 1) return items;
+    return [...items, ...items];
+  }, [items]);
 
   useEffect(() => {
-    update();
     const el = trackRef.current;
-    if (!el) return;
-    el.addEventListener("scroll", update, { passive: true });
-    window.addEventListener("resize", update);
-    return () => {
-      el.removeEventListener("scroll", update);
-      window.removeEventListener("resize", update);
-    };
-  }, [update]);
+    if (!el || items.length <= 1) return;
 
-  useEffect(() => {
-    if (!activeItem) return;
-    const onKey = (e: KeyboardEvent) => {
-      if (e.key === "Escape") setActiveItem(null);
+    const HALF = el.scrollWidth / 2;
+
+    // Posicionar el scroll inicial en la mitad (inicio de la segunda vuelta)
+    const setInitial = () => {
+      el.scrollLeft = HALF;
     };
-    document.addEventListener("keydown", onKey);
-    document.body.style.overflow = "hidden";
+    setInitial();
+
+    const handleScroll = () => {
+      const { scrollLeft, scrollWidth, clientWidth } = el;
+      const half = scrollWidth / 2;
+
+      // Llegó al borde izquierdo → saltar a la segunda vuelta (se ve idéntico)
+      if (scrollLeft <= 2) {
+        el.scrollLeft = scrollLeft + half;
+      }
+      // Llegó al borde derecho → saltar a la primera vuelta (se ve idéntico)
+      else if (scrollLeft >= scrollWidth - clientWidth - 2) {
+        el.scrollLeft = scrollLeft - half;
+      }
+    };
+
+    el.addEventListener("scroll", handleScroll, { passive: true });
+    window.addEventListener("resize", setInitial);
     return () => {
-      document.removeEventListener("keydown", onKey);
-      document.body.style.overflow = "";
+      el.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("resize", setInitial);
     };
-  }, [activeItem]);
+  }, [items.length]);
 
   const scrollByCard = (direction: 1 | -1) => {
     const el = trackRef.current;
@@ -251,75 +259,62 @@ export function PortfolioSlider({
   if (items.length === 0) return null;
 
   const arrowClass =
-    "inline-flex h-10 w-10 items-center justify-center rounded-full border border-ink/15 bg-transparent text-ink transition-colors hover:border-ink hover:bg-ink hover:text-cream disabled:pointer-events-none disabled:opacity-30";
+    "inline-flex h-10 w-10 items-center justify-center rounded-full border border-ink/15 bg-transparent text-ink transition-colors hover:border-ink hover:bg-ink hover:text-cream";
   const activeTestimonial = activeItem
     ? (testimonialByTitle.get(normalizeTitle(activeItem.bookTitle)) ?? undefined)
     : undefined;
 
   return (
     <div>
-      <Container className="max-w-6xl">
-        <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
-          <div className="flex max-w-xl flex-col gap-3">
-            <h2 className="font-display text-3xl italic text-ink sm:text-4xl">
-              Libros que he corregido
-            </h2>
-            <p className="text-lg text-muted">
-              Una muestra de manuscritos — de distintos géneros, todos con el
-              mismo cuidado palabra por palabra.
-            </p>
-          </div>
-          <div className="flex items-center gap-6">
-            <Link
-              href="/portafolio"
-              className="text-xs font-bold uppercase tracking-widest text-teal-dark underline decoration-teal/40 underline-offset-4 transition-colors hover:text-teal"
-            >
-              Ver todos los libros corregidos
-            </Link>
-            <div className="flex items-center gap-2">
-              <button
-                type="button"
-                onClick={() => scrollByCard(-1)}
-                disabled={!canPrev}
-                aria-label="Libros anteriores"
-                className={arrowClass}
+      {showHeader && (
+        <Container className="max-w-6xl">
+          <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
+            <div className="flex max-w-xl flex-col gap-3">
+              <h2 className="font-display text-3xl italic text-ink sm:text-4xl">
+                Libros que he corregido
+              </h2>
+              <p className="text-lg text-muted">
+                Una muestra de manuscritos — de distintos géneros, todos con el
+                mismo cuidado palabra por palabra.
+              </p>
+            </div>
+            <div className="flex items-center gap-6">
+              <Link
+                href="/portafolio"
+                className="text-xs font-bold uppercase tracking-widest text-teal-dark underline decoration-teal/40 underline-offset-4 transition-colors hover:text-teal"
               >
-                <ChevronLeft className="h-5 w-5" aria-hidden="true" />
-              </button>
-              <button
-                type="button"
-                onClick={() => scrollByCard(1)}
-                disabled={!canNext}
-                aria-label="Libros siguientes"
-                className={arrowClass}
-              >
-                <ChevronRight className="h-5 w-5" aria-hidden="true" />
-              </button>
+                Ver todos los libros corregidos
+              </Link>
+              <div className="flex items-center gap-2">
+                <button
+                  type="button"
+                  onClick={() => scrollByCard(-1)}
+                  aria-label="Libros anteriores"
+                  className={arrowClass}
+                >
+                  <ChevronLeft className="h-5 w-5" aria-hidden="true" />
+                </button>
+                <button
+                  type="button"
+                  onClick={() => scrollByCard(1)}
+                  aria-label="Libros siguientes"
+                  className={arrowClass}
+                >
+                  <ChevronRight className="h-5 w-5" aria-hidden="true" />
+                </button>
+              </div>
             </div>
           </div>
-        </div>
-      </Container>
+        </Container>
+      )}
 
       <div className="relative mt-8">
-        {canPrev && (
-          <div
-            className="pointer-events-none absolute inset-y-0 left-0 z-10 w-10 bg-gradient-to-r from-sand to-transparent md:w-16"
-            aria-hidden="true"
-          />
-        )}
-        {canNext && (
-          <div
-            className="pointer-events-none absolute inset-y-0 right-0 z-10 w-10 bg-gradient-to-l from-sand to-transparent md:w-16"
-            aria-hidden="true"
-          />
-        )}
-
         <div
           ref={trackRef}
           className="hide-scrollbar overflow-x-auto scroll-smooth px-6 snap-x snap-mandatory"
         >
           <div className="mx-auto flex w-max gap-6">
-            {items.map((item) => (
+            {displayItems.map((item) => (
               <div
                 key={item.id}
                 data-card

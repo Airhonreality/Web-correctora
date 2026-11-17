@@ -15,6 +15,11 @@ export function Footer() {
           <p className="text-sm text-cream/90">
             Comunicadora social-periodista, y escritora
           </p>
+          <p className="mt-3 text-sm text-cream/90 leading-relaxed">
+            Para novelas, memorias, crónicas, libros especializados y de
+            crecimiento profesional — hecha a mano, palabra por palabra, por una
+            escritora y periodista. Sin inteligencia artificial.
+          </p>
         </div>
         <div className="text-sm">
           <p>{siteInfo.email}</p>

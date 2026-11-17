@@ -15,7 +15,7 @@ message: string;
     "inline-flex items-center gap-2 rounded-md px-5 py-3 font-semibold transition-colors";
   const styles =
     variant === "primary"
-      ? "bg-coral text-[var(--color-coral-ink)] hover:brightness-95"
+      ? "bg-button-primary text-ink hover:brightness-95"
       : variant === "light"
         ? "bg-white text-teja hover:brightness-95"
         : variant === "terracotta"

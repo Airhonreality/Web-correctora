@@ -165,7 +165,7 @@ export default async function PortafolioPage() {
                     </div>
                     <div className="mt-auto flex min-w-0 items-end pt-6 pb-1">
                       <Link
-                        href="/correccion-de-estilo"
+                        href="/"
                         className="group inline-flex items-center gap-2 border-b border-ink/25 pb-0.5 text-[11px] font-bold uppercase tracking-widest text-muted transition-colors hover:border-terracotta hover:text-terracotta"
                       >
                         Ver detalles del trabajo
