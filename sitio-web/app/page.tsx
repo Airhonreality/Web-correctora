@@ -37,16 +37,18 @@ export default async function Home() {
         />
         <Container className="relative z-10 max-w-7xl py-12 sm:py-16 lg:py-20 px-8">
           <div className="grid grid-cols-1 items-center gap-10 lg:grid-cols-12 lg:gap-8">
-            <div className="lg:col-span-7">
-              <h1 className="mt-4 font-display text-3xl font-bold leading-[1.05] tracking-tight text-ink text-center sm:text-4xl lg:text-[3.5rem]">
-                Su texto está en buenas manos
-              </h1>
-              <p className="mt-4 max-w-xl text-lg leading-relaxed text-ink/80">
-                En mi trabajo de corrección de estilo, respeto fielmente tu voz
-                y tu sello personal como autor. Además, aporto a tu manuscrito
-                la claridad, la expresividad y el tono preciso que necesita para
-                que la lectura sea fluida, armónica y entretenida.
-              </p>
+            <div className="lg:col-span-7 flex flex-col items-center">
+              <div className="max-w-xl text-center w-full">
+                <h1 className="mt-4 font-display text-3xl font-bold leading-[1.05] tracking-tight text-ink sm:text-4xl lg:text-[3.5rem]">
+                  Tu texto está en buenas manos
+                </h1>
+                <p className="mt-4 text-lg leading-relaxed text-ink/80">
+                  En mi trabajo de corrección de estilo, respeto fielmente tu voz
+                  y tu sello personal como autor. Además, aporto a tu manuscrito
+                  la claridad, la expresividad y el tono preciso que necesita para
+                  que la lectura sea fluida, armónica y entretenida.
+                </p>
+              </div>
             </div>
 
             {/* Composición Visual: Arco + Cameo (5 Columnas) */}
@@ -275,33 +277,33 @@ export default async function Home() {
       {/* Banner confidencialidad (izquierda, horizontal) + IA (derecha, vertical) */}
       <section className="bg-cream py-16 sm:py-24 border-t border-ink/10">
         <Container className="max-w-6xl">
-          <div className="grid gap-8 lg:grid-cols-4 items-start">
+          <div className="grid gap-10 lg:grid-cols-2 items-start">
             {/* Columna izquierda: confidencialidad (horizontal) */}
             <section
-              className="lg:col-span-3 bg-banner-confidencialidad rounded-3xl p-6 sm:p-10 text-ink flex flex-col sm:flex-row items-center gap-6 sm:gap-8"
+              className="bg-banner-confidencialidad rounded-3xl p-8 sm:p-12 flex flex-col sm:flex-row items-center gap-8 sm:gap-10"
             >
               <div className="flex-shrink-0 sm:flex-shrink-0">
-                <div className="relative inline-flex items-center justify-center w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-ink/20 border border-ink/30">
-                  <Mail className="h-5 w-5 sm:h-6 sm:w-6 text-ink" aria-hidden="true" />
+                <div className="relative inline-flex items-center justify-center w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-ink/20 border border-ink/30">
+                  <Mail className="h-6 w-6 sm:h-8 sm:w-8 text-ink" aria-hidden="true" />
                   <Heart className="absolute -right-1 -bottom-1 h-4 w-4 sm:h-5 sm:w-5 text-gold" aria-hidden="true" />
                 </div>
               </div>
               <div className="flex-1">
-                <p className="font-display text-sm sm:text-base leading-relaxed">
-                  Firmamos un <strong className="text-ink font-bold italic">acuerdo de confidencialidad</strong> del material a corregir, con la certeza de que este no pasará a terceros ni será divulgado sin tu autorización.
+                <p className="font-display text-base sm:text-lg leading-relaxed text-button-primary">
+                  Firmamos un <strong className="font-bold italic">acuerdo de confidencialidad</strong> del material a corregir, con la certeza de que este no pasará a terceros ni será divulgado sin tu autorización.
                 </p>
               </div>
             </section>
 
             {/* Columna derecha: IA (rectángulo vertical) */}
-            <article className="lg:col-span-1 flex flex-col rounded-3xl border-2 border-teal bg-white p-6 sm:p-8 shadow-sm">
-              <p className="text-xs font-bold uppercase tracking-[0.24em] text-teal-dark mb-2 sm:mb-4">
+            <article className="flex flex-col rounded-3xl border-2 border-teal bg-white p-8 sm:p-12 shadow-sm">
+              <p className="text-xs font-bold uppercase tracking-[0.24em] text-teal-dark mb-3 sm:mb-6">
                 Humano vs. Inteligencia artificial
               </p>
-              <h2 className="mt-0 mb-3 font-display text-2xl sm:text-3xl italic leading-snug text-ink">
+              <h2 className="mt-0 mb-4 font-display text-2xl sm:text-3xl italic leading-snug text-ink">
                 ¿Por qué un corrector humano y no una IA?
               </h2>
-              <p className="mt-2 text-sm sm:text-base leading-relaxed text-ink/85">
+              <p className="mt-3 text-base leading-relaxed text-ink/85">
                 El software no diferencia el uso de la tilde diacrítica en
                 palabras como <em>cuánto/cuanto</em>, <em>qué/que</em> o{" "}
                 <em>dónde/donde</em>, cuya aplicación cambia el significado de

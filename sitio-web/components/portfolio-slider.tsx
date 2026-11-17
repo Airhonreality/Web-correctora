@@ -314,9 +314,9 @@ export function PortfolioSlider({
           className="hide-scrollbar overflow-x-auto scroll-smooth px-6 snap-x snap-mandatory"
         >
           <div className="mx-auto flex w-max gap-6">
-            {displayItems.map((item) => (
+            {displayItems.map((item, index) => (
               <div
-                key={item.id}
+                key={`${item.id}-${index}`}
                 data-card
                 className="w-[min(78vw,19rem)] flex-none snap-start sm:w-72 lg:w-80"
               >

@@ -13,8 +13,8 @@ const images: CarouselImage[] = [
     alt: 'Lanzamiento Marcianos - Casa Editorial Ibáñez',
   },
   {
-    src: '/event-filbo-conversatorio.jfif',
-    alt: 'Conversatorio Filbo',
+    src: '/conversatorio-marcianos-grupo.jpg',
+    alt: 'Conversatorio Marcianos grupo',
   },
   {
     src: '/event-3.jpg',
