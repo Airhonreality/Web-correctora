@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Check, Heart, Mail } from "lucide-react";
+import { Check, FileText, Heart } from "lucide-react";
 import { Container } from "@/components/container";
 import { WhatsAppButton } from "@/components/whatsapp-button";
 import { JsonLd } from "@/components/json-ld";
@@ -284,14 +284,19 @@ export default async function Home() {
             >
               <div className="flex-shrink-0 sm:flex-shrink-0">
                 <div className="relative inline-flex items-center justify-center w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-ink/20 border border-ink/30">
-                  <Mail className="h-6 w-6 sm:h-8 sm:w-8 text-ink" aria-hidden="true" />
+                  <FileText className="h-6 w-6 sm:h-8 sm:w-8 text-ink" aria-hidden="true" />
                   <Heart className="absolute -right-1 -bottom-1 h-4 w-4 sm:h-5 sm:w-5 text-gold" aria-hidden="true" />
                 </div>
               </div>
               <div className="flex-1">
-                <p className="font-display text-base sm:text-lg leading-relaxed text-ink">
-                  Firmamos un <strong className="font-bold italic">acuerdo de confidencialidad</strong> del material a corregir, con la certeza de que este no pasará a terceros ni será divulgado sin tu autorización.
-                </p>
+                <ul className="flex flex-col gap-3 text-lg leading-relaxed text-ink/90 space-y-3 list-disc list-outside pl-6">
+                  <li>
+                    Firmamos un <strong className="font-bold italic">contrato de prestación de servicios</strong> por el servicio de corrección de estilo, estableciendo los alcances, tiempos y condiciones del trabajo sobre tu manuscrito.
+                  </li>
+                  <li>
+                    Firmamos un <strong className="font-bold italic">acuerdo de confidencialidad</strong> del material a corregir, con la certeza de que este no pasará a terceros ni será divulgado sin tu autorización.
+                  </li>
+                </ul>
               </div>
             </section>
 
