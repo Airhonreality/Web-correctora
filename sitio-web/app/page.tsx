@@ -291,10 +291,10 @@ export default async function Home() {
               <div className="flex-1">
                 <ul className="flex flex-col gap-3 text-lg leading-relaxed text-ink/90 space-y-3 list-disc list-outside pl-6">
                   <li>
-                    Firmamos un <strong className="font-bold italic">contrato de prestación de servicios</strong> por el servicio de corrección de estilo, estableciendo los alcances, tiempos y condiciones del trabajo sobre tu manuscrito.
+                    <strong className="font-bold italic">contrato de prestación de servicios</strong> por el servicio de corrección de estilo, estableciendo los alcances, tiempos y condiciones del trabajo sobre tu manuscrito.
                   </li>
                   <li>
-                    Firmamos un <strong className="font-bold italic">acuerdo de confidencialidad</strong> del material a corregir, con la certeza de que este no pasará a terceros ni será divulgado sin tu autorización.
+                    <strong className="font-bold italic">acuerdo de confidencialidad</strong> del material a corregir, con la certeza de que este no pasará a terceros ni será divulgado sin tu autorización.
                   </li>
                 </ul>
               </div>
