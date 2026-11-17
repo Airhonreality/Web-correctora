@@ -128,6 +128,16 @@ export default async function Home() {
             </p>
           </div>
 
+          {/* Compromiso artesanal: ancho completo */}
+          <div className="mt-6 mb-10 text-center">
+            <p className="font-display text-lg italic text-ink leading-relaxed max-w-3xl mx-auto">
+              Mi corrección es 100% humana y artesanal: leo tu manuscrito
+              palabra por palabra, aplicando mi criterio como escritora y
+              periodista, sin recurrir a inteligencia artificial ni a herramientas
+              automáticas que decidan por ti.
+            </p>
+          </div>
+
           {/* Dos columnas de compromisos */}
           <div className="mt-8 grid gap-6 lg:grid-cols-2">
             {/* Columna 1 */}
@@ -191,19 +201,6 @@ export default async function Home() {
                 <li>Uso correcto de tiempos verbales.</li>
                 <li>Comentarios. Lectura crítica.</li>
               </ul>
-              <div className="flex items-start gap-3">
-                <Check className="mt-1 h-5 w-5 shrink-0 text-teal-dark" aria-hidden="true" />
-                <span className="uppercase tracking-wide font-bold text-teal-dark">
-                  Humanización y corrección de textos generados por IA.
-                </span>
-              </div>
-              <div className="flex items-start gap-3">
-                <Check className="mt-1 h-5 w-5 shrink-0 text-teal-dark" aria-hidden="true" />
-                <span>
-                  Otros servicios: diagramación del libro y diseño de portada
-                  (realizados por un diseñador gráfico).
-                </span>
-              </div>
             </div>
           </div>
         </Container>
