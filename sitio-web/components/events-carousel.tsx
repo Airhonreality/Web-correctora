@@ -13,8 +13,8 @@ const images: CarouselImage[] = [
     alt: 'Lanzamiento Marcianos - Casa Editorial Ibáñez',
   },
   {
-    src: '/event-2.jpg',
-    alt: 'Amparo Rozo en Filbo Marcianos',
+    src: '/event-filbo-conversatorio.jfif',
+    alt: 'Conversatorio Filbo',
   },
   {
     src: '/event-3.jpg',
