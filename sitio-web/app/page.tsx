@@ -274,7 +274,7 @@ export default async function Home() {
       </section>
 
       {/* E. Como escritora: video de Canal Uno + texto */}
-      <section className="bg-cream py-20 sm:py-28 border-t border-ink/10">
+      <section className="bg-white py-20 sm:py-28 border-t border-ink/10">
         <Container className="max-w-6xl text-center">
           <p className="font-display text-4xl italic text-burgundy sm:text-5xl mb-10">
             Como escritora

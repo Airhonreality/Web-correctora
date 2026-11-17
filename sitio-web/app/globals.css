@@ -26,6 +26,11 @@
   --color-teja: #c85a46;
   --color-burgundy: #722F37;
   --color-banner-confidencialidad: #EFE6E6;
+  --color-pastel-azul: #E8F4FD;
+  --color-pastel-vinotinto: #F5E9EB;
+  --color-pastel-beige: #FAF5E8;
+  --color-pastel-teal: #E7F4F0;
+  --color-pastel-rosa: #FBEEF0;
   --color-magenta: #db1f6e;
   --color-gold: #f1c87a;
   --color-whatsapp: #25d366;
@@ -57,6 +62,11 @@
   --color-teja: var(--color-teja);
   --color-burgundy: var(--color-burgundy);
   --color-banner-confidencialidad: var(--color-banner-confidencialidad);
+  --color-pastel-azul: var(--color-pastel-azul);
+  --color-pastel-vinotinto: var(--color-pastel-vinotinto);
+  --color-pastel-beige: var(--color-pastel-beige);
+  --color-pastel-teal: var(--color-pastel-teal);
+  --color-pastel-rosa: var(--color-pastel-rosa);
   --color-magenta: var(--color-magenta);
   --color-gold: var(--color-gold);
   --color-whatsapp: var(--color-whatsapp);

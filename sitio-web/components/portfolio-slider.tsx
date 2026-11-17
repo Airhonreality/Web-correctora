@@ -42,9 +42,11 @@ function summaryLines(summary: string) {
 function Card({
   item,
   onOpen,
+  colorVar,
 }: {
   item: PortfolioSliderItem;
   onOpen: (item: PortfolioSliderItem) => void;
+  colorVar: string;
 }) {
   const genre = item.genre.replace(/[.,;:]+$/, "");
 
@@ -53,9 +55,9 @@ function Card({
       type="button"
       onClick={() => onOpen(item)}
       aria-label={`Ver detalle de ${item.bookTitle}`}
-      className="group flex h-full w-full cursor-pointer flex-col overflow-hidden rounded-lg border border-ink/5 bg-cream text-left shadow-sm transition-shadow hover:shadow-md focus:outline-none focus-visible:ring-2 focus-visible:ring-teal"
+      className={`group flex h-full w-full cursor-pointer flex-col overflow-hidden rounded-lg border border-ink/5 bg-[var(${colorVar})] text-left shadow-sm transition-shadow hover:shadow-md focus:outline-none focus-visible:ring-2 focus-visible:ring-teal`}
     >
-      <div className="relative aspect-[2/3] w-full overflow-hidden bg-cream-soft">
+      <div className={`relative aspect-[2/3] w-full overflow-hidden bg-[var(${colorVar})]/40`}>
         {item.coverImageUrl ? (
           <Image
             src={item.coverImageUrl}
@@ -314,15 +316,25 @@ export function PortfolioSlider({
           className="hide-scrollbar overflow-x-auto scroll-smooth px-6 snap-x snap-mandatory"
         >
           <div className="mx-auto flex w-max gap-6">
-            {displayItems.map((item, index) => (
-              <div
-                key={`${item.id}-${index}`}
-                data-card
-                className="w-[min(78vw,19rem)] flex-none snap-start sm:w-72 lg:w-80"
-              >
-                <Card item={item} onOpen={setActiveItem} />
-              </div>
-            ))}
+            {items.map((item, index) => {
+              const pastelKeys = [
+                "--color-pastel-azul",
+                "--color-pastel-vinotinto",
+                "--color-pastel-beige",
+                "--color-pastel-teal",
+                "--color-pastel-rosa",
+              ];
+              const colorVar = pastelKeys[index % pastelKeys.length];
+              return (
+                <div
+                  key={item.id}
+                  data-card
+                  className="w-[min(78vw,19rem)] flex-none snap-start sm:w-72 lg:w-80"
+                >
+                  <Card item={item} onOpen={setActiveItem} colorVar={colorVar} />
+                </div>
+              );
+            })}
           </div>
         </div>
       </div>
