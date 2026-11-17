@@ -38,7 +38,7 @@ export default async function Home() {
         <Container className="relative z-10 max-w-7xl py-12 sm:py-16 lg:py-20 px-8">
           <div className="grid grid-cols-1 items-center gap-10 lg:grid-cols-12 lg:gap-8">
             <div className="lg:col-span-7">
-              <h1 className="mt-4 font-display text-3xl font-bold leading-[1.05] tracking-tight text-ink sm:text-4xl lg:text-[3.5rem]">
+              <h1 className="mt-4 font-display text-3xl font-bold leading-[1.05] tracking-tight text-ink text-center sm:text-4xl lg:text-[3.5rem]">
                 Su texto está en buenas manos
               </h1>
               <p className="mt-4 max-w-xl text-lg leading-relaxed text-ink/80">
@@ -50,9 +50,9 @@ export default async function Home() {
             </div>
 
             {/* Composición Visual: Arco + Cameo (5 Columnas) */}
-            <div className="col-span-1 lg:col-span-5 relative hidden lg:block">
+            <div className="col-span-1 lg:col-span-5 relative hidden lg:block flex flex-col items-end">
                {/* 1. El Arco (Carrusel de eventos) */}
-               <div className="aspect-[3/4] w-full max-w-[85%] ml-auto rounded-tr-full rounded-tl-full overflow-hidden shadow-xl border-4 border-white/50 bg-white">
+               <div className="aspect-[3/4] w-full max-w-[85%] rounded-tr-full rounded-tl-full overflow-hidden shadow-xl border-4 border-white/50 bg-white">
                   <EventsCarousel />
                </div>
 
@@ -71,8 +71,8 @@ export default async function Home() {
                   </div>
                </div>
 
-               {/* Texto de credenciales debajo del arco */}
-               <div className="mt-12 text-left">
+               {/* Texto de credenciales como pie de foto del arco */}
+               <div className="mt-4 text-right max-w-[85%]">
                  <p className="text-sm font-medium text-ink leading-relaxed">
                    Comunicadora social-periodista
                  </p>
@@ -119,15 +119,12 @@ export default async function Home() {
           <div className="mt-12 grid gap-8 lg:grid-cols-2">
             {/* Columna 1 */}
             <div className="flex flex-col gap-5 text-lg leading-relaxed text-ink/90">
-              <div className="flex items-start gap-3">
-                <Check className="mt-1 h-5 w-5 shrink-0 text-teal-dark" aria-hidden="true" />
-                <span>
-                  Corregir tu manuscrito sin recurrir a herramientas de IA ni a
-                  correctores automáticos que sustituyan el análisis
-                  lingüístico; de este modo, preservar los matices, el lenguaje
-                  y las expresiones propias del castellano.
-                </span>
-              </div>
+              <p className="font-semibold text-ink leading-relaxed">
+                Corregir tu manuscrito sin recurrir a herramientas de IA ni a
+                correctores automáticos que sustituyan el análisis lingüístico;
+                de este modo, preservar los matices, el lenguaje y las
+                expresiones propias del castellano.
+              </p>
               <div className="flex items-start gap-3">
                 <Check className="mt-1 h-5 w-5 shrink-0 text-teal-dark" aria-hidden="true" />
                 <span>
