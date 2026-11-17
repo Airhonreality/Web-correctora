@@ -49,15 +49,18 @@ function Card({
   colorVar: string;
 }) {
   const genre = item.genre.replace(/[.,;:]+$/, "");
+  const bgStyle = { backgroundColor: `var(${colorVar})` };
+  const imgStyle = { backgroundColor: `var(${colorVar})` };
 
   return (
     <button
       type="button"
       onClick={() => onOpen(item)}
       aria-label={`Ver detalle de ${item.bookTitle}`}
-      className={`group flex h-full w-full cursor-pointer flex-col overflow-hidden rounded-lg border border-ink/5 bg-[var(${colorVar})] text-left shadow-sm transition-shadow hover:shadow-md focus:outline-none focus-visible:ring-2 focus-visible:ring-teal`}
+      className="group flex h-full w-full cursor-pointer flex-col overflow-hidden rounded-lg border border-ink/5 text-left shadow-sm transition-shadow hover:shadow-md focus:outline-none focus-visible:ring-2 focus-visible:ring-teal"
+      style={bgStyle}
     >
-      <div className={`relative aspect-[2/3] w-full overflow-hidden bg-[var(${colorVar})]/40`}>
+      <div className="relative aspect-[2/3] w-full overflow-hidden" style={imgStyle}>
         {item.coverImageUrl ? (
           <Image
             src={item.coverImageUrl}
@@ -316,7 +319,7 @@ export function PortfolioSlider({
           className="hide-scrollbar overflow-x-auto scroll-smooth px-6 snap-x snap-mandatory"
         >
           <div className="mx-auto flex w-max gap-6">
-            {items.map((item, index) => {
+            {displayItems.map((item, index) => {
               const pastelKeys = [
                 "--color-pastel-azul",
                 "--color-pastel-vinotinto",
@@ -327,7 +330,7 @@ export function PortfolioSlider({
               const colorVar = pastelKeys[index % pastelKeys.length];
               return (
                 <div
-                  key={item.id}
+                  key={`card-${index}`}
                   data-card
                   className="w-[min(78vw,19rem)] flex-none snap-start sm:w-72 lg:w-80"
                 >
