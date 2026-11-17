@@ -264,7 +264,7 @@ export default async function Home() {
       {/* F. Algunos de mis clientes: slider de libros corregidos */}
       <section className="overflow-hidden bg-sand py-20 sm:py-24 border-t border-ink/10">
         <Container className="max-w-6xl text-center">
-          <p className="font-display text-4xl italic text-ink sm:text-5xl mb-10">
+          <p className="font-display text-4xl italic text-button-primary sm:text-5xl mb-10">
             Algunos de mis clientes
           </p>
         </Container>
