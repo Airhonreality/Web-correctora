@@ -7,7 +7,6 @@ export function whatsappHref(message: string) {
 
 export const navLinks = [
   { href: "/", label: "Inicio" },
-  { href: "/portafolio", label: "Portafolio" },
   { href: "/perfil", label: "Perfil" },
   { href: "/escritora", label: "Escritora" },
   { href: "/blog", label: "Blog" },
