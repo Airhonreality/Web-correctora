@@ -289,7 +289,7 @@ export default async function Home() {
                 </div>
               </div>
               <div className="flex-1">
-                <p className="font-display text-base sm:text-lg leading-relaxed text-button-primary">
+                <p className="font-display text-base sm:text-lg leading-relaxed text-ink">
                   Firmamos un <strong className="font-bold italic">acuerdo de confidencialidad</strong> del material a corregir, con la certeza de que este no pasará a terceros ni será divulgado sin tu autorización.
                 </p>
               </div>
