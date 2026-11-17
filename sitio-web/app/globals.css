@@ -25,6 +25,7 @@
   --color-cobalt: #2e5a8f;
   --color-teja: #c85a46;
   --color-burgundy: #722F37;
+  --color-banner-confidencialidad: #DAADAD;
   --color-magenta: #db1f6e;
   --color-gold: #f1c87a;
   --color-whatsapp: #25d366;
@@ -55,6 +56,7 @@
   --color-cobalt: var(--color-cobalt);
   --color-teja: var(--color-teja);
   --color-burgundy: var(--color-burgundy);
+  --color-banner-confidencialidad: var(--color-banner-confidencialidad);
   --color-magenta: var(--color-magenta);
   --color-gold: var(--color-gold);
   --color-whatsapp: var(--color-whatsapp);

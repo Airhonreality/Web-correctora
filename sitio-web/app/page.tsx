@@ -276,7 +276,7 @@ export default async function Home() {
         <Container className="max-w-6xl">
 
           {/* Banner confidencialidad */}
-          <section className="bg-terracotta rounded-3xl p-6 sm:p-10 text-cream mb-10 sm:mb-16 flex flex-col sm:flex-row items-center gap-6 sm:gap-10">
+          <section className="bg-banner-confidencialidad rounded-3xl p-6 sm:p-10 text-ink mb-10 sm:mb-16 flex flex-col sm:flex-row items-center gap-6 sm:gap-10">
             <div className="flex-shrink-0 sm:flex-shrink-0">
               <div className="relative inline-flex items-center justify-center w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-terracotta/20 border border-cream/30">
                 <Mail className="h-6 w-6 sm:h-8 sm:w-8 text-cream" aria-hidden="true" />
