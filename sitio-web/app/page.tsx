@@ -273,6 +273,49 @@ export default async function Home() {
         <PortfolioSlider items={portfolioItems} testimonials={testimonials} showHeader={false} />
       </section>
 
+      {/* E. Como escritora: video de Canal Uno + texto */}
+      <section className="bg-cream py-20 sm:py-28 border-t border-ink/10">
+        <Container className="max-w-6xl text-center">
+          <p className="font-display text-4xl italic text-burgundy sm:text-5xl mb-10">
+            Como escritora
+          </p>
+        </Container>
+        <div className="max-w-6xl mx-auto grid gap-10 lg:grid-cols-2 items-start px-6 sm:px-0">
+          <div className="flex flex-col gap-4">
+            <p className="text-lg leading-relaxed text-ink/85">
+              Autora de la novela de ficción histórica{" "}
+              <em>Juro por mis orejas</em>, publicada por la Editorial Oveja Negra
+              (2016), un relato con tintes de realismo mágico, en la que se
+              conjugan hechos reales y míticos de Colombia. Y de la novela{" "}
+              <em>Marcianos...</em>, publicada por el Grupo Editorial Ibáñez,
+              bajo el sello Sképsi (2025).
+            </p>
+            <p className="text-lg leading-relaxed text-ink/85">
+              El escritor y columnista colombiano Juan Esteban Constaín reseñó
+              mi novela{" "}
+              <em>Juro por mis orejas</em> en el espacio GPS en el canal UNO.
+              Resaltó su carácter histórico y fantástico. Un género al que
+              pocos escritores le apuestan.
+            </p>
+          </div>
+          <div className="aspect-video w-full rounded-md overflow-hidden bg-ink/5 shadow-inner border border-ink/10">
+            <video
+              autoPlay
+              muted
+              loop
+              playsInline
+              className="w-full h-full object-cover"
+            >
+              <source
+                src="https://pub-31f388eee9ee467086e726e2865e639a.r2.dev/web/amparo-rozo-canal-uno-gps.mp4"
+                type="video/mp4"
+              />
+              Tu navegador no soporta el formato de video.
+            </video>
+          </div>
+        </div>
+      </section>
+
       {/* D. Banner de confidencialidad + sección IA */}
       {/* Banner confidencialidad (izquierda, horizontal) + IA (derecha, vertical) */}
       <section className="bg-cream py-16 sm:py-24 border-t border-ink/10">
