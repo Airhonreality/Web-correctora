@@ -26,7 +26,7 @@ export function TestimonialSlider({
     if (reduceMotion) return;
     const timer = setInterval(
       () => setIndex((current) => (current + 1) % testimonials.length),
-      6000,
+      9000,
     );
     return () => clearInterval(timer);
   }, [index, paused, testimonials.length]);
@@ -42,7 +42,7 @@ export function TestimonialSlider({
 
   return (
     <section
-      className="relative overflow-hidden bg-terracotta"
+      className="relative overflow-hidden bg-testimonial-bg"
       onMouseEnter={() => setPaused(true)}
       onMouseLeave={() => setPaused(false)}
     >

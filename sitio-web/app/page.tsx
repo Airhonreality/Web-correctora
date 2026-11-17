@@ -238,7 +238,7 @@ export default async function Home() {
                 textos literarios, libros especializados, crecimiento personal y
                 revistas culturales.
               </p>
-              <ul className="flex flex-col gap-3 text-lg leading-relaxed text-ink/80 space-y-3">
+              <ul className="flex flex-col gap-3 text-lg leading-relaxed text-ink/80 space-y-3 list-disc list-outside pl-6">
                 <li>
                   Editorial COMCOSUR (corrección de clásicos).
                 </li>

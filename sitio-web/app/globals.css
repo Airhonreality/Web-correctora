@@ -15,6 +15,7 @@
   --color-coral: #ef8d77;
   --color-coral-ink: #2b2420;
   --color-button-primary: #38ccb2;
+  --color-testimonial-bg: #a6d4dd;
   --color-teal: #4ec0b0;  --color-teal-dark: #3d7c8c;
   --color-navy: #152741;
   --color-nude: #fbf8f1;
@@ -43,6 +44,7 @@
   --color-terracotta: var(--color-terracotta);
   --color-coral: var(--color-coral);
   --color-button-primary: var(--color-button-primary);
+  --color-testimonial-bg: var(--color-testimonial-bg);
   --color-teal: var(--color-teal);
   --color-teal-dark: var(--color-teal-dark);
   --color-navy: var(--color-navy);
