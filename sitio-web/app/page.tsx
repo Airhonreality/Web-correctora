@@ -105,7 +105,7 @@ export default async function Home() {
       </section>
 
       {/* C. Mi compromiso: título + lista en dos columnas */}
-      <section className="bg-white py-20 sm:py-24 border-b border-ink/10">
+      <section className="bg-white py-12 sm:py-16 border-b border-ink/10">
         <Container className="max-w-4xl">
           <div className="flex flex-col items-center text-center">
             <p className="text-xs font-bold uppercase tracking-[0.24em] text-teal-dark mb-2">
@@ -117,7 +117,7 @@ export default async function Home() {
           </div>
 
           {/* Encabezado principal: ancho completo */}
-          <div className="mt-14 mb-10 text-center">
+          <div className="mt-8 mb-6 text-center">
             <p className="font-semibold text-ink leading-relaxed max-w-2xl mx-auto">
               Corregir tu manuscrito sin recurrir a herramientas de IA ni a
               correctores automáticos que sustituyan el análisis lingüístico;
@@ -127,9 +127,9 @@ export default async function Home() {
           </div>
 
           {/* Dos columnas de compromisos */}
-          <div className="mt-12 grid gap-8 lg:grid-cols-2">
+          <div className="mt-8 grid gap-6 lg:grid-cols-2">
             {/* Columna 1 */}
-            <div className="flex flex-col gap-5 text-lg leading-relaxed text-ink/90">
+            <div className="flex flex-col gap-3 text-lg leading-relaxed text-ink/90">
               <div className="flex items-start gap-3">
                 <Check className="mt-1 h-5 w-5 shrink-0 text-teal-dark" aria-hidden="true" />
                 <span>
@@ -165,7 +165,7 @@ export default async function Home() {
             </div>
 
             {/* Columna 2 */}
-            <div className="flex flex-col gap-5 text-lg leading-relaxed text-ink/90">
+            <div className="flex flex-col gap-3 text-lg leading-relaxed text-ink/90">
               <div className="flex items-start gap-3">
                 <Check className="mt-1 h-5 w-5 shrink-0 text-teal-dark" aria-hidden="true" />
                 <span>Aplicación de Normas APA (libros especializados).</span>
@@ -208,7 +208,7 @@ export default async function Home() {
       </section>
 
       {/* CTA: servicio de corrección */}
-      <section className="bg-white py-16 sm:py-20 text-center border-b border-ink/10">
+      <section className="bg-white py-10 sm:py-14 text-center border-b border-ink/10">
         <Container className="max-w-2xl mx-auto">
           <WhatsAppButton
             message="Hola Amparo, requiero un servicio de corrección de estilo para mi manuscrito."
